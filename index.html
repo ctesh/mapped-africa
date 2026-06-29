@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formspree.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://formspree.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <meta name="robots" content="index, follow">
 <title>MAPPED — The Business Clarity Toolkit | Meroë Africa</title>
 <meta name="description" content="Mapped is the business-clarity toolkit that shows African founders how their business actually runs — then rebuilds it into a system you can scale. Get your Clarity Score.">
@@ -304,7 +304,7 @@
           <label class="check"><input type="checkbox" name="lead_magnet" value="yes" checked> Also send me “The 7 signs your business is running on memory.”</label>
           <button type="submit" class="btn" id="submitBtn" data-cta="form-submit">Get my Clarity Score</button>
           <p id="formErr" style="display:none;color:#b00020;font-size:.85rem;margin-top:10px"></p>
-          <p style="color:var(--grey);font-size:.78rem;margin-top:12px">Prefer to talk? Email <a href="mailto:hello@meroeafricagroup.com" style="color:var(--orange-dk)">hello@meroeafricagroup.com</a></p>
+          <p style="color:var(--grey);font-size:.78rem;margin-top:12px">Prefer to talk? Email <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:var(--orange-dk)">mappedafricameroeafrica@gmail.com</a></p>
         </form>
         <div class="formok" id="formOk">
           <div class="tick">✓</div>
@@ -331,17 +331,19 @@
 </section>
 
 <div class="foot">
-  © 2026 Meroë Africa · MAPPED — The Business Clarity Toolkit · Find the centre. · <a href="mailto:hello@meroeafricagroup.com">hello@meroeafricagroup.com</a>
+  © 2026 Meroë Africa · MAPPED — The Business Clarity Toolkit · Find the centre. · <a href="mailto:mappedafricameroeafrica@gmail.com">mappedafricameroeafrica@gmail.com</a>
 </div>
 
 <div class="sticky"><a href="#start" class="btn" data-cta="sticky">Get your Clarity Score</a></div>
 
 <script>
 (function(){
-  // ---- CONFIG: paste your Formspree form ID to send leads to your inbox/CRM ----
-  var FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
-  var FALLBACK_EMAIL = "hello@meroeafricagroup.com";
-  // ---------------------------------------------------------------------------
+  // ---- Lead delivery: FormSubmit (no signup). Leads go to this inbox. ----
+  var LEAD_EMAIL = "mappedafricameroeafrica@gmail.com";
+  var ENDPOINT = "https://formsubmit.co/ajax/" + LEAD_EMAIL;
+  var FALLBACK_EMAIL = LEAD_EMAIL;
+  // First submission triggers a one-time "Activate Form" email to LEAD_EMAIL — click it once, then every lead is delivered.
+  // -----------------------------------------------------------------------
 
   var q=new URLSearchParams(location.search);
   ["utm_source","utm_medium","utm_campaign"].forEach(function(k){
@@ -374,13 +376,14 @@
     btn.textContent='Sending…'; btn.disabled=true;
     try{gtag('event','generate_lead',{stage:data.stage});}catch(e){}
 
-    var configured = FORMSPREE_ENDPOINT.indexOf('REPLACE_WITH')===-1;
-    if(!configured){ mailtoFallback(data); btn.textContent='Get my Clarity Score'; btn.disabled=false; return; }
-
-    fetch(FORMSPREE_ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)})
-      .then(function(r){
-        if(r.ok){ form.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
-        else { throw new Error('bad response'); }
+    data._subject = "New Clarity Score lead — mapped.africa";
+    data._template = "table";
+    data._captcha = "false";
+    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){ return r.json().catch(function(){return {};}); })
+      .then(function(j){
+        if(j && (j.success===true || j.success==="true")){ form.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
+        else { mailtoFallback(data); }
       })
       .catch(function(){ mailtoFallback(data); })
       .finally(function(){ btn.textContent='Get my Clarity Score'; btn.disabled=false; });
