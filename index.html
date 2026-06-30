@@ -362,8 +362,8 @@ var AUTORESPONSE = "Hi, and thanks for reaching out to Mapped.\n\nWe have your d
   var btn=document.getElementById('submitBtn');
 
   function mailtoFallback(data){
-    var body=Object.keys(data).filter(function(k){return data[k] && k.charAt(0)!=='_';}).map(function(k){return k+': '+data[k];}).join('%0D%0A');
-    window.location.href='mailto:'+FALLBACK_EMAIL+'?subject='+encodeURIComponent('Clarity Score request, '+(data.name||''))+'&body='+body;
+    
+    err.innerHTML='That did not send just now. Please email us at <a href="mailto:'+FALLBACK_EMAIL+'" style="color:#C2660A">'+FALLBACK_EMAIL+'</a> and we will come straight back to you.'; err.style.display='block';
   }
 
   form.addEventListener('submit',function(e){
