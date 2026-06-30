@@ -340,8 +340,9 @@
 (function(){
   // ---- Lead delivery: FormSubmit (no signup). Leads go to this inbox. ----
   var LEAD_EMAIL = "mappedafricameroeafrica@gmail.com";
-  var ENDPOINT = "https://formsubmit.co/ajax/" + LEAD_EMAIL;
+  var ENDPOINT = "https://formsubmit.co/ajax/3af1ad71dd62748a71019e24ad0d840f";
   var FALLBACK_EMAIL = LEAD_EMAIL;
+var AUTORESPONSE = "Hi, and thanks for reaching out to Mapped.\n\nWe have your details, and one of our team will personally come back to you within one business day with how a Clarity Index Sprint would work for your business.\n\nHere is the guide you asked for, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhat happens next:\n1. We review what you shared.\n2. We send you a short, no obligation plan for your Clarity Sprint (fixed fee, about 2 weeks).\n3. If it is a fit, we map your business so you can see it clearly and run it intentionally.\n\nIf anything is urgent, just reply to this email.\n\nTalk soon,\nThe Mapped team at Meroe Africa\nmapped.africa";
   // First submission triggers a one-time "Activate Form" email to LEAD_EMAIL, click it once, then every lead is delivered.
   // -----------------------------------------------------------------------
 
@@ -361,7 +362,7 @@
   var btn=document.getElementById('submitBtn');
 
   function mailtoFallback(data){
-    var body=Object.keys(data).map(function(k){return k+': '+data[k];}).join('%0D%0A');
+    var body=Object.keys(data).filter(function(k){return data[k] && k.charAt(0)!=='_';}).map(function(k){return k+': '+data[k];}).join('%0D%0A');
     window.location.href='mailto:'+FALLBACK_EMAIL+'?subject='+encodeURIComponent('Clarity Score request, '+(data.name||''))+'&body='+body;
   }
 
@@ -376,10 +377,10 @@
     btn.textContent='Sending…'; btn.disabled=true;
     try{gtag('event','generate_lead',{stage:data.stage});}catch(e){}
 
-    data._subject = "New Clarity Score lead, mapped.africa";
-    data._template = "table";
-    data._captcha = "false";
-    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)})
+    var payload={}; for(var pk in data){payload[pk]=data[pk];} payload._subject = "New Clarity Score lead from mapped.africa";
+    payload._template = "table";
+    payload._captcha = "false"; payload._autoresponse = AUTORESPONSE;
+    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)})
       .then(function(r){ return r.json().catch(function(){return {};}); })
       .then(function(j){
         if(j && (j.success===true || j.success==="true")){ form.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
