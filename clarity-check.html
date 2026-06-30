@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<title>The Clarity Self-Check | MAPPED</title>
+<meta name="description" content="Take the free Clarity Self-Check. 10 questions, 60 seconds, an instant Clarity Score for your business.">
+<link rel="canonical" href="https://mapped.africa/clarity-check.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0B0B0D">
+<style>
+  :root{--black:#0B0B0D;--ink:#151821;--orange:#F08010;--orange-dk:#C2660A;--gold:#C9A24B;--white:#fff;--light:#F4F6FA;--grey:#5B6472;--line:#E6EAF1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--ink);line-height:1.55;background:var(--light)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  header{background:var(--black);position:sticky;top:0;z-index:30}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em;color:#fff;text-decoration:none}
+  .brand img{height:34px;border-radius:5px}
+  .nav a.home{color:#9AA3B2;text-decoration:none;font-size:.9rem;font-weight:600}
+  .hero{background:var(--black);color:#fff;padding:46px 0 56px}
+  .ey{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+  .hero h1{font-size:2.5rem;font-weight:800;margin:.3em 0 .25em}
+  .hero p{color:#D7DEEE;font-size:1.1rem;max-width:560px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 10px 40px rgba(20,24,33,.08);margin:-28px 0 40px}
+  .q{padding:18px 0;border-bottom:1px solid var(--line)}
+  .q:last-child{border-bottom:none}
+  .q .n{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:.85rem;margin-right:8px}
+  .q p{font-weight:600;font-size:1.05rem;margin-bottom:12px}
+  .opts{display:flex;gap:10px;flex-wrap:wrap}
+  .opt{flex:1;min-width:120px}
+  .opt input{position:absolute;opacity:0}
+  .opt label{display:block;text-align:center;padding:10px 8px;border:1px solid var(--line);border-radius:9px;cursor:pointer;font-size:.92rem;font-weight:600;color:var(--grey);transition:.15s}
+  .opt input:checked + label{background:var(--orange);border-color:var(--orange);color:#fff}
+  .btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;padding:15px 28px;border-radius:9px;text-decoration:none;border:2px solid var(--orange);cursor:pointer;font-size:1.05rem;width:100%}
+  .btn:hover{background:var(--orange-dk);border-color:var(--orange-dk)}
+  .btn.dark{background:var(--ink);border-color:var(--ink)}
+  .err{display:none;color:#b00020;font-size:.9rem;margin-top:12px;text-align:center}
+  /* results */
+  #results{display:none}
+  .score-wrap{text-align:center;padding:14px 0 6px}
+  .score{font-size:4.6rem;font-weight:800;color:var(--orange);line-height:1}
+  .band{font-size:1.3rem;font-weight:800;margin-top:4px}
+  .bar{height:14px;background:var(--line);border-radius:8px;overflow:hidden;margin:18px 0 8px}
+  .bar span{display:block;height:100%;background:var(--orange);width:0;transition:width .8s ease}
+  .interp{color:var(--grey);text-align:center;max-width:520px;margin:8px auto 0}
+  .capture{margin-top:26px;border-top:1px solid var(--line);padding-top:24px}
+  .capture h3{font-size:1.25rem;margin-bottom:6px}
+  .capture p.s{color:var(--grey);font-size:.95rem;margin-bottom:16px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
+  .field input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:9px;font-size:1rem;font-family:inherit}
+  .field input:focus{outline:2px solid var(--orange);border-color:var(--orange)}
+  .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+  #thanks{display:none;text-align:center;padding:10px 6px}
+  #thanks .tick{width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin:0 auto 14px}
+  .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .row .btn{flex:1;min-width:200px;text-align:center}
+  .foot{text-align:center;color:var(--grey);font-size:.85rem;padding:30px 0 50px}
+  .foot a{color:var(--orange-dk);text-decoration:none}
+  @media(max-width:560px){.hero h1{font-size:2rem}.score{font-size:3.6rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="https://mapped.africa/"><img src="mapped-mark.png" alt="Mapped">MAPPED</a>
+  <a class="home" href="https://mapped.africa/">Back to mapped.africa</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <span class="ey">The Clarity Self-Check</span>
+  <h1>What is your Clarity Score?</h1>
+  <p>Ten quick questions, about 60 seconds, and you get your score on the spot. Answer honestly. No one sees this but you.</p>
+</div></div>
+
+<div class="wrap">
+  <div class="card" id="quizCard">
+    <form id="quiz"></form>
+    <button class="btn" id="seeScore" style="margin-top:20px">See my Clarity Score</button>
+    <p class="err" id="quizErr">Please answer all ten questions to see your score.</p>
+  </div>
+
+  <div class="card" id="results">
+    <div class="score-wrap">
+      <div class="score" id="scoreNum">0%</div>
+      <div class="band" id="bandText"></div>
+    </div>
+    <div class="bar"><span id="barFill"></span></div>
+    <p class="interp" id="interp"></p>
+
+    <div class="capture" id="capture">
+      <h3>Get your full breakdown</h3>
+      <p class="s">We will email you a short read on what your score means and the three things to fix first, plus the 7 Signs guide.</p>
+      <form id="lead" novalidate>
+        <input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field"><label for="name">Name</label><input id="name" name="name"></div>
+        <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required></div>
+        <button class="btn" type="submit" id="leadBtn">Send my breakdown</button>
+        <p class="err" id="leadErr">Please add a valid email.</p>
+      </form>
+    </div>
+
+    <div id="thanks">
+      <div class="tick">✓</div>
+      <h3>On its way. Talk soon.</h3>
+      <p style="color:var(--grey);margin-top:6px">Your breakdown and guide are heading to your inbox.</p>
+      <div class="row">
+        <a class="btn" href="7-signs.pdf" download>Download the 7 Signs guide</a>
+        <a class="btn dark" href="https://mapped.africa/#pricing">Book your Clarity Sprint</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">A Meroë Africa product · The full, facilitated Clarity Index comes with a Clarity Sprint. · <a href="https://mapped.africa/">mapped.africa</a></div>
+
+<script>
+(function(){
+  var ENDPOINT = "https://formsubmit.co/ajax/3af1ad71dd62748a71019e24ad0d840f";
+  var questions = [
+    "The business runs day to day without every decision going through the founder.",
+    "Our core processes are written down, not just kept in people's heads.",
+    "A new hire can learn how we work from documentation, not only by shadowing.",
+    "The same task gets done the same way no matter who does it.",
+    "We can explain how the business makes money on a single page.",
+    "Roles are clear and everyone knows what they own.",
+    "We track a few key numbers and actually review them regularly.",
+    "Vendor and client terms are documented and up to date.",
+    "Growth has made things smoother, not more chaotic.",
+    "The founder could step away for two weeks and the business would keep running."
+  ];
+  var qForm = document.getElementById('quiz');
+  questions.forEach(function(t,i){
+    var n=i+1;
+    var div=document.createElement('div'); div.className='q';
+    div.innerHTML='<p><span class="n">'+n+'</span>'+t+'</p>'+
+      '<div class="opts">'+
+      '<div class="opt"><input type="radio" id="q'+n+'a" name="q'+n+'" value="0"><label for="q'+n+'a">Not yet</label></div>'+
+      '<div class="opt"><input type="radio" id="q'+n+'b" name="q'+n+'" value="1"><label for="q'+n+'b">Getting there</label></div>'+
+      '<div class="opt"><input type="radio" id="q'+n+'c" name="q'+n+'" value="2"><label for="q'+n+'c">Yes, solid</label></div>'+
+      '</div>';
+    qForm.appendChild(div);
+  });
+
+  var quizErr=document.getElementById('quizErr');
+  var answersText="";
+  var pct=0, band="";
+
+  document.getElementById('seeScore').addEventListener('click',function(){
+    var total=0, answered=0; answersText="";
+    for(var i=1;i<=questions.length;i++){
+      var sel=document.querySelector('input[name="q'+i+'"]:checked');
+      if(sel){ answered++; total+=parseInt(sel.value,10);
+        answersText += "Q"+i+": "+(sel.value==="2"?"Yes":(sel.value==="1"?"Getting there":"Not yet"))+"\n";
+      }
+    }
+    if(answered<questions.length){ quizErr.style.display='block'; return; }
+    quizErr.style.display='none';
+    pct = Math.round((total/(questions.length*2))*100);
+    var interp;
+    if(pct<40){ band="Running on memory"; interp="The business lives largely in people's heads. The silent tax is high, and clarity is your single highest return investment right now."; }
+    else if(pct<70){ band="Building structure"; interp="You have real foundations and clear gaps. A focused Clarity Sprint would turn the loose parts into a system you can scale."; }
+    else { band="Clear and scaling"; interp="Strong. You run on more than memory. A Sprint now tightens the last gaps and gets you investment and AI ready."; }
+
+    document.getElementById('scoreNum').textContent=pct+"%";
+    var bt=document.getElementById('bandText'); bt.textContent=band; bt.style.color = pct<40?'#b00020':(pct<70?'var(--orange-dk)':'#1f9d55');
+    document.getElementById('interp').textContent=interp;
+    document.getElementById('quizCard').style.display='none';
+    document.getElementById('results').style.display='block';
+    document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){ document.getElementById('barFill').style.width=pct+"%"; },120);
+  });
+
+  var lead=document.getElementById('lead'), leadErr=document.getElementById('leadErr'), leadBtn=document.getElementById('leadBtn');
+  lead.addEventListener('submit',function(e){
+    e.preventDefault(); leadErr.style.display='none';
+    if(lead._hp.value) return;
+    var email=lead.email.value.trim();
+    if(!email || email.indexOf('@')<1){ leadErr.style.display='block'; return; }
+    leadBtn.textContent='Sending...'; leadBtn.disabled=true;
+    var auto = "Hi, and thanks for taking the Mapped Clarity Self-Check.\n\nYour Clarity Score is "+pct+"% ("+band+").\n\nWhat that means: lower scores mean more of the business lives in people's heads, which quietly caps growth, funding and the ability to automate. The fix is to make the engine visible.\n\nHere is your guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhen you are ready for the full, facilitated Clarity Index and a plan to fix your top three gaps, reply to this email or book a Clarity Sprint at https://mapped.africa\n\nTalk soon,\nThe Mapped team at Meroe Africa";
+    var payload={
+      name: lead.name.value, email: email,
+      clarity_score: pct+"%", band: band, answers: answersText,
+      _subject: "New Clarity Self-Check lead, score "+pct+"% ("+band+")",
+      _template: "table", _captcha: "false", _autoresponse: auto
+    };
+    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){return r.json().catch(function(){return {};});})
+      .then(function(j){
+        if(j && (j.success===true||j.success==="true")){ document.getElementById('capture').style.display='none'; document.getElementById('thanks').style.display='block'; }
+        else { leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.'; leadErr.style.display='block'; }
+      })
+      .catch(function(){ leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.'; leadErr.style.display='block'; })
+      .finally(function(){ leadBtn.textContent='Send my breakdown'; leadBtn.disabled=false; });
+  });
+})();
+</script>
+</body>
+</html>
