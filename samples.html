@@ -47,6 +47,9 @@
   .tax .lbl{color:var(--orange);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
   .tax .row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;color:#D7DEEE;font-size:.8rem}
   .tax b{color:#fff}
+  .tobe{background:#0f3d24;margin:0 18px 18px;border-radius:9px;padding:14px 16px}
+  .tobe .lbl{color:#57d98a;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .tobe .row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;color:#d7f5e3;font-size:.8rem}
   .cta{background:var(--orange);color:#fff;border-radius:14px;padding:34px 24px;text-align:center;margin:34px 0 44px}
   .cta h2{font-size:1.7rem;font-weight:800;margin-bottom:8px}
   .cta p{max-width:520px;margin:0 auto 18px;opacity:.95}
@@ -55,7 +58,7 @@
   .note{text-align:center;color:var(--grey);font-size:.8rem;padding-bottom:8px}
   .foot{text-align:center;color:var(--grey);font-size:.84rem;padding:6px 0 46px}
   .foot a{color:var(--orange-dk);text-decoration:none}
-  @media(max-width:820px){.stages{grid-template-columns:repeat(2,1fr)}.tax .row{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+  @media(max-width:820px){.stages{grid-template-columns:repeat(2,1fr)}.tax .row,.tobe .row{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
 </style>
 </head>
 <body>
@@ -92,6 +95,11 @@
       <div><b>Manual data stitching.</b> Verification pulls from three systems by hand.</div>
       <div><b>No default early warning.</b> Losses are seen only after they happen.</div>
     </div></div>
+    <div class="tobe"><div class="lbl">The To-Be redesign · projected 58% to 84%</div><div class="row">
+      <div>Move the scoring model into a shared, versioned system.</div>
+      <div>Automate verification across the three systems.</div>
+      <div>Add a default early-warning signal on collections.</div>
+    </div></div>
   </div>
 
   <!-- 2. MANUFACTURING / AGRI -->
@@ -112,6 +120,11 @@
       <div><b>Paper intake.</b> Weights are disputed and margin walks out the gate.</div>
       <div><b>No yield data.</b> Nobody knows the real cost per unit.</div>
       <div><b>Stock is guessed.</b> Counts are estimates, not numbers.</div>
+    </div></div>
+    <div class="tobe"><div class="lbl">The To-Be redesign · projected 44% to 80%</div><div class="row">
+      <div>Digitize intake weights at the gate.</div>
+      <div>Set a grading standard and track yield and wastage.</div>
+      <div>Link every order to live stock.</div>
     </div></div>
   </div>
 
@@ -134,6 +147,11 @@
       <div><b>Time not tracked.</b> You cannot see which work is profitable.</div>
       <div><b>Billing lags delivery.</b> Cash arrives late, if at all.</div>
     </div></div>
+    <div class="tobe"><div class="lbl">The To-Be redesign · projected 63% to 86%</div><div class="row">
+      <div>Build a reusable proposal and pricing library.</div>
+      <div>Track time to every matter.</div>
+      <div>Trigger billing at delivery milestones.</div>
+    </div></div>
   </div>
 
   <!-- 4. LOGISTICS -->
@@ -154,6 +172,11 @@
       <div><b>Routing by memory.</b> Fuel and time bleed on every run.</div>
       <div><b>No live tracking.</b> Clients call to ask where their goods are.</div>
       <div><b>Paper proof.</b> Missing PODs turn into billing disputes.</div>
+    </div></div>
+    <div class="tobe"><div class="lbl">The To-Be redesign · projected 51% to 82%</div><div class="row">
+      <div>Plan routes in a system, not on a whiteboard.</div>
+      <div>Add live tracking and digital proof of delivery.</div>
+      <div>Reconcile billing to PODs automatically.</div>
     </div></div>
   </div>
 
@@ -176,6 +199,11 @@
       <div><b>Stock-outs.</b> No reorder trigger on the pharmacy.</div>
       <div><b>No recall.</b> Patients who should return are never contacted.</div>
     </div></div>
+    <div class="tobe"><div class="lbl">The To-Be redesign · projected 55% to 83%</div><div class="row">
+      <div>One shared patient record across every branch.</div>
+      <div>Add reorder triggers on pharmacy stock.</div>
+      <div>Trigger follow-up recalls automatically.</div>
+    </div></div>
   </div>
 
   <!-- 6. SME (kept) -->
@@ -196,6 +224,11 @@
       <div><b>Founder-dependent.</b> The flow stops when the founder is unavailable.</div>
       <div><b>No system of record.</b> Orders live in WhatsApp, so nothing can be measured.</div>
       <div><b>No follow-up.</b> Repeat business is left on the table every order.</div>
+    </div></div>
+    <div class="tobe"><div class="lbl">The To-Be redesign · projected 40% to 82%</div><div class="row">
+      <div>Move orders into a system of record.</div>
+      <div>Give follow-up an owner and a trigger.</div>
+      <div>Add a quality checklist at assembly.</div>
     </div></div>
   </div>
 
