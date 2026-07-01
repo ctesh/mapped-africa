@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <title>Sample Maps | MAPPED</title>
-<meta name="description" content="See real businesses mapped on one page. Sample Process Canvases showing workflows, roles, tools, and where value leaks, each with a Clarity Index score.">
+<meta name="description" content="See real businesses mapped on one page, across industries and scale. Sample Process Canvases showing workflows, roles, tools, and where value leaks, each with a Clarity Index score.">
 <link rel="canonical" href="https://mapped.africa/samples.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -25,10 +25,12 @@
   .hero{background:var(--black);color:#fff;padding:44px 0 40px}
   .ey{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
   .hero h1{font-size:2.4rem;font-weight:800;margin:.3em 0 .25em}
-  .hero p{color:#D7DEEE;font-size:1.08rem;max-width:640px}
+  .hero p{color:#D7DEEE;font-size:1.08rem;max-width:660px}
+  .filter{color:#9AA3B2;font-size:.9rem;margin-top:16px}
+  .filter b{color:#fff}
   .canvas{background:#fff;border:1px solid var(--line);border-radius:14px;margin:26px 0;overflow:hidden;box-shadow:0 10px 40px rgba(20,24,33,.07)}
   .chead{background:var(--black);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-  .chead .lbl{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);font-weight:700}
+  .chead .lbl{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:700}
   .chead .nm{color:#fff;font-size:1.2rem;font-weight:800}
   .badge{text-align:center;background:var(--ink);border:1px solid #2a2f3a;border-radius:10px;padding:7px 14px}
   .badge .sc{color:var(--orange);font-size:1.4rem;font-weight:800;line-height:1}
@@ -36,11 +38,11 @@
   .stages{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;padding:18px}
   .stage{background:var(--light);border:1px solid var(--line);border-radius:9px;padding:11px}
   .snum{width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.74rem;text-align:center;line-height:22px;margin-bottom:7px}
-  .stage h4{font-size:.86rem;margin-bottom:5px}
-  .stage p{font-size:.75rem;color:var(--grey);margin-bottom:9px}
-  .chip{font-size:.66rem;background:#fff;border:1px solid var(--line);border-radius:6px;padding:2px 6px;display:inline-block;margin:0 3px 3px 0;color:var(--grey)}
+  .stage h4{font-size:.84rem;margin-bottom:5px}
+  .stage p{font-size:.74rem;color:var(--grey);margin-bottom:9px}
+  .chip{font-size:.64rem;background:#fff;border:1px solid var(--line);border-radius:6px;padding:2px 6px;display:inline-block;margin:0 3px 3px 0;color:var(--grey)}
   .chip.role{background:#FCEBD8;border-color:#F6D3AC;color:#8a4d06}
-  .flag{margin-top:7px;font-size:.66rem;color:var(--red);font-weight:600}
+  .flag{margin-top:7px;font-size:.64rem;color:var(--red);font-weight:600}
   .tax{background:var(--black);margin:0 18px 18px;border-radius:9px;padding:14px 16px}
   .tax .lbl{color:var(--orange);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
   .tax .row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;color:#D7DEEE;font-size:.8rem}
@@ -66,22 +68,128 @@
   <span class="ey">Sample Maps</span>
   <h1>See a business on one page.</h1>
   <p>This is what Mapped produces: your whole operation on a single Process Canvas, every role and tool shown, every leak flagged, with a Clarity Index score. The examples below are illustrative. This is the output. Yours is built with you, from your real business, in a Clarity Sprint.</p>
+  <p class="filter">Across industries and scale: <b>fintech, manufacturing, professional services, logistics, healthcare, and a founder-led SME.</b></p>
 </div></div>
 
 <div class="wrap">
 
-  <!-- SAMPLE 1 -->
+  <!-- 1. FINTECH -->
   <div class="canvas">
     <div class="chead">
-      <div><div class="lbl">Process Canvas · Sample</div><div class="nm">Zawadi Gifting Co. — Order to Delivery</div></div>
-      <div class="badge"><div class="sc">48%</div><div class="bd">Clarity · Running on memory</div></div>
+      <div><div class="lbl">Process Canvas · Sample · Fintech scale-up</div><div class="nm">PesaFlow — Loan Application to Disbursement</div></div>
+      <div class="badge"><div class="sc">58%</div><div class="bd">Clarity · Building structure</div></div>
     </div>
     <div class="stages">
-      <div class="stage"><div class="snum">1</div><h4>Enquiry</h4><p>Customer DMs asking for options and price.</p><span class="chip role">Founder</span><span class="chip">Instagram</span><div class="flag">&#9873; Replies depend on the founder being awake</div></div>
-      <div class="stage"><div class="snum">2</div><h4>Order</h4><p>Details and payment confirmed by chat.</p><span class="chip role">Founder</span><span class="chip">WhatsApp</span><div class="flag">&#9873; Orders live in chat, not a system</div></div>
+      <div class="stage"><div class="snum">1</div><h4>Application</h4><p>Borrower applies in the app.</p><span class="chip role">Product</span><span class="chip">Mobile app</span></div>
+      <div class="stage"><div class="snum">2</div><h4>Verification</h4><p>Check ID and credit history.</p><span class="chip role">Ops analyst</span><span class="chip">3 systems</span><div class="flag">&#9873; Data stitched together by hand</div></div>
+      <div class="stage"><div class="snum">3</div><h4>Scoring</h4><p>Decide the credit limit.</p><span class="chip role">Credit team</span><span class="chip">Spreadsheet</span><div class="flag">&#9873; Model lives in one analyst's sheet</div></div>
+      <div class="stage"><div class="snum">4</div><h4>Approval</h4><p>Sign off the loan.</p><span class="chip role">Credit manager</span><span class="chip">Email</span><div class="flag">&#9873; Stalls when the manager is out</div></div>
+      <div class="stage"><div class="snum">5</div><h4>Disbursement</h4><p>Release the funds.</p><span class="chip role">Finance</span><span class="chip">Bank portal</span></div>
+      <div class="stage"><div class="snum">6</div><h4>Collection</h4><p>Recover repayments.</p><span class="chip role">Collections</span><span class="chip">Calls + SMS</span><div class="flag">&#9873; No early warning on defaults</div></div>
+    </div>
+    <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
+      <div><b>Key-person risk.</b> The scoring model sits in one person's spreadsheet.</div>
+      <div><b>Manual data stitching.</b> Verification pulls from three systems by hand.</div>
+      <div><b>No default early warning.</b> Losses are seen only after they happen.</div>
+    </div></div>
+  </div>
+
+  <!-- 2. MANUFACTURING / AGRI -->
+  <div class="canvas">
+    <div class="chead">
+      <div><div class="lbl">Process Canvas · Sample · Mid-market manufacturer</div><div class="nm">Rift Valley Foods — Raw Intake to Dispatch</div></div>
+      <div class="badge"><div class="sc">44%</div><div class="bd">Clarity · Running on memory</div></div>
+    </div>
+    <div class="stages">
+      <div class="stage"><div class="snum">1</div><h4>Intake</h4><p>Receive raw produce.</p><span class="chip role">Store keeper</span><span class="chip">Paper log</span><div class="flag">&#9873; Weights on paper, disputes</div></div>
+      <div class="stage"><div class="snum">2</div><h4>Grading</h4><p>Sort and grade the batch.</p><span class="chip role">Line supervisor</span><span class="chip">By eye</span><div class="flag">&#9873; No consistent grading standard</div></div>
+      <div class="stage"><div class="snum">3</div><h4>Processing</h4><p>Clean, process, and pack.</p><span class="chip role">Plant crew</span><span class="chip">Machines</span><div class="flag">&#9873; No yield or wastage tracking</div></div>
+      <div class="stage"><div class="snum">4</div><h4>Quality</h4><p>Check the finished goods.</p><span class="chip role">QC officer</span><span class="chip">Manual</span><div class="flag">&#9873; Checks skipped under pressure</div></div>
+      <div class="stage"><div class="snum">5</div><h4>Storage</h4><p>Move to the warehouse.</p><span class="chip role">Warehouse</span><span class="chip">Shelves</span><div class="flag">&#9873; Stock counts are estimates</div></div>
+      <div class="stage"><div class="snum">6</div><h4>Dispatch</h4><p>Load and deliver orders.</p><span class="chip role">Dispatch</span><span class="chip">Trucks</span><div class="flag">&#9873; Orders not linked to stock</div></div>
+    </div>
+    <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
+      <div><b>Paper intake.</b> Weights are disputed and margin walks out the gate.</div>
+      <div><b>No yield data.</b> Nobody knows the real cost per unit.</div>
+      <div><b>Stock is guessed.</b> Counts are estimates, not numbers.</div>
+    </div></div>
+  </div>
+
+  <!-- 3. PROFESSIONAL SERVICES -->
+  <div class="canvas">
+    <div class="chead">
+      <div><div class="lbl">Process Canvas · Sample · Professional services</div><div class="nm">Sifa &amp; Partners — Engagement to Invoice</div></div>
+      <div class="badge"><div class="sc">63%</div><div class="bd">Clarity · Building structure</div></div>
+    </div>
+    <div class="stages">
+      <div class="stage"><div class="snum">1</div><h4>Enquiry</h4><p>A prospect reaches out.</p><span class="chip role">Partner</span><span class="chip">Email</span><div class="flag">&#9873; Depends who catches it</div></div>
+      <div class="stage"><div class="snum">2</div><h4>Proposal</h4><p>Scope and quote the work.</p><span class="chip role">Partner</span><span class="chip">Word docs</span><div class="flag">&#9873; Built from scratch each time</div></div>
+      <div class="stage"><div class="snum">3</div><h4>Engagement</h4><p>Sign and kick off.</p><span class="chip role">Admin</span><span class="chip">Email + PDF</span></div>
+      <div class="stage"><div class="snum">4</div><h4>Delivery</h4><p>Do the client work.</p><span class="chip role">Associates</span><span class="chip">Files + email</span><div class="flag">&#9873; Time not tracked to matters</div></div>
+      <div class="stage"><div class="snum">5</div><h4>Review</h4><p>Partner sign-off.</p><span class="chip role">Partner</span><span class="chip">Email</span><div class="flag">&#9873; Bottleneck at one partner</div></div>
+      <div class="stage"><div class="snum">6</div><h4>Invoice</h4><p>Bill the client.</p><span class="chip role">Finance</span><span class="chip">Manual</span><div class="flag">&#9873; Billing lags, cash slips</div></div>
+    </div>
+    <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
+      <div><b>Proposals rebuilt every time.</b> No reusable library or pricing.</div>
+      <div><b>Time not tracked.</b> You cannot see which work is profitable.</div>
+      <div><b>Billing lags delivery.</b> Cash arrives late, if at all.</div>
+    </div></div>
+  </div>
+
+  <!-- 4. LOGISTICS -->
+  <div class="canvas">
+    <div class="chead">
+      <div><div class="lbl">Process Canvas · Sample · Logistics and distribution</div><div class="nm">HaraLink Logistics — Order to Last-Mile</div></div>
+      <div class="badge"><div class="sc">51%</div><div class="bd">Clarity · Building structure</div></div>
+    </div>
+    <div class="stages">
+      <div class="stage"><div class="snum">1</div><h4>Order</h4><p>Client places an order.</p><span class="chip role">Sales</span><span class="chip">Phone + email</span><div class="flag">&#9873; Captured inconsistently</div></div>
+      <div class="stage"><div class="snum">2</div><h4>Planning</h4><p>Plan the delivery route.</p><span class="chip role">Dispatcher</span><span class="chip">Whiteboard</span><div class="flag">&#9873; Routes planned by memory</div></div>
+      <div class="stage"><div class="snum">3</div><h4>Load</h4><p>Pick and load the vehicle.</p><span class="chip role">Warehouse</span><span class="chip">Manual</span><div class="flag">&#9873; No load verification</div></div>
+      <div class="stage"><div class="snum">4</div><h4>Transit</h4><p>Drive to the destination.</p><span class="chip role">Driver</span><span class="chip">Phone</span><div class="flag">&#9873; No live tracking for clients</div></div>
+      <div class="stage"><div class="snum">5</div><h4>Delivery</h4><p>Hand over the goods.</p><span class="chip role">Driver</span><span class="chip">Paper POD</span><div class="flag">&#9873; Proof of delivery on paper</div></div>
+      <div class="stage"><div class="snum">6</div><h4>Billing</h4><p>Invoice and reconcile.</p><span class="chip role">Finance</span><span class="chip">Spreadsheet</span><div class="flag">&#9873; Disputes from missing PODs</div></div>
+    </div>
+    <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
+      <div><b>Routing by memory.</b> Fuel and time bleed on every run.</div>
+      <div><b>No live tracking.</b> Clients call to ask where their goods are.</div>
+      <div><b>Paper proof.</b> Missing PODs turn into billing disputes.</div>
+    </div></div>
+  </div>
+
+  <!-- 5. HEALTHCARE -->
+  <div class="canvas">
+    <div class="chead">
+      <div><div class="lbl">Process Canvas · Sample · Healthcare group</div><div class="nm">Afya Clinics — Patient Visit to Follow-up</div></div>
+      <div class="badge"><div class="sc">55%</div><div class="bd">Clarity · Building structure</div></div>
+    </div>
+    <div class="stages">
+      <div class="stage"><div class="snum">1</div><h4>Booking</h4><p>Patient books a slot.</p><span class="chip role">Reception</span><span class="chip">Phone + walk-in</span><div class="flag">&#9873; No shared calendar across branches</div></div>
+      <div class="stage"><div class="snum">2</div><h4>Intake</h4><p>Register and triage.</p><span class="chip role">Nurse</span><span class="chip">Paper file</span><div class="flag">&#9873; Records are per-branch paper</div></div>
+      <div class="stage"><div class="snum">3</div><h4>Consult</h4><p>Doctor sees the patient.</p><span class="chip role">Doctor</span><span class="chip">Notes</span><div class="flag">&#9873; History not visible across visits</div></div>
+      <div class="stage"><div class="snum">4</div><h4>Pharmacy</h4><p>Dispense medication.</p><span class="chip role">Pharmacist</span><span class="chip">Manual stock</span><div class="flag">&#9873; Stock-outs, no reorder trigger</div></div>
+      <div class="stage"><div class="snum">5</div><h4>Billing</h4><p>Charge and claim.</p><span class="chip role">Cashier</span><span class="chip">POS + insurer</span><div class="flag">&#9873; Insurance claims delayed</div></div>
+      <div class="stage"><div class="snum">6</div><h4>Follow-up</h4><p>Recall the patient.</p><span class="chip role">Nobody</span><div class="flag">&#9873; No recall, patients lost</div></div>
+    </div>
+    <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
+      <div><b>Paper records per branch.</b> No single patient history.</div>
+      <div><b>Stock-outs.</b> No reorder trigger on the pharmacy.</div>
+      <div><b>No recall.</b> Patients who should return are never contacted.</div>
+    </div></div>
+  </div>
+
+  <!-- 6. SME (kept) -->
+  <div class="canvas">
+    <div class="chead">
+      <div><div class="lbl">Process Canvas · Sample · Founder-led SME</div><div class="nm">Zawadi Gifting Co. — Order to Delivery</div></div>
+      <div class="badge"><div class="sc">40%</div><div class="bd">Clarity · Running on memory</div></div>
+    </div>
+    <div class="stages">
+      <div class="stage"><div class="snum">1</div><h4>Enquiry</h4><p>Customer DMs for options and price.</p><span class="chip role">Founder</span><span class="chip">Instagram</span><div class="flag">&#9873; Replies depend on the founder being awake</div></div>
+      <div class="stage"><div class="snum">2</div><h4>Order</h4><p>Details and payment by chat.</p><span class="chip role">Founder</span><span class="chip">WhatsApp</span><div class="flag">&#9873; Orders live in chat, not a system</div></div>
       <div class="stage"><div class="snum">3</div><h4>Sourcing</h4><p>Buy items from market vendors.</p><span class="chip role">Assistant</span><span class="chip">On foot</span></div>
-      <div class="stage"><div class="snum">4</div><h4>Assembly</h4><p>Hamper packed and wrapped.</p><span class="chip role">Assistant</span><span class="chip">Workbench</span><div class="flag">&#9873; No quality checklist</div></div>
-      <div class="stage"><div class="snum">5</div><h4>Delivery</h4><p>Rider takes it to the recipient.</p><span class="chip role">Rider</span><span class="chip">3rd party</span><div class="flag">&#9873; No tracking, disputes common</div></div>
+      <div class="stage"><div class="snum">4</div><h4>Assembly</h4><p>Pack and wrap the hamper.</p><span class="chip role">Assistant</span><span class="chip">Workbench</span><div class="flag">&#9873; No quality checklist</div></div>
+      <div class="stage"><div class="snum">5</div><h4>Delivery</h4><p>Rider delivers to the recipient.</p><span class="chip role">Rider</span><span class="chip">3rd party</span><div class="flag">&#9873; No tracking, disputes common</div></div>
       <div class="stage"><div class="snum">6</div><h4>Follow-up</h4><p>Ask if it arrived well.</p><span class="chip role">Nobody</span><div class="flag">&#9873; Rarely happens, repeat sales lost</div></div>
     </div>
     <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
@@ -91,56 +199,14 @@
     </div></div>
   </div>
 
-  <!-- SAMPLE 2 -->
-  <div class="canvas">
-    <div class="chead">
-      <div><div class="lbl">Process Canvas · Sample</div><div class="nm">Bloom Hair Studio — Booking to Rebooking</div></div>
-      <div class="badge"><div class="sc">61%</div><div class="bd">Clarity · Building structure</div></div>
-    </div>
-    <div class="stages">
-      <div class="stage"><div class="snum">1</div><h4>Booking</h4><p>Client requests a slot.</p><span class="chip role">Front desk</span><span class="chip">Phone + WhatsApp</span><div class="flag">&#9873; Double bookings happen</div></div>
-      <div class="stage"><div class="snum">2</div><h4>Confirm</h4><p>Remind the client the day before.</p><span class="chip role">Front desk</span><span class="chip">Manual texts</span><div class="flag">&#9873; Forgotten when busy, no-shows</div></div>
-      <div class="stage"><div class="snum">3</div><h4>Service</h4><p>Stylist does the work.</p><span class="chip role">Stylist</span><span class="chip">Chair</span></div>
-      <div class="stage"><div class="snum">4</div><h4>Payment</h4><p>Client pays after service.</p><span class="chip role">Front desk</span><span class="chip">Cash + M-Pesa</span><div class="flag">&#9873; Totals not reconciled daily</div></div>
-      <div class="stage"><div class="snum">5</div><h4>Records</h4><p>Note what was done.</p><span class="chip role">Nobody</span><span class="chip">Paper book</span><div class="flag">&#9873; Client history lives on paper</div></div>
-      <div class="stage"><div class="snum">6</div><h4>Rebooking</h4><p>Book the next visit.</p><span class="chip role">Sometimes</span><div class="flag">&#9873; Left to the client to remember</div></div>
-    </div>
-    <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
-      <div><b>No shared calendar.</b> Bookings clash and slots go empty.</div>
-      <div><b>History on paper.</b> No record of what each client had or paid.</div>
-      <div><b>Rebooking left to chance.</b> The most valuable moment is not owned.</div>
-    </div></div>
-  </div>
-
-  <!-- SAMPLE 3 -->
-  <div class="canvas">
-    <div class="chead">
-      <div><div class="lbl">Process Canvas · Sample</div><div class="nm">Mama's Kitchen — Order to Repeat</div></div>
-      <div class="badge"><div class="sc">39%</div><div class="bd">Clarity · Running on memory</div></div>
-    </div>
-    <div class="stages">
-      <div class="stage"><div class="snum">1</div><h4>Order</h4><p>Customer calls or messages.</p><span class="chip role">Owner</span><span class="chip">Phone</span><div class="flag">&#9873; Orders missed at peak times</div></div>
-      <div class="stage"><div class="snum">2</div><h4>Kitchen</h4><p>Ticket passed to cooks verbally.</p><span class="chip role">Owner</span><span class="chip">Spoken</span><div class="flag">&#9873; Verbal orders, mistakes common</div></div>
-      <div class="stage"><div class="snum">3</div><h4>Prep</h4><p>Food cooked and packed.</p><span class="chip role">Cooks</span><span class="chip">Kitchen</span><div class="flag">&#9873; No portion or cost control</div></div>
-      <div class="stage"><div class="snum">4</div><h4>Dispatch</h4><p>Rider collects and delivers.</p><span class="chip role">Rider</span><span class="chip">3rd party</span><div class="flag">&#9873; No delivery tracking</div></div>
-      <div class="stage"><div class="snum">5</div><h4>Payment</h4><p>Paid on delivery.</p><span class="chip role">Rider</span><span class="chip">Cash + M-Pesa</span><div class="flag">&#9873; Cash leaks, hard to reconcile</div></div>
-      <div class="stage"><div class="snum">6</div><h4>Repeat</h4><p>Bring the customer back.</p><span class="chip role">Nobody</span><div class="flag">&#9873; No customer list, start from zero</div></div>
-    </div>
-    <div class="tax"><div class="lbl">Where value leaks · the silent tax</div><div class="row">
-      <div><b>Orders taken verbally.</b> Nothing is written, so mistakes repeat.</div>
-      <div><b>No cost control.</b> Portions and cash are not tracked.</div>
-      <div><b>No customer list.</b> Every sale starts from zero.</div>
-    </div></div>
-  </div>
-
   <div class="cta">
     <h2>Want to see your business like this?</h2>
-    <p>Start with the free Clarity Self-Check to see your score, then we map your whole business on one page.</p>
+    <p>Start with the free Clarity Self-Check to see your score, then we map your whole business on one page, with you, in a Sprint.</p>
     <a class="btn" href="clarity-check.html">Get your Clarity Score</a>
     <a class="btn dark" href="https://mapped.africa/#pricing">See the packages</a>
   </div>
 
-  <p class="note">Sample businesses are illustrative and fictional, created to show the format.</p>
+  <p class="note">Sample businesses are illustrative and fictional, created to show the format across industries and scale.</p>
 </div>
 
 <div class="foot">A Meroë Africa product · <a href="https://mapped.africa/">mapped.africa</a></div>

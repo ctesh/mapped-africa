@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://formspree.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://formspree.io https://api.country.is https://open.er-api.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <meta name="robots" content="index, follow">
 <title>MAPPED: The Business Clarity Toolkit | Meroë Africa</title>
 <meta name="description" content="Mapped is the business-clarity toolkit that shows African founders how their business actually runs, then rebuilds it into a system you can scale. Get your Clarity Score.">
@@ -107,7 +107,9 @@
   .silent{background:var(--ink);color:#fff;text-align:center;padding:54px 0}
   .silent p{font-size:1.5rem;font-weight:700;max-width:900px;margin:0 auto}.silent .hl{color:var(--orange)}
   .price{display:flex;flex-direction:column}.price.feat{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .price .amt{font-size:2rem;font-weight:800;color:var(--orange);margin:6px 0}
+  .price .amt{font-size:2rem;font-weight:800;color:var(--orange);margin:6px 0 0}
+  .price .locamt{font-size:.92rem;font-weight:600;color:var(--grey);margin:2px 0 8px;min-height:1.1em}
+  .price.feat .locamt{color:#AEB6C4}
   .price ul{list-style:none;margin:16px 0 0}.price li{padding:7px 0 7px 26px;position:relative;font-size:.95rem}
   .price li::before{content:"";position:absolute;left:0;top:14px;width:10px;height:10px;background:var(--orange);border-radius:2px}
   .price.feat li{color:#D7DEEE}
@@ -152,7 +154,7 @@
     .nav-links{display:none}.ba{grid-template-columns:1fr}.ba .ar{display:none}
     .sticky{display:block}body{padding-bottom:64px}
   }
-  @media(max-width:560px){.formcard{padding:24px}}
+  @media(max-width:560px){.formcard{padding:24px}.hero h1{font-size:2.4rem}.hero .sub{font-size:1.1rem}h2.title{font-size:1.9rem}.formintro h2{font-size:1.9rem}.hero .tag{font-size:.82rem}}
 </style>
 </head>
 <body id="top">
@@ -218,10 +220,11 @@
   <div class="wrap">
     <span class="ey">Choose your clarity mode</span>
     <h2 class="title">A tier for every stage</h2>
+    <p id="curNote" style="color:var(--grey);font-size:.85rem;margin:6px 0 0"></p>
     <div class="grid g3">
-      <div class="card price"><h3>Mapped Lite</h3><div class="amt">$150 to $300</div><p>For founders who need a mirror, not a meeting.</p><ul><li>Mapped PDF Toolkit</li><li>Clarity Index self-assessment</li><li>DIY Process Canvas</li><li>Pain-Point Friction Map</li></ul></div>
-      <div class="card price feat"><h3>Mapped Pro</h3><div class="amt">$800 to $2,500</div><p style="color:#AEB6C4">For teams ready to stop winging it.</p><ul><li>Live Business Clarity Audit</li><li>End-to-End Workflow Map</li><li>Priority Friction-Fix Plan</li><li>Monthly Scorecard + SOP pack</li></ul></div>
-      <div class="card price"><h3>Mapped Enterprise</h3><div class="amt">$4,000 to $15,000</div><p>For businesses building structure at scale.</p><ul><li>In-depth Ops Discovery</li><li>Custom Execution Dashboard</li><li>Transformation Roadmap</li><li>Handover playbook + KPI tracker</li></ul></div>
+      <div class="card price"><h3>Mapped Lite</h3><div class="amt" data-lo="150" data-hi="300">$150 to $300</div><div class="locamt"></div><p>For founders who need a mirror, not a meeting.</p><ul><li>Mapped PDF Toolkit</li><li>Clarity Index self-assessment</li><li>DIY Process Canvas</li><li>Pain-Point Friction Map</li></ul></div>
+      <div class="card price feat"><h3>Mapped Pro</h3><div class="amt" data-lo="800" data-hi="2500">$800 to $2,500</div><div class="locamt"></div><p style="color:#AEB6C4">For teams ready to stop winging it.</p><ul><li>Live Business Clarity Audit</li><li>End-to-End Workflow Map</li><li>Priority Friction-Fix Plan</li><li>Monthly Scorecard + SOP pack</li></ul></div>
+      <div class="card price"><h3>Mapped Enterprise</h3><div class="amt" data-lo="4000" data-hi="15000">$4,000 to $15,000</div><div class="locamt"></div><p>For businesses building structure at scale.</p><ul><li>In-depth Ops Discovery</li><li>Custom Execution Dashboard</li><li>Transformation Roadmap</li><li>Handover playbook + KPI tracker</li></ul></div>
     </div>
     <div class="sprint"><b>Start here, the Clarity Index Sprint.</b> A fixed-fee, 1 to 2 week diagnostic. Get your Clarity Score, your top three friction points, and a clear recommendation, credited toward Pro or Enterprise. <a href="clarity-check.html" style="color:var(--orange-dk);font-weight:700">Get your Clarity Score →</a></div>
   </div>
@@ -390,6 +393,27 @@ var AUTORESPONSE = "Hi, and thanks for reaching out to Mapped.\n\nWe have your d
       .catch(function(){ mailtoFallback(data); })
       .finally(function(){ btn.textContent='Get my Clarity Score'; btn.disabled=false; });
   });
+})();
+</script>
+<script>
+(function(){
+  var CUR={KE:['KES','Kenya'],NG:['NGN','Nigeria'],ZA:['ZAR','South Africa'],GH:['GHS','Ghana'],UG:['UGX','Uganda'],TZ:['TZS','Tanzania'],RW:['RWF','Rwanda']};
+  function r100(v){return Math.round(v/100)*100;}
+  function m(cur,v){return cur+' '+r100(v).toLocaleString('en-US');}
+  try{
+  fetch('https://api.country.is/').then(function(r){return r.json();}).then(function(g){
+    var info=g&&CUR[g.country]; if(!info) return;
+    fetch('https://open.er-api.com/v6/latest/USD').then(function(r){return r.json();}).then(function(fx){
+      var rate=fx&&fx.rates&&fx.rates[info[0]]; if(!rate) return;
+      document.querySelectorAll('.amt').forEach(function(el){
+        var lo=parseFloat(el.getAttribute('data-lo')), hi=parseFloat(el.getAttribute('data-hi'));
+        if(!lo) return; var loc=el.nextElementSibling; if(!loc||(loc.className||'').indexOf('locamt')<0) return;
+        loc.textContent='≈ '+m(info[0],lo*rate)+(hi?' to '+m(info[0],hi*rate):'');
+      });
+      var n=document.getElementById('curNote'); if(n){n.textContent='Indicative '+info[0]+' for '+info[1]+'. All plans billed in USD.';}
+    }).catch(function(){});
+  }).catch(function(){});
+  }catch(e){}
 })();
 </script>
 </body>

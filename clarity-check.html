@@ -40,6 +40,9 @@
   .btn:hover{background:var(--orange-dk);border-color:var(--orange-dk)}
   .btn.dark{background:var(--ink);border-color:var(--ink)}
   .err{display:none;color:#b00020;font-size:.9rem;margin-top:12px;text-align:center}
+  .pbar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:18px 0 6px}
+  .pbar span{display:block;height:100%;width:0;background:var(--orange);transition:width .3s}
+  .prog{font-size:.85rem;color:var(--grey);font-weight:600;text-align:center}
   /* results */
   #results{display:none}
   .score-wrap{text-align:center;padding:14px 0 6px}
@@ -82,7 +85,9 @@
 <div class="wrap">
   <div class="card" id="quizCard">
     <form id="quiz"></form>
-    <button class="btn" id="seeScore" style="margin-top:20px">See my Clarity Score</button>
+    <div class="pbar"><span id="pfill"></span></div>
+    <div id="prog" class="prog">0 of 10 answered</div>
+    <button class="btn" id="seeScore" style="margin-top:14px">See my Clarity Score</button>
     <p class="err" id="quizErr">Please answer all ten questions to see your score.</p>
   </div>
 
@@ -148,6 +153,13 @@
       '</div>';
     qForm.appendChild(div);
   });
+
+  function updateProg(){
+    var n=0; for(var i=1;i<=questions.length;i++){ if(document.querySelector('input[name="q'+i+'"]:checked')) n++; }
+    var pf=document.getElementById('pfill'); if(pf) pf.style.width=(n/questions.length*100)+'%';
+    var pr=document.getElementById('prog'); if(pr) pr.textContent=n+' of '+questions.length+' answered';
+  }
+  qForm.addEventListener('change', updateProg);
 
   var quizErr=document.getElementById('quizErr');
   var answersText="";
