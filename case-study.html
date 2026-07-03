@@ -4,8 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <title>Flagship Case Study | MAPPED</title>
+<script>
+  window.GA_ID = "G-SB3C0THX1W";
+  if (window.GA_ID && window.GA_ID !== "G-XXXXXXXXXX") {
+    var gaS=document.createElement('script'); gaS.async=1;
+    gaS.src='https://www.googletagmanager.com/gtag/js?id='+window.GA_ID; document.head.appendChild(gaS);
+    window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag; gtag('js',new Date()); gtag('config',window.GA_ID);
+  } else { window.gtag=function(){}; }
+</script>
 <meta name="description" content="How Mapped took a Nairobi design-and-build studio from a business that ran in the founder's head to a redesigned operating model it can train, delegate, and scale on.">
 <link rel="canonical" href="https://mapped.africa/case-study.html">
 <link rel="icon" href="favicon.ico" sizes="any">
