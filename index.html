@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://formspree.io https://api.country.is https://open.er-api.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://formspree.io https://api.country.is https://open.er-api.com https://*.app.n8n.cloud https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
 <meta name="robots" content="index, follow">
 <title>MAPPED: The Business Clarity Toolkit | Meroë Africa</title>
 <meta name="description" content="Mapped is the business-clarity toolkit that shows African founders how their business actually runs, then rebuilds it into a system you can scale. Get your Clarity Score.">
@@ -345,6 +345,7 @@
   // ---- Lead delivery: FormSubmit (no signup). Leads go to this inbox. ----
   var LEAD_EMAIL = "mappedafricameroeafrica@gmail.com";
   var ENDPOINT = "https://formsubmit.co/ajax/3af1ad71dd62748a71019e24ad0d840f";
+  var N8N_ENDPOINT = ""; // paste your n8n production webhook URL here to route leads through n8n; blank = FormSubmit (zero risk)
   var FALLBACK_EMAIL = LEAD_EMAIL;
 var AUTORESPONSE = "Hi, and thanks for reaching out to Mapped.\n\nWe have your details, and one of our team will personally come back to you within one business day with how a Clarity Index Sprint would work for your business.\n\nHere is the guide you asked for, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhat happens next:\n1. We review what you shared.\n2. We send you a short, no obligation plan for your Clarity Sprint (fixed fee, about 2 weeks).\n3. If it is a fit, we map your business so you can see it clearly and run it intentionally.\n\nIf anything is urgent, just reply to this email.\n\nTalk soon,\nThe Mapped team at Meroe Africa\nmapped.africa";
   // First submission triggers a one-time "Activate Form" email to LEAD_EMAIL, click it once, then every lead is delivered.
@@ -384,14 +385,21 @@ var AUTORESPONSE = "Hi, and thanks for reaching out to Mapped.\n\nWe have your d
     var payload={}; for(var pk in data){payload[pk]=data[pk];} payload._subject = "New Clarity Score lead from mapped.africa";
     payload._template = "table";
     payload._captcha = "false"; payload._autoresponse = AUTORESPONSE;
-    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(r){ return r.json().catch(function(){return {};}); })
-      .then(function(j){
-        if(j && (j.success===true || j.success==="true")){ form.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
-        else { mailtoFallback(data); }
-      })
-      .catch(function(){ mailtoFallback(data); })
-      .finally(function(){ btn.textContent='Get my Clarity Score'; btn.disabled=false; });
+    function ok2(){ form.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
+    function done2(){ btn.textContent='Get my Clarity Score'; btn.disabled=false; }
+    function viaFS(){
+      fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .then(function(r){ return r.json().catch(function(){return {};}); })
+        .then(function(j){ if(j && (j.success===true || j.success==="true")){ ok2(); } else { mailtoFallback(data); } })
+        .catch(function(){ mailtoFallback(data); })
+        .finally(done2);
+    }
+    if(N8N_ENDPOINT){
+      var n8nData={source:"main-form"}; for(var k in data){n8nData[k]=data[k];}
+      fetch(N8N_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(n8nData)})
+        .then(function(r){ if(r.ok){ ok2(); done2(); } else { viaFS(); } })
+        .catch(function(){ viaFS(); });
+    } else { viaFS(); }
   });
 })();
 </script>

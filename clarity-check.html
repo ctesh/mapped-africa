@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.app.n8n.cloud; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <title>The Clarity Self-Check | MAPPED</title>
 <meta name="description" content="Take the free Clarity Self-Check. 10 questions, 60 seconds, an instant Clarity Score for your business.">
 <link rel="canonical" href="https://mapped.africa/clarity-check.html">
@@ -129,6 +129,7 @@
 <script>
 (function(){
   var ENDPOINT = "https://formsubmit.co/ajax/3af1ad71dd62748a71019e24ad0d840f";
+  var N8N_ENDPOINT = ""; // paste your n8n production webhook URL here to route leads through n8n; blank = FormSubmit (zero risk)
   var questions = [
     "The business runs day to day without every decision going through the founder.",
     "Our core processes are written down, not just kept in people's heads.",
@@ -198,20 +199,27 @@
     if(!email || email.indexOf('@')<1){ leadErr.style.display='block'; return; }
     leadBtn.textContent='Sending...'; leadBtn.disabled=true;
     var auto = "Hi, and thanks for taking the Mapped Clarity Self-Check.\n\nYour Clarity Score is "+pct+"% ("+band+").\n\nWhat that means: lower scores mean more of the business lives in people's heads, which quietly caps growth, funding and the ability to automate. The fix is to make the engine visible.\n\nHere is your guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhen you are ready for the full, facilitated Clarity Index and a plan to fix your top three gaps, reply to this email or book a Clarity Sprint at https://mapped.africa\n\nTalk soon,\nThe Mapped team at Meroe Africa";
-    var payload={
+    var fsPayload={
       name: lead.name.value, email: email,
       clarity_score: pct+"%", band: band, answers: answersText,
       _subject: "New Clarity Self-Check lead, score "+pct+"% ("+band+")",
       _template: "table", _captcha: "false", _autoresponse: auto
     };
-    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(r){return r.json().catch(function(){return {};});})
-      .then(function(j){
-        if(j && (j.success===true||j.success==="true")){ document.getElementById('capture').style.display='none'; document.getElementById('thanks').style.display='block'; }
-        else { leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.'; leadErr.style.display='block'; }
-      })
-      .catch(function(){ leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.'; leadErr.style.display='block'; })
-      .finally(function(){ leadBtn.textContent='Send my breakdown'; leadBtn.disabled=false; });
+    var n8nPayload={ source:"clarity-self-check", name: lead.name.value, email: email, clarity_score: pct, band: band, answers: answersText, page: location.href };
+    function ok(){ document.getElementById('capture').style.display='none'; document.getElementById('thanks').style.display='block'; }
+    function fail(){ leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.'; leadErr.style.display='block'; }
+    function done(){ leadBtn.textContent='Send my breakdown'; leadBtn.disabled=false; }
+    function viaFormSubmit(){
+      fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(fsPayload)})
+        .then(function(r){return r.json().catch(function(){return {};});})
+        .then(function(j){ if(j && (j.success===true||j.success==="true")){ ok(); } else { fail(); } })
+        .catch(fail).finally(done);
+    }
+    if(N8N_ENDPOINT){
+      fetch(N8N_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(n8nPayload)})
+        .then(function(r){ if(r.ok){ ok(); done(); } else { viaFormSubmit(); } })
+        .catch(function(){ viaFormSubmit(); });
+    } else { viaFormSubmit(); }
   });
 })();
 </script>
