@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page not found — MAPPED</title>
 <link rel="icon" href="favicon.ico" sizes="any">
+<script>
+  window.GA_ID = "G-SB3C0THX1W";
+  if (window.GA_ID && window.GA_ID !== "G-XXXXXXXXXX") {
+    var gaS=document.createElement('script'); gaS.async=1;
+    gaS.src='https://www.googletagmanager.com/gtag/js?id='+window.GA_ID; document.head.appendChild(gaS);
+    window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag; gtag('js',new Date()); gtag('config',window.GA_ID);
+    gtag('event','page_not_found',{page:location.pathname+location.search});
+  } else { window.gtag=function(){}; }
+</script>
 <style>
   body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
     background:#0B0B0D;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
