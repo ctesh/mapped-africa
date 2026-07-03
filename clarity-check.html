@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.app.n8n.cloud; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.app.n8n.cloud https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <title>The Clarity Index | MAPPED</title>
 <meta name="description" content="Take the Clarity Index. 10 questions, 90 seconds, and you get your Clarity Score plus a five-pillar profile of how your business really runs — and the first thing to fix.">
 <link rel="canonical" href="https://mapped.africa/clarity-check.html">
@@ -17,6 +17,16 @@
 <meta property="og:url" content="https://mapped.africa/clarity-check.html">
 <meta property="og:image" content="https://mapped.africa/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Google Analytics 4 — paste your Measurement ID below to switch analytics on (replaces G-XXXXXXXXXX) -->
+<script>
+  window.GA_ID = "G-XXXXXXXXXX"; // <-- paste your GA4 ID here (same one as the homepage)
+  if (window.GA_ID && window.GA_ID !== "G-XXXXXXXXXX") {
+    var gaS=document.createElement('script'); gaS.async=1;
+    gaS.src='https://www.googletagmanager.com/gtag/js?id='+window.GA_ID; document.head.appendChild(gaS);
+    window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag; gtag('js',new Date()); gtag('config',window.GA_ID);
+  } else { window.gtag=function(){}; }
+</script>
 <style>
   :root{
     --black:#0B0B0D; --ink:#151821; --orange:#F08010; --orange-dk:#C2660A;
@@ -255,7 +265,9 @@
   });
 
   function answeredCount(){var c=0;for(var i=1;i<=questions.length;i++){if(document.querySelector('input[name="q'+i+'"]:checked'))c++;}return c;}
+  var started=false;
   quiz.addEventListener('change',function(){
+    if(!started){started=true;try{gtag('event','quiz_start');}catch(e){}}
     var n=answeredCount();
     document.getElementById('pfill').style.width=(n/questions.length*100)+'%';
     document.getElementById('prog').textContent=n+' of '+questions.length+' answered';
@@ -321,6 +333,7 @@
     var focusStr=weak.map(function(p){return p.name;}).join(", ")||"None — all pillars solid";
     window.__clarity={pct:pct,band:band,answersText:answersText,pillarsStr:pillarsStr,focusStr:focusStr,
       pillars:pdata.map(function(p){return {name:p.name,pct:p.pct};})};
+    try{gtag('event','quiz_complete',{clarity_score:pct,band:band,weakest:(weak[0]?weak[0].name:'none')});}catch(e){}
 
     res.scrollIntoView({behavior:'smooth',block:'start'});
   });
@@ -365,7 +378,7 @@
     };
     var n8nPayload={source:"clarity-index",name:name,email:email,clarity_score:c.pct,band:c.band,pillars:c.pillars,fix_first:c.focusStr,answers:c.answersText,page:location.href};
 
-    function ok(){document.getElementById('captureBlock').style.display='none';document.getElementById('deeper').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth',block:'center'});}
+    function ok(){try{gtag('event','generate_lead',{clarity_score:c.pct,band:c.band});}catch(e){}document.getElementById('captureBlock').style.display='none';document.getElementById('deeper').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth',block:'center'});}
     function fail(){leadErr.innerHTML='That did not send. Please email us at <a href="mailto:hello@meroeafricagroup.com" style="color:#C2660A">hello@meroeafricagroup.com</a>.';leadErr.style.display='block';}
     function done(){leadBtn.textContent='Send my breakdown';leadBtn.disabled=false;}
     function viaFormSubmit(){
