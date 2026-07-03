@@ -5,134 +5,216 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.app.n8n.cloud; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
-<title>The Clarity Self-Check | MAPPED</title>
-<meta name="description" content="Take the free Clarity Self-Check. 10 questions, 60 seconds, an instant Clarity Score for your business.">
+<title>The Clarity Index | MAPPED</title>
+<meta name="description" content="Take the Clarity Index. 10 questions, 90 seconds, and you get your Clarity Score plus a five-pillar profile of how your business really runs — and the first thing to fix.">
 <link rel="canonical" href="https://mapped.africa/clarity-check.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0B0B0D">
+<meta property="og:title" content="The MAPPED Clarity Index">
+<meta property="og:description" content="See exactly where your business runs on memory. A Clarity Score, a five-pillar profile, and your first fix — in 90 seconds.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mapped.africa/clarity-check.html">
+<meta property="og:image" content="https://mapped.africa/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-  :root{--black:#0B0B0D;--ink:#151821;--orange:#F08010;--orange-dk:#C2660A;--gold:#C9A24B;--white:#fff;--light:#F4F6FA;--grey:#5B6472;--line:#E6EAF1}
+  :root{
+    --black:#0B0B0D; --ink:#151821; --orange:#F08010; --orange-dk:#C2660A;
+    --gold:#C9A24B; --white:#fff; --light:#F4F6FA; --grey:#5B6472; --line:#E6EAF1;
+    --weak:#D64545; --mid:#F08010; --strong:#1F9D55;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--ink);line-height:1.55;background:var(--light)}
-  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  body{font-family:var(--sans);color:var(--ink);line-height:1.55;background:var(--light);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 22px}
+
   header{background:var(--black);position:sticky;top:0;z-index:30}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em;color:#fff;text-decoration:none}
-  .brand img{height:34px;border-radius:5px}
-  .nav a.home{color:#9AA3B2;text-decoration:none;font-size:.9rem;font-weight:600}
-  .hero{background:var(--black);color:#fff;padding:46px 0 56px}
-  .ey{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
-  .hero h1{font-size:2.5rem;font-weight:800;margin:.3em 0 .25em}
-  .hero p{color:#D7DEEE;font-size:1.1rem;max-width:560px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 10px 40px rgba(20,24,33,.08);margin:-28px 0 40px}
-  .q{padding:18px 0;border-bottom:1px solid var(--line)}
-  .q:last-child{border-bottom:none}
-  .q .n{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:.85rem;margin-right:8px}
-  .q p{font-weight:600;font-size:1.05rem;margin-bottom:12px}
-  .opts{display:flex;gap:10px;flex-wrap:wrap}
-  .opt{flex:1;min-width:120px}
-  .opt input{position:absolute;opacity:0}
-  .opt label{display:block;text-align:center;padding:10px 8px;border:1px solid var(--line);border-radius:9px;cursor:pointer;font-size:.92rem;font-weight:600;color:var(--grey);transition:.15s}
-  .opt input:checked + label{background:var(--orange);border-color:var(--orange);color:#fff}
-  .btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;padding:15px 28px;border-radius:9px;text-decoration:none;border:2px solid var(--orange);cursor:pointer;font-size:1.05rem;width:100%}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.05em;font-size:1.05rem}
+  .mark{width:26px;height:26px;display:block}
+  .nav a.home{color:#9AA3B2;text-decoration:none;font-size:.88rem;font-weight:600}
+  .nav a.home:hover{color:#fff}
+
+  .hero{background:var(--black);color:#fff;padding:44px 0 62px}
+  .ey{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+  .hero h1{font-size:clamp(2rem,5.5vw,2.7rem);font-weight:800;margin:.35em 0 .3em;letter-spacing:-.01em;line-height:1.05}
+  .hero p{color:#D7DEEE;font-size:1.08rem;max-width:580px}
+
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,30px);box-shadow:0 12px 44px rgba(20,24,33,.09);margin:-34px 0 40px}
+
+  .pbar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0 4px}
+  .pbar span{display:block;height:100%;width:0;background:var(--orange);transition:width .3s ease}
+  .prog{font-family:var(--mono);font-size:.76rem;color:var(--grey);font-weight:600;text-align:right;letter-spacing:.02em}
+
+  fieldset{border:0;padding:16px 0;border-bottom:1px solid var(--line)}
+  fieldset:last-of-type{border-bottom:0}
+  legend{font-weight:600;font-size:1.04rem;margin-bottom:12px;display:flex;gap:10px;align-items:flex-start}
+  legend .n{flex:none;width:25px;height:25px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--mono);font-weight:700;text-align:center;line-height:25px;font-size:.8rem;margin-top:1px}
+  .opts{display:flex;gap:9px;flex-wrap:wrap;padding-left:35px}
+  .opt{flex:1;min-width:120px;position:relative}
+  .opt input{position:absolute;opacity:0;width:1px;height:1px}
+  .opt label{display:block;text-align:center;padding:11px 8px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:.92rem;font-weight:600;color:var(--grey);transition:.15s}
+  .opt label:hover{border-color:#c9d2e0}
+  .opt input:checked + label{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(240,128,16,.28)}
+  .opt input:focus-visible + label{outline:2px solid var(--ink);outline-offset:2px}
+
+  .btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;padding:15px 28px;border-radius:11px;text-decoration:none;border:2px solid var(--orange);cursor:pointer;font-size:1.05rem;width:100%;font-family:inherit;transition:.15s;text-align:center}
   .btn:hover{background:var(--orange-dk);border-color:var(--orange-dk)}
-  .btn.dark{background:var(--ink);border-color:var(--ink)}
-  .err{display:none;color:#b00020;font-size:.9rem;margin-top:12px;text-align:center}
-  .pbar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:18px 0 6px}
-  .pbar span{display:block;height:100%;width:0;background:var(--orange);transition:width .3s}
-  .prog{font-size:.85rem;color:var(--grey);font-weight:600;text-align:center}
-  /* results */
+  .btn:disabled{opacity:.7;cursor:default}
+  .btn.dark{background:var(--ink);border-color:var(--ink)} .btn.dark:hover{background:#000}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)} .btn.ghost:hover{border-color:var(--ink)}
+  .cta-row{margin-top:22px}
+  .err{display:none;color:var(--weak);font-size:.9rem;margin-top:12px;text-align:center;font-weight:600}
+
   #results{display:none}
-  .score-wrap{text-align:center;padding:14px 0 6px}
-  .score{font-size:4.6rem;font-weight:800;color:var(--orange);line-height:1}
-  .band{font-size:1.3rem;font-weight:800;margin-top:4px}
-  .bar{height:14px;background:var(--line);border-radius:8px;overflow:hidden;margin:18px 0 8px}
-  .bar span{display:block;height:100%;background:var(--orange);width:0;transition:width .8s ease}
-  .interp{color:var(--grey);text-align:center;max-width:520px;margin:8px auto 0}
-  .deeper{max-width:540px;margin:16px auto 0;text-align:center;font-size:.9rem;color:var(--ink);background:#FCEBD8;border:1px solid #F6D3AC;border-radius:9px;padding:12px 15px}
+  .res-top{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+  @media(max-width:540px){.res-top{grid-template-columns:1fr;text-align:center;gap:14px}}
+  .score-badge{text-align:center}
+  .score{font-size:4.4rem;font-weight:800;color:var(--orange);line-height:.95;font-variant-numeric:tabular-nums}
+  .score small{font-size:1.6rem;vertical-align:top}
+  .band{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-top:6px}
+  .res-lead h2{font-size:1.5rem;font-weight:800;line-height:1.15;margin-bottom:8px}
+  .res-lead p{color:var(--grey);font-size:1rem}
+
+  .divider{height:1px;background:var(--line);margin:28px 0}
+  .sec-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:700;margin-bottom:16px}
+
+  .profile{display:grid;grid-template-columns:230px 1fr;gap:26px;align-items:center}
+  @media(max-width:560px){.profile{grid-template-columns:1fr}}
+  .radar-box{display:flex;justify-content:center}
+  canvas{max-width:100%;height:auto}
+  .bars{display:flex;flex-direction:column;gap:13px}
+  .prow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:baseline}
+  .prow .pn{font-weight:600;font-size:.95rem}
+  .prow .pv{font-family:var(--mono);font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .track{grid-column:1/-1;height:9px;background:var(--line);border-radius:6px;overflow:hidden}
+  .track span{display:block;height:100%;width:0;border-radius:6px;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+
+  .fixes{display:flex;flex-direction:column;gap:12px}
+  .fix{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:16px 18px;background:var(--light);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:11px}
+  .fix .rank{font-family:var(--mono);font-weight:800;color:var(--orange-dk);font-size:.85rem;letter-spacing:.04em}
+  .fix h4{font-size:1rem;margin-bottom:3px}
+  .fix .diag{color:var(--grey);font-size:.9rem;margin-bottom:7px}
+  .fix .do{font-size:.92rem}
+  .fix .do b{color:var(--ink)}
+  .allclear{background:#EAF7EF;border:1px solid #BEE6CC;border-left:4px solid var(--strong);padding:16px 18px;border-radius:11px;font-size:.95rem}
+
+  .deeper{margin-top:22px;font-size:.92rem;color:var(--ink);background:#FCEBD8;border:1px solid #F6D3AC;border-radius:11px;padding:14px 16px}
   .deeper b{color:var(--orange-dk)}
-  .capture{margin-top:26px;border-top:1px solid var(--line);padding-top:24px}
-  .capture h3{font-size:1.25rem;margin-bottom:6px}
-  .capture p.s{color:var(--grey);font-size:.95rem;margin-bottom:16px}
-  .field{margin-bottom:14px}
-  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
-  .field input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:9px;font-size:1rem;font-family:inherit}
-  .field input:focus{outline:2px solid var(--orange);border-color:var(--orange)}
+
+  .capture{margin-top:8px}
+  .capture h3{font-size:1.2rem;margin-bottom:6px}
+  .capture .s{color:var(--grey);font-size:.94rem;margin-bottom:16px}
+  .field{margin-bottom:13px}
+  .field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px}
+  .field input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:inherit}
+  .field input:focus{outline:2px solid var(--orange);outline-offset:0;border-color:var(--orange)}
   .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
-  #thanks{display:none;text-align:center;padding:10px 6px}
-  #thanks .tick{width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin:0 auto 14px}
-  .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-  .row .btn{flex:1;min-width:200px;text-align:center}
-  .foot{text-align:center;color:var(--grey);font-size:.85rem;padding:30px 0 50px}
-  .foot a{color:var(--orange-dk);text-decoration:none}
-  @media(max-width:560px){.hero h1{font-size:2rem}.score{font-size:3.6rem}}
+  #thanks{display:none;text-align:center;padding:8px 6px}
+  #thanks .tick{width:58px;height:58px;border-radius:50%;background:var(--strong);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px}
+  #thanks h3{font-size:1.3rem;margin-bottom:6px}
+  #thanks p{color:var(--grey);margin-bottom:18px}
+  .row2{display:flex;gap:12px;flex-wrap:wrap}
+  .row2 .btn{flex:1;min-width:190px}
+
+  .foot{text-align:center;color:var(--grey);font-size:.84rem;padding:8px 0 46px}
+  .foot a{color:var(--orange-dk);text-decoration:none;font-weight:600}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="https://mapped.africa/"><img src="mapped-mark.png" alt="Mapped">MAPPED</a>
-  <a class="home" href="https://mapped.africa/">Back to mapped.africa</a>
-</div></header>
 
-<div class="hero"><div class="wrap">
-  <span class="ey">The Clarity Self-Check</span>
-  <h1>What is your Clarity Score?</h1>
-  <p>Ten quick questions, about 60 seconds, and you get your score on the spot. Answer honestly. No one sees this but you.</p>
-</div></div>
+<header><div class="wrap"><nav class="nav">
+  <a class="brand" href="https://mapped.africa">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="#F08010"/><path d="M8 23V10l8 8 8-8v13" fill="none" stroke="#0B0B0D" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    MAPPED
+  </a>
+  <a class="home" href="https://mapped.africa">← mapped.africa</a>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="ey">The Clarity Index</div>
+  <h1>See exactly where your business runs on memory.</h1>
+  <p>Ten questions, about ninety seconds. You get a Clarity Score, a five-pillar profile of your operating model, and the first thing to fix — on the spot.</p>
+</div></section>
 
 <div class="wrap">
   <div class="card" id="quizCard">
-    <form id="quiz"></form>
     <div class="pbar"><span id="pfill"></span></div>
-    <div id="prog" class="prog">0 of 10 answered</div>
-    <button class="btn" id="seeScore" style="margin-top:14px">See my Clarity Score</button>
-    <p class="err" id="quizErr">Please answer all ten questions to see your score.</p>
+    <div class="prog" id="prog">0 of 10 answered</div>
+    <form id="quiz"></form>
+    <div class="cta-row">
+      <button type="button" class="btn" id="seeScore">Reveal my Clarity Profile</button>
+      <div class="err" id="quizErr">Answer all ten to see your profile.</div>
+    </div>
   </div>
 
   <div class="card" id="results">
-    <div class="score-wrap">
-      <div class="score" id="scoreNum">0%</div>
-      <div class="band" id="bandText"></div>
+    <div class="res-top">
+      <div class="score-badge">
+        <div class="score" id="scoreNum">0<small>%</small></div>
+        <div class="band" id="bandText">—</div>
+      </div>
+      <div class="res-lead">
+        <h2 id="bandHead">Your Clarity Score</h2>
+        <p id="interp"></p>
+      </div>
     </div>
-    <div class="bar"><span id="barFill"></span></div>
-    <p class="interp" id="interp"></p>
-    <p class="deeper"><b>This is the surface read.</b> Your full Clarity Index goes several layers deeper across every process, and comes with the fix, in a Clarity Sprint.</p>
 
-    <div class="capture" id="capture">
+    <div class="divider"></div>
+    <div class="sec-label">Your operating-model profile</div>
+    <div class="profile">
+      <div class="radar-box"><canvas id="radar" width="440" height="440" role="img" aria-label="Clarity profile across five pillars"></canvas></div>
+      <div class="bars" id="bars"></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="sec-label">Fix these first</div>
+    <div class="fixes" id="fixes"></div>
+
+    <div class="deeper" id="deeper">This is the surface read across five pillars. Your full <b>Clarity Index</b> goes several layers deeper into every process — and comes with the fix — in a facilitated <b>Clarity Sprint</b>.</div>
+
+    <div class="divider"></div>
+    <div class="capture" id="captureBlock">
       <h3>Get your full breakdown</h3>
-      <p class="s">We will email your score breakdown and the three things to fix first, plus the 7 Signs guide. The full map and the rebuild come with a Sprint.</p>
+      <p class="s">We'll email your pillar-by-pillar breakdown, the three things to fix first, and the <b>7 Signs</b> guide. The full map and the rebuild come with a Sprint.</p>
       <form id="lead" novalidate>
-        <input class="hp" type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="field"><label for="name">Name</label><input id="name" name="name"></div>
-        <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" required></div>
-        <button class="btn" type="submit" id="leadBtn">Send my breakdown</button>
-        <p class="err" id="leadErr">Please add a valid email.</p>
+        <div class="field"><label for="lname">Name</label><input id="lname" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+        <div class="field"><label for="lemail">Email *</label><input id="lemail" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn dark" id="leadBtn">Send my breakdown</button>
+        <div class="err" id="leadErr">Please add a valid email.</div>
       </form>
     </div>
 
     <div id="thanks">
-      <div class="tick">✓</div>
+      <div class="tick" aria-hidden="true">✓</div>
       <h3>On its way. Talk soon.</h3>
-      <p style="color:var(--grey);margin-top:6px">Your breakdown and guide are heading to your inbox.</p>
-      <div class="row">
-        <a class="btn" href="7-signs.pdf" download>Download the 7 Signs guide</a>
-        <a class="btn dark" href="https://mapped.africa/#pricing">Book your Clarity Sprint</a>
+      <p>Your breakdown and the 7 Signs guide are heading to your inbox.</p>
+      <div class="row2">
+        <a class="btn" href="https://mapped.africa/7-signs.pdf">Download the 7 Signs guide</a>
+        <a class="btn ghost" href="https://mapped.africa">Book a Clarity Sprint</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="foot">A Meroë Africa product · The full, facilitated Clarity Index comes with a Clarity Sprint. · <a href="https://mapped.africa/">mapped.africa</a></div>
+<div class="foot"><div class="wrap">A Meroë Africa product · The full, facilitated Clarity Index comes with a Clarity Sprint · <a href="https://mapped.africa">mapped.africa</a></div></div>
 
 <script>
 (function(){
+  "use strict";
+
+  // ---- Lead pipeline (unchanged from the self-check): n8n-first, FormSubmit fallback ----
   var ENDPOINT = "https://formsubmit.co/ajax/3af1ad71dd62748a71019e24ad0d840f";
   var N8N_ENDPOINT = ""; // paste your n8n production webhook URL here to route leads through n8n; blank = FormSubmit (zero risk)
+
   var questions = [
     "The business runs day to day without every decision going through the founder.",
-    "Our core processes are written down, not just kept in people's heads.",
+    "Our core processes are written down, not just kept in people’s heads.",
     "A new hire can learn how we work from documentation, not only by shadowing.",
     "The same task gets done the same way no matter who does it.",
     "We can explain how the business makes money on a single page.",
@@ -142,83 +224,160 @@
     "Growth has made things smoother, not more chaotic.",
     "The founder could step away for two weeks and the business would keep running."
   ];
-  var qForm = document.getElementById('quiz');
+  var pillars = [
+    {name:"Owner Independence", short:"Owner", qs:[0,9],
+     diag:"The business still needs you in the room to move.",
+     fix:"Write down the three decisions only you make today — and the one rule that would let someone else make them."},
+    {name:"Documented Knowledge", short:"Knowledge", qs:[1,2],
+     diag:"Your operating knowledge lives in people’s heads.",
+     fix:"Take your most-repeated task and document it once, step by step. That is your first real system."},
+    {name:"Process Consistency", short:"Consistency", qs:[3,7],
+     diag:"The same job gets done differently depending on who does it.",
+     fix:"Set one “this is how we do it here” standard for your highest-volume process and your client terms."},
+    {name:"Model & Roles", short:"Model", qs:[4,5],
+     diag:"How you make money — and who owns what — isn’t clear on a page.",
+     fix:"Draw the one-page money map and a simple who-owns-what before you hire again."},
+    {name:"Numbers & Scale", short:"Numbers", qs:[6,8],
+     diag:"You’re running on feel, and growth adds friction instead of removing it.",
+     fix:"Choose three numbers that tell you if the week went well, and review them every Monday."}
+  ];
+
+  var quiz=document.getElementById('quiz');
   questions.forEach(function(t,i){
-    var n=i+1;
-    var div=document.createElement('div'); div.className='q';
-    div.innerHTML='<p><span class="n">'+n+'</span>'+t+'</p>'+
+    var n=i+1, fs=document.createElement('fieldset');
+    fs.innerHTML='<legend><span class="n">'+n+'</span><span>'+t+'</span></legend>'+
       '<div class="opts">'+
       '<div class="opt"><input type="radio" id="q'+n+'a" name="q'+n+'" value="0"><label for="q'+n+'a">Not yet</label></div>'+
       '<div class="opt"><input type="radio" id="q'+n+'b" name="q'+n+'" value="1"><label for="q'+n+'b">Getting there</label></div>'+
       '<div class="opt"><input type="radio" id="q'+n+'c" name="q'+n+'" value="2"><label for="q'+n+'c">Yes, solid</label></div>'+
       '</div>';
-    qForm.appendChild(div);
+    quiz.appendChild(fs);
   });
 
-  function updateProg(){
-    var n=0; for(var i=1;i<=questions.length;i++){ if(document.querySelector('input[name="q'+i+'"]:checked')) n++; }
-    var pf=document.getElementById('pfill'); if(pf) pf.style.width=(n/questions.length*100)+'%';
-    var pr=document.getElementById('prog'); if(pr) pr.textContent=n+' of '+questions.length+' answered';
-  }
-  qForm.addEventListener('change', updateProg);
+  function answeredCount(){var c=0;for(var i=1;i<=questions.length;i++){if(document.querySelector('input[name="q'+i+'"]:checked'))c++;}return c;}
+  quiz.addEventListener('change',function(){
+    var n=answeredCount();
+    document.getElementById('pfill').style.width=(n/questions.length*100)+'%';
+    document.getElementById('prog').textContent=n+' of '+questions.length+' answered';
+    document.getElementById('quizErr').style.display='none';
+  });
 
-  var quizErr=document.getElementById('quizErr');
-  var answersText="";
-  var pct=0, band="";
+  function val(i){var s=document.querySelector('input[name="q'+(i+1)+'"]:checked');return s?parseInt(s.value,10):0;}
+  function label(v){return v===2?"Yes, solid":(v===1?"Getting there":"Not yet");}
+  function getCss(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+  function colorFor(pct){return pct<50?getCss('--weak'):(pct<75?getCss('--mid'):getCss('--strong'));}
 
   document.getElementById('seeScore').addEventListener('click',function(){
-    var total=0, answered=0; answersText="";
-    for(var i=1;i<=questions.length;i++){
-      var sel=document.querySelector('input[name="q'+i+'"]:checked');
-      if(sel){ answered++; total+=parseInt(sel.value,10);
-        answersText += "Q"+i+": "+(sel.value==="2"?"Yes":(sel.value==="1"?"Getting there":"Not yet"))+"\n";
-      }
-    }
-    if(answered<questions.length){ quizErr.style.display='block'; return; }
-    quizErr.style.display='none';
-    pct = Math.round((total/(questions.length*2))*100);
-    var interp;
-    if(pct<40){ band="Running on memory"; interp="The business lives largely in people's heads. The silent tax is high, and clarity is your single highest return investment right now."; }
-    else if(pct<70){ band="Building structure"; interp="You have real foundations and clear gaps. A focused Clarity Sprint would turn the loose parts into a system you can scale."; }
-    else { band="Clear and scaling"; interp="Strong. You run on more than memory. A Sprint now tightens the last gaps and gets you investment and AI ready."; }
+    if(answeredCount()<questions.length){document.getElementById('quizErr').style.display='block';return;}
 
-    document.getElementById('scoreNum').textContent=pct+"%";
-    var bt=document.getElementById('bandText'); bt.textContent=band; bt.style.color = pct<40?'#b00020':(pct<70?'var(--orange-dk)':'#1f9d55');
-    document.getElementById('interp').textContent=interp;
+    var total=0, answersText="";
+    for(var i=0;i<questions.length;i++){var v=val(i);total+=v;answersText+="Q"+(i+1)+": "+label(v)+"\n";}
+    var pct=Math.round(total/(questions.length*2)*100);
+
+    var pdata=pillars.map(function(p){
+      var pts=val(p.qs[0])+val(p.qs[1]);
+      return {name:p.name,short:p.short,diag:p.diag,fix:p.fix,pct:Math.round(pts/4*100)};
+    });
+
+    var band,interp,bandColor;
+    if(pct<40){band="Running on memory";interp="The business lives largely in people’s heads. The silent tax is high — and clarity is your single highest-return investment right now.";bandColor=getCss('--weak');}
+    else if(pct<70){band="Building structure";interp="You have real foundations and clear gaps. A focused Clarity Sprint would turn the loose parts into a system you can scale.";bandColor=getCss('--orange-dk');}
+    else{band="Clear and scaling";interp="Strong — you run on more than memory. A Sprint now tightens the last gaps and gets you investment and AI ready.";bandColor=getCss('--strong');}
+
     document.getElementById('quizCard').style.display='none';
-    document.getElementById('results').style.display='block';
-    document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
-    setTimeout(function(){ document.getElementById('barFill').style.width=pct+"%"; },120);
+    var res=document.getElementById('results');res.style.display='block';
+    document.getElementById('interp').textContent=interp;
+    var bt=document.getElementById('bandText');bt.textContent=band;bt.style.color=bandColor;
+
+    var sn=document.getElementById('scoreNum'),cur=0;
+    (function step(){cur+=Math.max(1,Math.ceil((pct-cur)/6));if(cur>=pct)cur=pct;sn.innerHTML=cur+'<small>%</small>';if(cur<pct)requestAnimationFrame(step);})();
+
+    var bars=document.getElementById('bars');bars.innerHTML='';
+    pdata.forEach(function(p){
+      var row=document.createElement('div');row.className='prow';
+      row.innerHTML='<span class="pn">'+p.name+'</span><span class="pv" style="color:'+colorFor(p.pct)+'">'+p.pct+'%</span><div class="track"><span></span></div>';
+      bars.appendChild(row);
+      var fill=row.querySelector('.track span');fill.style.background=colorFor(p.pct);
+      requestAnimationFrame(function(){setTimeout(function(){fill.style.width=p.pct+'%';},60);});
+    });
+
+    var weak=pdata.filter(function(p){return p.pct<75;}).sort(function(a,b){return a.pct-b.pct;}).slice(0,3);
+    var fx=document.getElementById('fixes');fx.innerHTML='';
+    if(weak.length===0){
+      fx.innerHTML='<div class="allclear"><b>No weak pillars.</b> Every part of your operating model scored solid. The value of a Sprint here is compounding — locking the system so growth, funding and AI don’t reintroduce chaos.</div>';
+    } else {
+      weak.forEach(function(p,idx){
+        var d=document.createElement('div');d.className='fix';
+        d.innerHTML='<div class="rank">0'+(idx+1)+'</div><div><h4>'+p.name+' · '+p.pct+'%</h4>'+
+          '<div class="diag">'+p.diag+'</div><div class="do"><b>Do this first:</b> '+p.fix+'</div></div>';
+        fx.appendChild(d);
+      });
+    }
+
+    drawRadar(pdata);
+
+    // stash everything the lead payload needs
+    var pillarsStr=pdata.map(function(p){return p.name+" "+p.pct+"%";}).join(" | ");
+    var focusStr=weak.map(function(p){return p.name;}).join(", ")||"None — all pillars solid";
+    window.__clarity={pct:pct,band:band,answersText:answersText,pillarsStr:pillarsStr,focusStr:focusStr,
+      pillars:pdata.map(function(p){return {name:p.name,pct:p.pct};})};
+
+    res.scrollIntoView({behavior:'smooth',block:'start'});
   });
 
-  var lead=document.getElementById('lead'), leadErr=document.getElementById('leadErr'), leadBtn=document.getElementById('leadBtn');
-  lead.addEventListener('submit',function(e){
-    e.preventDefault(); leadErr.style.display='none';
-    if(lead._hp.value) return;
-    var email=lead.email.value.trim();
-    if(!email || email.indexOf('@')<1){ leadErr.style.display='block'; return; }
-    leadBtn.textContent='Sending...'; leadBtn.disabled=true;
-    var auto = "Hi, and thanks for taking the Mapped Clarity Self-Check.\n\nYour Clarity Score is "+pct+"% ("+band+").\n\nWhat that means: lower scores mean more of the business lives in people's heads, which quietly caps growth, funding and the ability to automate. The fix is to make the engine visible.\n\nHere is your guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhen you are ready for the full, facilitated Clarity Index and a plan to fix your top three gaps, reply to this email or book a Clarity Sprint at https://mapped.africa\n\nTalk soon,\nThe Mapped team at Meroe Africa";
+  function drawRadar(pdata){
+    var c=document.getElementById('radar'),dpr=window.devicePixelRatio||1;
+    var size=Math.min(c.parentElement.clientWidth||300,300);
+    c.width=size*dpr;c.height=size*dpr;c.style.width=size+'px';c.style.height=size+'px';
+    var x=c.getContext('2d');x.scale(dpr,dpr);
+    var cx=size/2,cy=size/2,R=size/2-38,N=pdata.length;
+    function pt(a,r){return [cx+Math.cos(a)*r,cy+Math.sin(a)*r];}
+    x.clearRect(0,0,size,size);
+    for(var g=1;g<=4;g++){x.beginPath();for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,p=pt(a,R*g/4);i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]);}x.closePath();x.strokeStyle=g===4?'#c9d2e0':'#E6EAF1';x.lineWidth=1;x.stroke();}
+    x.fillStyle='#5B6472';x.font='600 11px -apple-system,Segoe UI,Arial';x.textAlign='center';x.textBaseline='middle';
+    for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,e=pt(a,R);x.beginPath();x.moveTo(cx,cy);x.lineTo(e[0],e[1]);x.strokeStyle='#E6EAF1';x.lineWidth=1;x.stroke();var lp=pt(a,R+20);x.fillText(pdata[i].short,lp[0],lp[1]);}
+    x.beginPath();for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,r=R*(pdata[i].pct/100),p=pt(a,r);i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]);}x.closePath();
+    x.fillStyle='rgba(240,128,16,.18)';x.fill();x.strokeStyle='#F08010';x.lineWidth=2.5;x.stroke();
+    for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,r=R*(pdata[i].pct/100),p=pt(a,r);x.beginPath();x.arc(p[0],p[1],3.5,0,7);x.fillStyle='#C2660A';x.fill();x.strokeStyle='#fff';x.lineWidth=1.5;x.stroke();}
+  }
+
+  // ---- Lead capture: n8n-first, FormSubmit fallback (mirrors clarity self-check) ----
+  document.getElementById('lead').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var leadBtn=document.getElementById('leadBtn'), leadErr=document.getElementById('leadErr');
+    var email=document.getElementById('lemail').value.trim();
+    var name=document.getElementById('lname').value.trim();
+    var honey=document.querySelector('input[name="_honey"]').value;
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){leadErr.textContent="Please add a valid email.";leadErr.style.display='block';return;}
+    if(honey){document.getElementById('captureBlock').style.display='none';document.getElementById('deeper').style.display='none';document.getElementById('thanks').style.display='block';return;}
+
+    var c=window.__clarity||{pct:0,band:"",answersText:"",pillarsStr:"",focusStr:""};
+    leadBtn.textContent='Sending...';leadBtn.disabled=true;
+
+    var auto="Hi, and thanks for taking the Mapped Clarity Index.\n\nYour Clarity Score is "+c.pct+"% ("+c.band+").\n\nYour five-pillar profile:\n"+c.pillarsStr+"\n\nFix first: "+c.focusStr+".\n\nWhat this means: the lower a pillar scores, the more of that part of the business lives in people's heads — which quietly caps growth, funding and the ability to automate. The fix is to make the engine visible.\n\nHere is your guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhen you are ready for the full, facilitated Clarity Index and a plan to fix your top gaps, reply to this email or book a Clarity Sprint at https://mapped.africa\n\nTalk soon,\nThe Mapped team at Meroe Africa";
+
     var fsPayload={
-      name: lead.name.value, email: email,
-      clarity_score: pct+"%", band: band, answers: answersText,
-      _subject: "New Clarity Self-Check lead, score "+pct+"% ("+band+")",
-      _template: "table", _captcha: "false", _autoresponse: auto
+      name:name, email:email,
+      clarity_score:c.pct+"%", band:c.band,
+      pillars:c.pillarsStr, fix_first:c.focusStr, answers:c.answersText,
+      _subject:"New Clarity Index lead, score "+c.pct+"% ("+c.band+")",
+      _template:"table", _captcha:"false", _autoresponse:auto
     };
-    var n8nPayload={ source:"clarity-self-check", name: lead.name.value, email: email, clarity_score: pct, band: band, answers: answersText, page: location.href };
-    function ok(){ document.getElementById('capture').style.display='none'; document.getElementById('thanks').style.display='block'; }
-    function fail(){ leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.'; leadErr.style.display='block'; }
-    function done(){ leadBtn.textContent='Send my breakdown'; leadBtn.disabled=false; }
+    var n8nPayload={source:"clarity-index",name:name,email:email,clarity_score:c.pct,band:c.band,pillars:c.pillars,fix_first:c.focusStr,answers:c.answersText,page:location.href};
+
+    function ok(){document.getElementById('captureBlock').style.display='none';document.getElementById('deeper').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth',block:'center'});}
+    function fail(){leadErr.innerHTML='That did not send. Please email us at <a href="mailto:hello@meroeafricagroup.com" style="color:#C2660A">hello@meroeafricagroup.com</a>.';leadErr.style.display='block';}
+    function done(){leadBtn.textContent='Send my breakdown';leadBtn.disabled=false;}
     function viaFormSubmit(){
       fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(fsPayload)})
         .then(function(r){return r.json().catch(function(){return {};});})
-        .then(function(j){ if(j && (j.success===true||j.success==="true")){ ok(); } else { fail(); } })
+        .then(function(j){if(j&&(j.success===true||j.success==="true")){ok();}else{fail();}})
         .catch(fail).finally(done);
     }
     if(N8N_ENDPOINT){
       fetch(N8N_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(n8nPayload)})
-        .then(function(r){ if(r.ok){ ok(); done(); } else { viaFormSubmit(); } })
-        .catch(function(){ viaFormSubmit(); });
+        .then(function(r){if(r.ok){ok();done();}else{viaFormSubmit();}})
+        .catch(function(){viaFormSubmit();});
     } else { viaFormSubmit(); }
   });
 })();
