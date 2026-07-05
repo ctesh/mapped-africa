@@ -209,7 +209,7 @@
       <p>Your breakdown and the 7 Signs guide are heading to your inbox.</p>
       <div class="row2">
         <a class="btn" href="https://mapped.africa/7-signs.pdf">Download the 7 Signs guide</a>
-        <a class="btn ghost" id="bookSprint" href="mailto:hello@meroeafricagroup.com?subject=Booking%20a%20Clarity%20Sprint&body=Hi%20Mapped%20team%2C%20I%27d%20like%20to%20book%20a%20Clarity%20Sprint.">Book a Clarity Sprint</a>
+        <a class="btn ghost" id="bookSprint" href="mailto:mappedafricameroeafrica@gmail.com?subject=Booking%20a%20Clarity%20Sprint&body=Hi%20Mapped%20team%2C%20I%27d%20like%20to%20book%20a%20Clarity%20Sprint.">Book a Clarity Sprint</a>
       </div>
     </div>
   </div>
@@ -382,9 +382,9 @@
     var n8nPayload={source:"clarity-index",name:name,email:email,clarity_score:c.pct,band:c.band,pillars:c.pillars,fix_first:c.focusStr,answers:c.answersText,page:location.href};
 
     function ok(){try{gtag('event','generate_lead',{clarity_score:c.pct,band:c.band});}catch(e){}
-      try{var bs=document.getElementById('bookSprint');if(bs){bs.href='mailto:hello@meroeafricagroup.com?subject='+encodeURIComponent('Booking a Clarity Sprint — '+c.pct+'% ('+c.band+')')+'&body='+encodeURIComponent('Hi Mapped team, I just took the Clarity Index (score '+c.pct+'%, '+c.band+'). I\'d like to book a Clarity Sprint to fix: '+c.focusStr+'.');}}catch(e){}
+      try{var bs=document.getElementById('bookSprint');if(bs){bs.href='mailto:mappedafricameroeafrica@gmail.com?subject='+encodeURIComponent('Booking a Clarity Sprint — '+c.pct+'% ('+c.band+')')+'&body='+encodeURIComponent('Hi Mapped team, I just took the Clarity Index (score '+c.pct+'%, '+c.band+'). I\'d like to book a Clarity Sprint to fix: '+c.focusStr+'.');}}catch(e){}
       document.getElementById('captureBlock').style.display='none';document.getElementById('deeper').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth',block:'center'});}
-    function fail(){leadErr.innerHTML='That did not send. Please email us at <a href="mailto:hello@meroeafricagroup.com" style="color:#C2660A">hello@meroeafricagroup.com</a>.';leadErr.style.display='block';}
+    function fail(){leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.';leadErr.style.display='block';}
     function done(){leadBtn.textContent='Send my breakdown';leadBtn.disabled=false;}
     function viaFormSubmit(){
       fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(fsPayload)})
