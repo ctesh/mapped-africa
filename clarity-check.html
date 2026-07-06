@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.app.n8n.cloud https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
-<title>The Clarity Index | MAPPED</title>
-<meta name="description" content="Take the Clarity Index. 10 questions, 90 seconds, and you get your Clarity Score plus a five-pillar profile of how your business really runs — and the first thing to fix.">
+<title>The Mapped Score™ | MAPPED</title>
+<meta name="description" content="Get your Mapped Score. Fourteen questions, about ninety seconds. One number, seven dimensions, five levels — how understandable is your organisation?">
 <link rel="canonical" href="https://mapped.africa/clarity-check.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0B0B0D">
-<meta property="og:title" content="The MAPPED Clarity Index">
-<meta property="og:description" content="See exactly where your business runs on memory. A Clarity Score, a five-pillar profile, and your first fix — in 90 seconds.">
+<meta name="mapped-version" content="site-v2.0-phase1; mapped-score-v1.0">
+<meta property="og:title" content="The Mapped Score™">
+<meta property="og:description" content="One number, seven dimensions, five levels. Measure whether your organisation can be understood well enough to scale, fund, automate, and improve.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mapped.africa/clarity-check.html">
 <meta property="og:image" content="https://mapped.africa/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"MAPPED Clarity Index","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://mapped.africa/clarity-check.html","description":"A free interactive diagnostic that scores how much of your business runs on memory across five operating-model pillars, and shows the first thing to fix.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Meroë Africa","url":"https://meroeafricagroup.com"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"The Mapped Score","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://mapped.africa/clarity-check.html","description":"A free diagnostic that scores how understandable your organisation is across seven dimensions and five levels, and surfaces founder-dependency risk.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Meroë Africa","url":"https://mapped.africa"}}
 </script>
-<!-- Google Analytics 4 — paste your Measurement ID below to switch analytics on (replaces G-XXXXXXXXXX) -->
+<!-- Google Analytics 4 -->
 <script>
   window.GA_ID = "G-SB3C0THX1W"; // MAPPED / Meroë GA4 measurement ID
   if (window.GA_ID && window.GA_ID !== "G-XXXXXXXXXX") {
@@ -31,114 +32,162 @@
   } else { window.gtag=function(){}; }
 </script>
 <style>
-  :root{
-    --black:#0B0B0D; --ink:#151821; --orange:#F08010; --orange-dk:#C2660A;
-    --gold:#C9A24B; --white:#fff; --light:#F4F6FA; --grey:#5B6472; --line:#E6EAF1;
-    --weak:#D64545; --mid:#F08010; --strong:#1F9D55;
-    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
-    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
-  }
+  :root{--ink:#0B0B0D;--paper:#fff;--grey:#6B7280;--grey2:#9AA3B2;--line:#E7E9EE;--soft:#F6F7F9;
+    --accent:#F08010;--accent-dk:#C2660A;--bench:#3B82F6;--red:#D64545;--amber:#E8912B;--green:#1F9D55;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Iowan Old Style',Georgia,serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);line-height:1.55;background:var(--light);-webkit-font-smoothing:antialiased}
-  .wrap{max-width:780px;margin:0 auto;padding:0 22px}
+  body{font-family:var(--sans);color:var(--ink);background:var(--soft);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
 
-  header{background:var(--black);position:sticky;top:0;z-index:30}
+  header{background:var(--ink);position:sticky;top:0;z-index:30}
   .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.05em;font-size:1.05rem}
+  .brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.05em;font-size:1.02rem}
   .mark{width:26px;height:26px;display:block}
-  .nav a.home{color:#9AA3B2;text-decoration:none;font-size:.88rem;font-weight:600}
+  .nav a.home{color:var(--grey2);text-decoration:none;font-size:.88rem;font-weight:600}
   .nav a.home:hover{color:#fff}
 
-  .hero{background:var(--black);color:#fff;padding:44px 0 62px}
-  .ey{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
-  .hero h1{font-size:clamp(2rem,5.5vw,2.7rem);font-weight:800;margin:.35em 0 .3em;letter-spacing:-.01em;line-height:1.05}
-  .hero p{color:#D7DEEE;font-size:1.08rem;max-width:580px}
+  .hero{background:var(--ink);color:#fff;padding:48px 0 66px}
+  .ey{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .ey sup{font-size:.6em;color:var(--grey2)}
+  .hero h1{font-size:clamp(1.9rem,5vw,2.5rem);font-weight:800;letter-spacing:-.015em;margin:12px 0 8px;line-height:1.08}
+  .hero p{color:#C9D2E0;max-width:600px;font-size:1.05rem}
 
-  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,30px);box-shadow:0 12px 44px rgba(20,24,33,.09);margin:-34px 0 40px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 50px rgba(11,11,13,.08);margin:-30px 0 22px;overflow:hidden}
+  .pad{padding:clamp(20px,4vw,34px)}
 
-  .pbar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0 4px}
-  .pbar span{display:block;height:100%;width:0;background:var(--orange);transition:width .3s ease}
+  .pbar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:2px 0 4px}
+  .pbar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s ease}
   .prog{font-family:var(--mono);font-size:.76rem;color:var(--grey);font-weight:600;text-align:right;letter-spacing:.02em}
 
-  fieldset{border:0;padding:16px 0;border-bottom:1px solid var(--line)}
-  fieldset:last-of-type{border-bottom:0}
-  legend{font-weight:600;font-size:1.04rem;margin-bottom:12px;display:flex;gap:10px;align-items:flex-start}
-  legend .n{flex:none;width:25px;height:25px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--mono);font-weight:700;text-align:center;line-height:25px;font-size:.8rem;margin-top:1px}
+  .dimhead{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dk);padding:22px 0 2px;border-top:1px solid var(--line);margin-top:18px}
+  .dimhead:first-of-type{border-top:0;margin-top:0;padding-top:14px}
+  fieldset{border:0;padding:12px 0 4px}
+  legend{font-weight:600;font-size:1.02rem;margin-bottom:11px;display:flex;gap:10px;align-items:flex-start}
+  legend .n{flex:none;width:25px;height:25px;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--mono);font-weight:700;text-align:center;line-height:25px;font-size:.78rem;margin-top:1px}
   .opts{display:flex;gap:9px;flex-wrap:wrap;padding-left:35px}
-  .opt{flex:1;min-width:120px;position:relative}
+  .opt{flex:1;min-width:118px;position:relative}
   .opt input{position:absolute;opacity:0;width:1px;height:1px}
-  .opt label{display:block;text-align:center;padding:11px 8px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:.92rem;font-weight:600;color:var(--grey);transition:.15s}
+  .opt label{display:block;text-align:center;padding:11px 8px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--grey);transition:.15s;background:#fff}
   .opt label:hover{border-color:#c9d2e0}
-  .opt input:checked + label{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 4px 14px rgba(240,128,16,.28)}
+  .opt input:checked + label{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(240,128,16,.28)}
   .opt input:focus-visible + label{outline:2px solid var(--ink);outline-offset:2px}
 
-  .btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;padding:15px 28px;border-radius:11px;text-decoration:none;border:2px solid var(--orange);cursor:pointer;font-size:1.05rem;width:100%;font-family:inherit;transition:.15s;text-align:center}
-  .btn:hover{background:var(--orange-dk);border-color:var(--orange-dk)}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:14px 26px;border-radius:10px;text-decoration:none;border:2px solid var(--accent);cursor:pointer;font-size:1rem;font-family:inherit;transition:.15s;text-align:center}
+  .btn:hover{background:var(--accent-dk);border-color:var(--accent-dk)}
   .btn:disabled{opacity:.7;cursor:default}
   .btn.dark{background:var(--ink);border-color:var(--ink)} .btn.dark:hover{background:#000}
   .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)} .btn.ghost:hover{border-color:var(--ink)}
+  .btn.wide{width:100%}
   .cta-row{margin-top:22px}
-  .err{display:none;color:var(--weak);font-size:.9rem;margin-top:12px;text-align:center;font-weight:600}
+  .err{display:none;color:var(--red);font-size:.9rem;margin-top:12px;text-align:center;font-weight:600}
 
+  /* ---------- RESULTS ---------- */
   #results{display:none}
-  .res-top{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
-  @media(max-width:540px){.res-top{grid-template-columns:1fr;text-align:center;gap:14px}}
-  .score-badge{text-align:center}
-  .score{font-size:4.4rem;font-weight:800;color:var(--orange);line-height:.95;font-variant-numeric:tabular-nums}
-  .score small{font-size:1.6rem;vertical-align:top}
-  .band{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-top:6px}
-  .res-lead h2{font-size:1.5rem;font-weight:800;line-height:1.15;margin-bottom:8px}
-  .res-lead p{color:var(--grey);font-size:1rem}
+  .res{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;padding:30px 34px 24px}
+  @media(max-width:640px){.res{grid-template-columns:1fr;text-align:center;gap:14px;padding:24px 22px 18px}}
+  .big{text-align:center}
+  .big .num{font-size:5rem;font-weight:800;line-height:.9;color:var(--accent);font-variant-numeric:tabular-nums}
+  .big .num small{font-size:1.5rem;color:var(--grey2)}
+  .big .lvl{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--accent-dk);margin-top:10px}
+  .res h2{font-size:1.4rem;font-weight:800;margin-bottom:6px;line-height:1.2}
+  .res p{color:var(--grey)}
+  .tier{font-size:.76rem;color:var(--grey2);margin-top:8px}
 
-  .divider{height:1px;background:var(--line);margin:28px 0}
-  .sec-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:700;margin-bottom:16px}
+  .gauge{padding:6px 34px 26px}
+  @media(max-width:640px){.gauge{padding:6px 22px 22px}}
+  .glabels{display:flex;justify-content:space-between;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--grey2);margin-bottom:7px}
+  .glabels span{flex:1;text-align:center}
+  @media(max-width:520px){.glabels{font-size:.5rem;letter-spacing:0;gap:2px}}
+  .gbar{position:relative;height:16px;border-radius:9px;overflow:visible;margin-top:34px;
+    background:linear-gradient(90deg,#D64545 0%,#E8912B 30%,#F08010 55%,#7BC47F 80%,#1F9D55 100%)}
+  .gseg{position:absolute;top:0;bottom:0;border-right:2px solid rgba(255,255,255,.7)}
+  .gpin{position:absolute;top:-10px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:11px solid var(--ink);transform:translateX(-7px)}
+  .gpin::after{content:attr(data-v);position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:5px;white-space:nowrap}
 
-  .profile{display:grid;grid-template-columns:230px 1fr;gap:26px;align-items:center}
-  @media(max-width:560px){.profile{grid-template-columns:1fr}}
-  .radar-box{display:flex;justify-content:center}
-  canvas{max-width:100%;height:auto}
-  .bars{display:flex;flex-direction:column;gap:13px}
-  .prow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:baseline}
-  .prow .pn{font-weight:600;font-size:.95rem}
-  .prow .pv{font-family:var(--mono);font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums}
-  .track{grid-column:1/-1;height:9px;background:var(--line);border-radius:6px;overflow:hidden}
-  .track span{display:block;height:100%;width:0;border-radius:6px;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+  .flagbox{margin:8px 34px;border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  @media(max-width:640px){.flagbox{margin:8px 22px}}
+  .flagbox.high,.flagbox.medium{background:#FCEEE1;border:1px solid #F6D3AC;border-left:5px solid var(--amber)}
+  .flagbox.high .risk{background:var(--red)}
+  .flagbox.medium .risk{background:var(--amber)}
+  .flagbox.low{background:#EAF7EF;border:1px solid #BEE6CC;border-left:5px solid var(--green)}
+  .flagbox.low .risk{background:var(--green)}
+  .flagbox .risk{font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:5px 10px;border-radius:6px;white-space:nowrap}
+  .flagbox .t{font-size:.95rem;color:#5a4632;flex:1;min-width:220px}
+  .flagbox.low .t{color:#245c38}
+  .flagbox .t b{color:inherit}
 
-  .fixes{display:flex;flex-direction:column;gap:12px}
-  .fix{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:16px 18px;background:var(--light);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:11px}
-  .fix .rank{font-family:var(--mono);font-weight:800;color:var(--orange-dk);font-size:.85rem;letter-spacing:.04em}
-  .fix h4{font-size:1rem;margin-bottom:3px}
-  .fix .diag{color:var(--grey);font-size:.9rem;margin-bottom:7px}
-  .fix .do{font-size:.92rem}
-  .fix .do b{color:var(--ink)}
-  .allclear{background:#EAF7EF;border:1px solid #BEE6CC;border-left:4px solid var(--strong);padding:16px 18px;border-radius:11px;font-size:.95rem}
+  .radar-sec{padding:20px 34px 6px;text-align:center;border-top:1px solid var(--line)}
+  @media(max-width:640px){.radar-sec{padding:18px 22px 4px}}
+  .sec-h{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:2px}
+  #radar{max-width:100%;height:auto}
+  .legend{display:flex;gap:20px;flex-wrap:wrap;font-size:.8rem;color:var(--grey);margin:6px 0 18px}
+  .legend b{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+  .b-you{background:var(--accent)} .b-bench{background:var(--bench)}
 
-  .deeper{margin-top:22px;font-size:.92rem;color:var(--ink);background:#FCEBD8;border:1px solid #F6D3AC;border-radius:11px;padding:14px 16px}
-  .deeper b{color:var(--orange-dk)}
+  .body-sec{padding:22px 34px 10px}
+  @media(max-width:640px){.body-sec{padding:18px 22px 8px}}
+  .dim{margin:15px 0}
+  .dtop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;gap:10px}
+  .dname{font-weight:650;font-size:1rem}
+  .dval{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent-dk)}
+  .dval.low{color:var(--amber)}
+  .track{position:relative;height:12px;background:var(--soft);border:1px solid var(--line);border-radius:8px}
+  .fill{height:100%;background:var(--accent);border-radius:7px 0 0 7px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+  .fill.low{background:var(--amber)}
+  .tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--bench)}
+  .dsub{font-size:.82rem;color:var(--grey);margin-top:5px}
 
-  .capture{margin-top:8px}
+  .benchbar{background:var(--ink);color:#fff;border-radius:14px;padding:18px 22px;margin:22px 34px}
+  @media(max-width:640px){.benchbar{margin:18px 22px}}
+  .benchbar .l{font-size:.92rem;color:#C9D2E0}
+  .benchbar b{color:#fff}
+  .realities{font-size:.8rem;color:var(--grey2);padding:0 34px 20px;font-family:var(--serif);font-style:italic}
+  @media(max-width:640px){.realities{padding:0 22px 16px}}
+
+  .cta{display:flex;gap:12px;flex-wrap:wrap;padding:0 34px 26px}
+  @media(max-width:640px){.cta{padding:0 22px 20px}}
+  .cta .btn{flex:1;min-width:200px}
+  .tierline{padding:0 34px 8px;font-size:.85rem;color:var(--grey)}
+  @media(max-width:640px){.tierline{padding:0 22px 8px}}
+
+  .capture{border-top:1px solid var(--line);padding:24px 34px 30px}
+  @media(max-width:640px){.capture{padding:20px 22px 24px}}
   .capture h3{font-size:1.2rem;margin-bottom:6px}
   .capture .s{color:var(--grey);font-size:.94rem;margin-bottom:16px}
   .field{margin-bottom:13px}
   .field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px}
-  .field input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:inherit}
-  .field input:focus{outline:2px solid var(--orange);outline-offset:0;border-color:var(--orange)}
+  .field input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:inherit;background:#fff}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
   .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
-  #thanks{display:none;text-align:center;padding:8px 6px}
-  #thanks .tick{width:58px;height:58px;border-radius:50%;background:var(--strong);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px}
+  #thanks{display:none;text-align:center;padding:26px 22px 34px}
+  #thanks .tickmark{width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px}
   #thanks h3{font-size:1.3rem;margin-bottom:6px}
   #thanks p{color:var(--grey);margin-bottom:18px}
-  .row2{display:flex;gap:12px;flex-wrap:wrap}
+  .row2{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
   .row2 .btn{flex:1;min-width:190px}
 
+  .flywheel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 34px;margin-bottom:22px}
+  @media(max-width:640px){.flywheel{padding:22px}}
+  .fh-h{font-size:1.15rem;font-weight:800;margin-bottom:16px}
+  .steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch}
+  @media(max-width:700px){.steps{grid-template-columns:1fr;gap:10px}.steps .arw{display:none}}
+  .stepc{border:1px solid var(--line);border-radius:14px;padding:18px}
+  .stepc .k{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dk)}
+  .stepc h4{font-size:1.05rem;margin:5px 0 4px}
+  .stepc p{font-size:.86rem;color:var(--grey)}
+  .arw{display:flex;align-items:center;color:var(--grey2);font-size:1.3rem}
+
+  .note{color:var(--grey2);font-size:.8rem;text-align:center;padding:0 0 40px;max-width:70ch;margin:0 auto}
   .foot{text-align:center;color:var(--grey);font-size:.84rem;padding:8px 0 46px}
-  .foot a{color:var(--orange-dk);text-decoration:none;font-weight:600}
+  .foot a{color:var(--accent-dk);text-decoration:none;font-weight:600}
 
   @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
-<body>
+<!-- The Mapped Score™ v1.0 — FROZEN RULER. The 7 dimensions, 14 questions, scoring and 5 levels below are the measurement. Do not change without versioning. -->
+<body data-mapped-score-version="1.0">
 
 <header><div class="wrap"><nav class="nav">
   <a class="brand" href="https://mapped.africa">
@@ -149,115 +198,177 @@
 </nav></div></header>
 
 <section class="hero"><div class="wrap">
-  <div class="ey">The Clarity Index</div>
-  <h1>See exactly where your business runs on memory.</h1>
-  <p>Ten questions, about ninety seconds. You get a Clarity Score, a five-pillar profile of your operating model, and the first thing to fix — on the spot.</p>
+  <div class="ey">The Mapped Score<sup>™</sup></div>
+  <h1>How understandable is your organisation?</h1>
+  <p>One number, seven dimensions, five levels. Fourteen questions, about ninety seconds. It measures whether your organisation can be understood well enough to scale, fund, automate, and improve — not how good or profitable it is.</p>
 </div></section>
 
 <div class="wrap">
-  <div class="card" id="quizCard">
+  <div class="panel" id="quizCard"><div class="pad">
     <div class="pbar"><span id="pfill"></span></div>
-    <div class="prog" id="prog">0 of 10 answered</div>
+    <div class="prog" id="prog">0 of 14 answered</div>
     <form id="quiz"></form>
     <div class="cta-row">
-      <button type="button" class="btn" id="seeScore">Reveal my Clarity Profile</button>
-      <div class="err" id="quizErr">Answer all ten to see your profile.</div>
+      <button type="button" class="btn wide" id="seeScore">Reveal my Mapped Score</button>
+      <div class="err" id="quizErr">Answer all fourteen to see your Score.</div>
     </div>
-  </div>
+  </div></div>
 
-  <div class="card" id="results">
-    <div class="res-top">
-      <div class="score-badge">
-        <div class="score" id="scoreNum">0<small>%</small></div>
-        <div class="band" id="bandText">—</div>
+  <div class="panel" id="results">
+    <div class="res">
+      <div class="big">
+        <div class="num" id="scoreNum">0<small>/100</small></div>
+        <div class="lvl" id="lvlText">—</div>
       </div>
-      <div class="res-lead">
-        <h2 id="bandHead">Your Clarity Score</h2>
+      <div>
+        <h2 id="lvlHead">Your Mapped Score</h2>
         <p id="interp"></p>
+        <div class="tier">This is your free indicative Mapped Score. The full facilitated Score goes several layers deeper.</div>
       </div>
     </div>
 
-    <div class="divider"></div>
-    <div class="sec-label">Your operating-model profile</div>
-    <div class="profile">
-      <div class="radar-box"><canvas id="radar" width="440" height="440" role="img" aria-label="Clarity profile across five pillars"></canvas></div>
-      <div class="bars" id="bars"></div>
+    <div class="gauge">
+      <div class="glabels"><span>Invisible</span><span>Founder-Dependent</span><span>Partially Visible</span><span>Managed</span><span>Adaptive</span></div>
+      <div class="gbar">
+        <div class="gseg" style="left:20%"></div><div class="gseg" style="left:40%"></div><div class="gseg" style="left:60%"></div><div class="gseg" style="left:80%"></div>
+        <div class="gpin" id="gpin" style="left:0%" data-v="You · 0"></div>
+      </div>
     </div>
 
-    <div class="divider"></div>
-    <div class="sec-label">Fix these first</div>
-    <div class="fixes" id="fixes"></div>
+    <div class="flagbox medium" id="flagbox">
+      <span class="risk" id="flagRisk">Founder-dependency</span>
+      <div class="t" id="flagText"></div>
+    </div>
 
-    <div class="deeper" id="deeper">This is the surface read across five pillars. Your full <b>Clarity Index</b> goes several layers deeper into every process — and comes with the fix — in a facilitated <b>Clarity Sprint</b>.</div>
+    <div class="radar-sec">
+      <div class="sec-h" style="text-align:left">Your organisation's shape</div>
+      <canvas id="radar" width="560" height="400" role="img" aria-label="Your Mapped Score profile across seven dimensions, against the emerging benchmark"></canvas>
+      <div class="legend" style="justify-content:center;margin-top:2px"><span><b class="b-you"></b>You</span><span><b class="b-bench"></b>Benchmark (illustrative)</span></div>
+    </div>
 
-    <div class="divider"></div>
+    <div class="body-sec">
+      <div class="sec-h">The seven dimensions</div>
+      <div class="legend"><span><b class="b-you"></b>Your score</span><span><b class="b-bench"></b>Emerging Africa benchmark (illustrative)</span></div>
+      <div id="dims"></div>
+    </div>
+
+    <div class="benchbar"><div class="l" id="benchText"></div></div>
+
+    <div class="realities">The seven dimensions sit within the four realities of every organisation — Intent, Structure, Flow, and Outcomes — from the paper <a href="invisible-organisation.pdf" data-pub="invisible-organisation" style="color:#C2660A">The Invisible Organisation</a>.</div>
+
+    <div class="cta">
+      <a class="btn" id="bookBtn" href="mailto:mappedafricameroeafrica@gmail.com?subject=Booking%20a%20facilitated%20assessment">Book a session to fix your top gap</a>
+      <a class="btn ghost" href="#captureBlock">Email me my full breakdown</a>
+    </div>
+
     <div class="capture" id="captureBlock">
       <h3>Get your full breakdown</h3>
-      <p class="s">We'll email your pillar-by-pillar breakdown, the three things to fix first, and the <b>7 Signs</b> guide. The full map and the rebuild come with a Sprint.</p>
+      <p class="s">We'll email your dimension-by-dimension breakdown, your founder-dependency read, and the <b>7 Signs</b> guide. The full facilitated Score and the rebuild come after.</p>
       <form id="lead" novalidate>
         <div class="field"><label for="lname">Name</label><input id="lname" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
         <div class="field"><label for="lemail">Email *</label><input id="lemail" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
         <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="btn dark" id="leadBtn">Send my breakdown</button>
+        <button type="submit" class="btn dark wide" id="leadBtn">Send my breakdown</button>
         <div class="err" id="leadErr">Please add a valid email.</div>
       </form>
     </div>
 
     <div id="thanks">
-      <div class="tick" aria-hidden="true">✓</div>
+      <div class="tickmark" aria-hidden="true">✓</div>
       <h3>On its way. Talk soon.</h3>
       <p>Your breakdown and the 7 Signs guide are heading to your inbox.</p>
       <div class="row2">
-        <a class="btn" href="https://mapped.africa/7-signs.pdf">Download the 7 Signs guide</a>
-        <a class="btn ghost" id="bookSprint" href="/cdn-cgi/l/email-protection#f69e939a9a99b69b938499939790849f95979184998386d895999bc98583949c939582cbb499999d9f9891d3c4c697d3c4c6b59a97849f828fd3c4c6a586849f9882d09499928fcbbe9fd3c4c6bb9786869392d3c4c68293979bd3c4b5d3c4c6bfd3c4c192d3c4c69a9f9d93d3c4c68299d3c4c69499999dd3c4c697d3c4c6b59a97849f828fd3c4c6a586849f9882d8">Book a Clarity Sprint</a>
+        <a class="btn" href="7-signs.pdf" data-pub="7-signs">Download the 7 Signs guide</a>
+        <a class="btn ghost" id="bookSprint" href="mailto:mappedafricameroeafrica@gmail.com?subject=Booking%20a%20facilitated%20assessment">Book a facilitated assessment</a>
       </div>
     </div>
   </div>
+
+  <div class="flywheel" id="flywheel" style="display:none">
+    <div class="fh-h">What happens after your Score</div>
+    <div class="steps">
+      <div class="stepc"><div class="k">Step 1 · Free</div><h4>Get Your Mapped Score</h4><p>The diagnostic. See your number, your level, and your weakest dimension.</p></div>
+      <div class="arw">→</div>
+      <div class="stepc"><div class="k">Step 2 · Project</div><h4>Build the System</h4><p>We redesign the operating model that lifts your score, with you.</p></div>
+      <div class="arw">→</div>
+      <div class="stepc"><div class="k">Step 3 · Retainer</div><h4>Stay Mapped</h4><p>Monthly clarity support to keep the organisation visible and improving.</p></div>
+    </div>
+  </div>
+
+  <p class="note" id="consentNote" style="display:none">Every Mapped Score contributes, with consent and anonymisation, to Africa's emerging organisational visibility benchmark. Benchmark figures shown are illustrative while the founding sample is being built.</p>
 </div>
 
-<div class="foot"><div class="wrap">A Meroë Africa product · The full, facilitated Clarity Index comes with a Clarity Sprint · <a href="https://mapped.africa">mapped.africa</a></div></div>
+<div class="foot"><div class="wrap">A Meroë Africa institution · The full, facilitated Mapped Score goes several layers deeper · <a href="https://mapped.africa">mapped.africa</a></div></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   "use strict";
 
-  // ---- Lead pipeline (unchanged from the self-check): n8n-first, FormSubmit fallback ----
+  // ---- Lead pipeline: n8n-first, FormSubmit fallback ----
   var ENDPOINT = "https://formsubmit.co/ajax/3af1ad71dd62748a71019e24ad0d840f";
   var N8N_ENDPOINT = ""; // paste your n8n production webhook URL here to route leads through n8n; blank = FormSubmit (zero risk)
 
-  var questions = [
-    "The business runs day to day without every decision going through the founder.",
-    "Our core processes are written down, not just kept in people’s heads.",
-    "A new hire can learn how we work from documentation, not only by shadowing.",
-    "The same task gets done the same way no matter who does it.",
-    "We can explain how the business makes money on a single page.",
-    "Roles are clear and everyone knows what they own.",
-    "We track a few key numbers and actually review them regularly.",
-    "Vendor and client terms are documented and up to date.",
-    "Growth has made things smoother, not more chaotic.",
-    "The founder could step away for two weeks and the business would keep running."
+  /* ============================================================
+     THE MAPPED SCORE™ v1.0 — FROZEN RULER
+     7 dimensions × 2 questions. 0 = Not yet, 1 = Getting there, 2 = Yes, solid.
+     Dimension score = (sum of its 2 answers ÷ 4) × 100.
+     Overall = mean of the 7 dimension scores, rounded.
+     Q4b (index 7) drives the founder-dependency flag.
+     Do NOT add, remove, or reword — they ARE the measurement.
+     ============================================================ */
+  var DIMS = [
+    {name:"Intent Clarity", short:"Intent", sub:"Does the organisation know what it is building, why, and what matters now?"},
+    {name:"Role & Accountability Clarity", short:"Roles", sub:"Does everyone know who owns what, and who decides?"},
+    {name:"Process Visibility", short:"Process", sub:"Can the organisation see how work actually happens?"},
+    {name:"Knowledge Transferability", short:"Knowledge", sub:"Can critical knowledge survive beyond individuals? Key-person and founder risk live here."},
+    {name:"Decision Quality", short:"Decisions", sub:"Are decisions clear, fast, traceable, and evidence-based?"},
+    {name:"Systems & Data Readiness", short:"Systems", sub:"Do tools, data, and operating systems support the work? Your AI-context readiness lives here."},
+    {name:"Learning & Adaptability", short:"Learning", sub:"Can the organisation improve itself continuously?"}
   ];
-  var pillars = [
-    {name:"Owner Independence", short:"Owner", qs:[0,9],
-     diag:"The business still needs you in the room to move.",
-     fix:"Write down the three decisions only you make today — and the one rule that would let someone else make them."},
-    {name:"Documented Knowledge", short:"Knowledge", qs:[1,2],
-     diag:"Your operating knowledge lives in people’s heads.",
-     fix:"Take your most-repeated task and document it once, step by step. That is your first real system."},
-    {name:"Process Consistency", short:"Consistency", qs:[3,7],
-     diag:"The same job gets done differently depending on who does it.",
-     fix:"Set one “this is how we do it here” standard for your highest-volume process and your client terms."},
-    {name:"Model & Roles", short:"Model", qs:[4,5],
-     diag:"How you make money — and who owns what — isn’t clear on a page.",
-     fix:"Draw the one-page money map and a simple who-owns-what before you hire again."},
-    {name:"Numbers & Scale", short:"Numbers", qs:[6,8],
-     diag:"You’re running on feel, and growth adds friction instead of removing it.",
-     fix:"Choose three numbers that tell you if the week went well, and review them every Monday."}
+  var QUESTIONS = [
+    "We can explain what we're building and why it matters now, on a single page.",
+    "Everyone senior agrees on our top priorities this quarter.",
+    "Everyone knows what they own and who makes each key decision.",
+    "When something falls through the cracks, it's clear whose job it was.",
+    "Our core workflows are written down, not just kept in people's heads.",
+    "We can see where work slows down or gets stuck.",
+    "A new hire can learn how we work from documentation, not only by shadowing.",
+    "The business could run for two weeks if the founder or a key person stepped away.",
+    "Important decisions are made quickly, with clear owners and evidence.",
+    "We can trace why a past decision was made.",
+    "Our tools and data give us reliable numbers without manual patching.",
+    "Our processes and data are organised enough that AI or automation could actually help.",
+    "We review how things went and act on what we learn, on a regular rhythm.",
+    "When a problem recurs, we fix the root cause, not just the symptom."
+  ];
+  var FOUNDER_Q = 7; // 0-based index of Q4b
+
+  var LEVELS = [
+    {max:20, name:"Invisible",         head:"The organisation runs on memory, improvisation, and individual effort.",
+     body:"Very little of how the business works can be seen, transferred, or improved on purpose. Making the engine visible is your single highest-return move."},
+    {max:40, name:"Founder-Dependent", head:"It works — but too much is trapped in people's heads.",
+     body:"The business functions because a few people carry it. That caps growth, funding, and automation until the knowledge is made transferable."},
+    {max:60, name:"Partially Visible", head:"Important systems exist, but visibility is uneven and fragile.",
+     body:"You have real foundations. The weak dimensions below are quietly capping your ability to scale, raise, and automate."},
+    {max:80, name:"Managed",           head:"The organisation is largely visible, documented, and improvable.",
+     body:"Strong. The work now is tightening the last gaps and locking the system so growth doesn't reintroduce chaos."},
+    {max:100,name:"Adaptive",          head:"The organisation can learn, scale, automate, and transfer knowledge with confidence.",
+     body:"Rare air. Protect it: keep the operating picture current as you grow, and use it as your edge for funding and AI."}
   ];
 
+  // Emerging Africa benchmark — ILLUSTRATIVE PLACEHOLDERS until the founding sample is real.
+  var BENCH = {overall:42, dims:[44,45,43,40,42,41,43]};
+
+  // ---- Build the quiz ----
   var quiz=document.getElementById('quiz');
-  questions.forEach(function(t,i){
-    var n=i+1, fs=document.createElement('fieldset');
+  QUESTIONS.forEach(function(t,i){
+    var n=i+1;
+    if(i%2===0){
+      var dh=document.createElement('div');dh.className='dimhead';
+      dh.textContent=(i/2+1)+' · '+DIMS[i/2].name;
+      quiz.appendChild(dh);
+    }
+    var fs=document.createElement('fieldset');
     fs.innerHTML='<legend><span class="n">'+n+'</span><span>'+t+'</span></legend>'+
       '<div class="opts">'+
       '<div class="opt"><input type="radio" id="q'+n+'a" name="q'+n+'" value="0"><label for="q'+n+'a">Not yet</label></div>'+
@@ -267,97 +378,135 @@
     quiz.appendChild(fs);
   });
 
-  function answeredCount(){var c=0;for(var i=1;i<=questions.length;i++){if(document.querySelector('input[name="q'+i+'"]:checked'))c++;}return c;}
+  function answeredCount(){var c=0;for(var i=1;i<=QUESTIONS.length;i++){if(document.querySelector('input[name="q'+i+'"]:checked'))c++;}return c;}
   var started=false;
   quiz.addEventListener('change',function(){
-    if(!started){started=true;try{gtag('event','quiz_start');}catch(e){}}
+    if(!started){started=true;try{gtag('event','mapped_score_started');}catch(e){}}
     var n=answeredCount();
-    document.getElementById('pfill').style.width=(n/questions.length*100)+'%';
-    document.getElementById('prog').textContent=n+' of '+questions.length+' answered';
+    document.getElementById('pfill').style.width=(n/QUESTIONS.length*100)+'%';
+    document.getElementById('prog').textContent=n+' of '+QUESTIONS.length+' answered';
     document.getElementById('quizErr').style.display='none';
   });
 
   function val(i){var s=document.querySelector('input[name="q'+(i+1)+'"]:checked');return s?parseInt(s.value,10):0;}
-  function label(v){return v===2?"Yes, solid":(v===1?"Getting there":"Not yet");}
-  function getCss(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
-  function colorFor(pct){return pct<50?getCss('--weak'):(pct<75?getCss('--mid'):getCss('--strong'));}
+  function albl(v){return v===2?"Yes, solid":(v===1?"Getting there":"Not yet");}
+  function levelFor(score){for(var i=0;i<LEVELS.length;i++){if(score<=LEVELS[i].max)return {idx:i,lvl:LEVELS[i]};}return {idx:4,lvl:LEVELS[4]};}
 
   document.getElementById('seeScore').addEventListener('click',function(){
-    if(answeredCount()<questions.length){document.getElementById('quizErr').style.display='block';return;}
+    if(answeredCount()<QUESTIONS.length){document.getElementById('quizErr').style.display='block';return;}
 
-    var total=0, answersText="";
-    for(var i=0;i<questions.length;i++){var v=val(i);total+=v;answersText+="Q"+(i+1)+": "+label(v)+"\n";}
-    var pct=Math.round(total/(questions.length*2)*100);
+    var answersText="";
+    for(var i=0;i<QUESTIONS.length;i++){answersText+="Q"+(i+1)+": "+albl(val(i))+"\n";}
 
-    var pdata=pillars.map(function(p){
-      var pts=val(p.qs[0])+val(p.qs[1]);
-      return {name:p.name,short:p.short,diag:p.diag,fix:p.fix,pct:Math.round(pts/4*100)};
+    // dimension scores
+    var ddata=DIMS.map(function(d,di){
+      var pts=val(di*2)+val(di*2+1);
+      return {name:d.name,short:d.short,sub:d.sub,score:Math.round(pts/4*100),bench:BENCH.dims[di]};
     });
+    var overall=Math.round(ddata.reduce(function(s,d){return s+d.score;},0)/ddata.length);
+    var L=levelFor(overall);
 
-    var band,interp,bandColor;
-    if(pct<40){band="Running on memory";interp="The business lives largely in people’s heads. The silent tax is high — and clarity is your single highest-return investment right now.";bandColor=getCss('--weak');}
-    else if(pct<70){band="Building structure";interp="You have real foundations and clear gaps. A focused Clarity Sprint would turn the loose parts into a system you can scale.";bandColor=getCss('--orange-dk');}
-    else{band="Clear and scaling";interp="Strong — you run on more than memory. A Sprint now tightens the last gaps and gets you investment and AI ready.";bandColor=getCss('--strong');}
+    // founder-dependency flag from Q4b
+    var fq=val(FOUNDER_Q);
+    var flag = fq===0?'High':(fq===1?'Medium':'Low');
+    var ktScore = ddata[3].score;
 
+    // weakest dimensions (lowest first)
+    var sorted=ddata.slice().sort(function(a,b){return a.score-b.score;});
+    var fixFirst=sorted[0].name;
+    var weakCount=ddata.filter(function(d){return d.score<d.bench;}).length;
+
+    // ---- render ----
     document.getElementById('quizCard').style.display='none';
     var res=document.getElementById('results');res.style.display='block';
-    document.getElementById('interp').textContent=interp;
-    var bt=document.getElementById('bandText');bt.textContent=band;bt.style.color=bandColor;
+    document.getElementById('flywheel').style.display='block';
+    document.getElementById('consentNote').style.display='block';
+
+    document.getElementById('lvlText').textContent='Level '+(L.idx+1)+' · '+L.lvl.name;
+    document.getElementById('lvlHead').textContent=L.lvl.head;
+    document.getElementById('interp').textContent=L.lvl.body;
 
     var sn=document.getElementById('scoreNum'),cur=0;
-    (function step(){cur+=Math.max(1,Math.ceil((pct-cur)/6));if(cur>=pct)cur=pct;sn.innerHTML=cur+'<small>%</small>';if(cur<pct)requestAnimationFrame(step);})();
+    (function step(){cur+=Math.max(1,Math.ceil((overall-cur)/6));if(cur>=overall)cur=overall;sn.innerHTML=cur+'<small>/100</small>';if(cur<overall)requestAnimationFrame(step);})();
 
-    var bars=document.getElementById('bars');bars.innerHTML='';
-    pdata.forEach(function(p){
-      var row=document.createElement('div');row.className='prow';
-      row.innerHTML='<span class="pn">'+p.name+'</span><span class="pv" style="color:'+colorFor(p.pct)+'">'+p.pct+'%</span><div class="track"><span></span></div>';
-      bars.appendChild(row);
-      var fill=row.querySelector('.track span');fill.style.background=colorFor(p.pct);
-      requestAnimationFrame(function(){setTimeout(function(){fill.style.width=p.pct+'%';},60);});
+    var pin=document.getElementById('gpin');
+    pin.style.left=overall+'%';pin.setAttribute('data-v','You · '+overall);
+
+    var fb=document.getElementById('flagbox');
+    fb.className='flagbox '+flag.toLowerCase();
+    document.getElementById('flagRisk').textContent='Founder-dependency: '+flag;
+    var ft=document.getElementById('flagText');
+    if(flag==='High'){ft.innerHTML='<b>The business still lives in your head.</b> Knowledge Transferability scored '+ktScore+'. This is the single biggest thing standing between you and a business that can scale, sell, or be handed over.';}
+    else if(flag==='Medium'){ft.innerHTML='<b>Parts of the business still depend on someone being in the room.</b> Knowledge Transferability scored '+ktScore+'. Keep moving knowledge out of heads and into systems.';}
+    else{ft.innerHTML='<b>The business can run without any single person.</b> Knowledge Transferability scored '+ktScore+'. Protect that as you scale — it is rarer than it should be.';}
+
+    var dimsEl=document.getElementById('dims');dimsEl.innerHTML='';
+    ddata.forEach(function(d,i){
+      var low=d.score<d.bench;
+      var el=document.createElement('div');el.className='dim';
+      el.innerHTML='<div class="dtop"><span class="dname">'+(i+1)+' · '+d.name+'</span><span class="dval'+(low?' low':'')+'">'+d.score+'</span></div>'+
+        '<div class="track"><div class="fill'+(low?' low':'')+'"></div><div class="tick" style="left:'+d.bench+'%"></div></div>'+
+        '<div class="dsub">'+d.sub+'</div>';
+      dimsEl.appendChild(el);
+      var fill=el.querySelector('.fill');
+      requestAnimationFrame(function(){setTimeout(function(){fill.style.width=d.score+'%';},80);});
     });
 
-    var weak=pdata.filter(function(p){return p.pct<75;}).sort(function(a,b){return a.pct-b.pct;}).slice(0,3);
-    var fx=document.getElementById('fixes');fx.innerHTML='';
-    if(weak.length===0){
-      fx.innerHTML='<div class="allclear"><b>No weak pillars.</b> Every part of your operating model scored solid. The value of a Sprint here is compounding — locking the system so growth, funding and AI don’t reintroduce chaos.</div>';
-    } else {
-      weak.forEach(function(p,idx){
-        var d=document.createElement('div');d.className='fix';
-        d.innerHTML='<div class="rank">0'+(idx+1)+'</div><div><h4>'+p.name+' · '+p.pct+'%</h4>'+
-          '<div class="diag">'+p.diag+'</div><div class="do"><b>Do this first:</b> '+p.fix+'</div></div>';
-        fx.appendChild(d);
-      });
-    }
+    var bt=document.getElementById('benchText');
+    bt.innerHTML='You score <b>'+overall+'</b>. The emerging African SME benchmark — illustrative while the founding sample is built — sits near <b>~'+BENCH.overall+'</b>. '+
+      (weakCount>0
+        ? 'Your <b>'+fixFirst+'</b> is your weakest dimension — that is the first thing a facilitated assessment would fix.'
+        : 'You sit at or above it on every dimension. The next step is locking that in.');
 
-    drawRadar(pdata);
+    drawRadar(ddata);
 
-    // stash everything the lead payload needs
-    var pillarsStr=pdata.map(function(p){return p.name+" "+p.pct+"%";}).join(" | ");
-    var focusStr=weak.map(function(p){return p.name;}).join(", ")||"None — all pillars solid";
-    window.__clarity={pct:pct,band:band,answersText:answersText,pillarsStr:pillarsStr,focusStr:focusStr,
-      pillars:pdata.map(function(p){return {name:p.name,pct:p.pct};})};
-    try{gtag('event','quiz_complete',{clarity_score:pct,band:band,weakest:(weak[0]?weak[0].name:'none')});}catch(e){}
+    // stash for the lead payload
+    var dimsStr=ddata.map(function(d){return d.name+" "+d.score;}).join(" | ");
+    window.__mapped={score:overall,level:L.lvl.name,levelIdx:L.idx+1,flag:flag,answersText:answersText,
+      dimsStr:dimsStr,fixFirst:fixFirst,
+      dims:ddata.map(function(d){return {name:d.name,score:d.score};})};
+    try{gtag('event','mapped_score_completed',{mapped_score:overall,level:L.lvl.name,founder_dependency:flag,fix_first:fixFirst});}catch(e){}
+
+    // personalise the book CTA
+    try{
+      var subj='Booking a facilitated assessment — Mapped Score '+overall+'/100 ('+L.lvl.name+')';
+      var body='Hi Mapped team, I just took the Mapped Score ('+overall+'/100, '+L.lvl.name+'). I\'d like to book a facilitated assessment to fix: '+fixFirst+'.';
+      var href='mailto:mappedafricameroeafrica@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+      document.getElementById('bookBtn').href=href;
+      document.getElementById('bookSprint').href=href;
+    }catch(e){}
 
     res.scrollIntoView({behavior:'smooth',block:'start'});
   });
 
-  function drawRadar(pdata){
+  // ---- radar: you vs illustrative benchmark ----
+  function drawRadar(ddata){
     var c=document.getElementById('radar'),dpr=window.devicePixelRatio||1;
-    var size=Math.min(c.parentElement.clientWidth||300,300);
-    c.width=size*dpr;c.height=size*dpr;c.style.width=size+'px';c.style.height=size+'px';
+    var w=Math.min(c.parentElement.clientWidth||560,560), h=Math.round(w*0.72);
+    c.width=w*dpr;c.height=h*dpr;c.style.width=w+'px';c.style.height=h+'px';
     var x=c.getContext('2d');x.scale(dpr,dpr);
-    var cx=size/2,cy=size/2,R=size/2-38,N=pdata.length;
-    function pt(a,r){return [cx+Math.cos(a)*r,cy+Math.sin(a)*r];}
-    x.clearRect(0,0,size,size);
-    for(var g=1;g<=4;g++){x.beginPath();for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,p=pt(a,R*g/4);i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]);}x.closePath();x.strokeStyle=g===4?'#c9d2e0':'#E6EAF1';x.lineWidth=1;x.stroke();}
-    x.fillStyle='#5B6472';x.font='600 11px -apple-system,Segoe UI,Arial';x.textAlign='center';x.textBaseline='middle';
-    for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,e=pt(a,R);x.beginPath();x.moveTo(cx,cy);x.lineTo(e[0],e[1]);x.strokeStyle='#E6EAF1';x.lineWidth=1;x.stroke();var lp=pt(a,R+20);x.fillText(pdata[i].short,lp[0],lp[1]);}
-    x.beginPath();for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,r=R*(pdata[i].pct/100),p=pt(a,r);i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]);}x.closePath();
-    x.fillStyle='rgba(240,128,16,.18)';x.fill();x.strokeStyle='#F08010';x.lineWidth=2.5;x.stroke();
-    for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N,r=R*(pdata[i].pct/100),p=pt(a,r);x.beginPath();x.arc(p[0],p[1],3.5,0,7);x.fillStyle='#C2660A';x.fill();x.strokeStyle='#fff';x.lineWidth=1.5;x.stroke();}
+    var cx=w/2,cy=h/2+4,R=Math.min(w,h)/2-46,N=ddata.length;
+    function pt(i,v){var a=-Math.PI/2+i*2*Math.PI/N,r=R*v/100;return [cx+r*Math.cos(a),cy+r*Math.sin(a)];}
+    x.clearRect(0,0,w,h);
+    [25,50,75,100].forEach(function(v){x.strokeStyle='#E7E9EE';x.lineWidth=1;x.beginPath();for(var i=0;i<=N;i++){var p=pt(i%N,v);i===0?x.moveTo(p[0],p[1]):x.lineTo(p[0],p[1]);}x.closePath();x.stroke();});
+    for(var i=0;i<N;i++){var p=pt(i,100);x.strokeStyle='#E7E9EE';x.beginPath();x.moveTo(cx,cy);x.lineTo(p[0],p[1]);x.stroke();
+      var lp=pt(i,119);x.fillStyle='#6B7280';x.font='600 12px -apple-system,Arial';
+      x.textAlign=(Math.abs(lp[0]-cx)<12?'center':(lp[0]<cx?'right':'left'));x.textBaseline='middle';
+      x.fillText(ddata[i].short,lp[0],lp[1]);}
+    function poly(vals,st,fl,dash){x.beginPath();for(var i=0;i<N;i++){var p=pt(i,vals[i]);i===0?x.moveTo(p[0],p[1]):x.lineTo(p[0],p[1]);}x.closePath();x.setLineDash(dash?[5,4]:[]);x.strokeStyle=st;x.lineWidth=2;if(fl){x.fillStyle=fl;x.fill();}x.stroke();x.setLineDash([]);}
+    poly(ddata.map(function(d){return d.bench;}),'#3B82F6','rgba(59,130,246,0.05)',true);
+    poly(ddata.map(function(d){return d.score;}),'#F08010','rgba(240,128,16,0.18)',false);
+    for(var i=0;i<N;i++){var p=pt(i,ddata[i].score);x.fillStyle='#F08010';x.beginPath();x.arc(p[0],p[1],3,0,6.3);x.fill();}
   }
 
-  // ---- Lead capture: n8n-first, FormSubmit fallback (mirrors clarity self-check) ----
+  // GA: book + publication events
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a');if(!a)return;
+    if(a.id==='bookBtn'||a.id==='bookSprint'){try{gtag('event','book_assessment_click',{mapped_score:(window.__mapped||{}).score||null});}catch(x){}}
+    if(a.hasAttribute('data-pub')){try{gtag('event','publication_download',{publication:a.getAttribute('data-pub')});}catch(x){}}
+  });
+
+  // ---- Lead capture: n8n-first, FormSubmit fallback ----
   document.getElementById('lead').addEventListener('submit',function(ev){
     ev.preventDefault();
     var leadBtn=document.getElementById('leadBtn'), leadErr=document.getElementById('leadErr');
@@ -365,25 +514,24 @@
     var name=document.getElementById('lname').value.trim();
     var honey=document.querySelector('input[name="_honey"]').value;
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){leadErr.textContent="Please add a valid email.";leadErr.style.display='block';return;}
-    if(honey){document.getElementById('captureBlock').style.display='none';document.getElementById('deeper').style.display='none';document.getElementById('thanks').style.display='block';return;}
+    if(honey){document.getElementById('captureBlock').style.display='none';document.getElementById('thanks').style.display='block';return;}
 
-    var c=window.__clarity||{pct:0,band:"",answersText:"",pillarsStr:"",focusStr:""};
+    var m=window.__mapped||{score:0,level:"",flag:"",answersText:"",dimsStr:"",fixFirst:""};
     leadBtn.textContent='Sending...';leadBtn.disabled=true;
 
-    var auto="Hi, and thanks for taking the Mapped Clarity Index.\n\nYour Clarity Score is "+c.pct+"% ("+c.band+").\n\nYour five-pillar profile:\n"+c.pillarsStr+"\n\nFix first: "+c.focusStr+".\n\nWhat this means: the lower a pillar scores, the more of that part of the business lives in people's heads — which quietly caps growth, funding and the ability to automate. The fix is to make the engine visible.\n\nHere is your guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhen you are ready for the full, facilitated Clarity Index and a plan to fix your top gaps, reply to this email or book a Clarity Sprint at https://mapped.africa\n\nTalk soon,\nThe Mapped team at Meroe Africa";
+    var auto="Hi, and thanks for taking the Mapped Score.\n\nYour Mapped Score is "+m.score+"/100 ("+m.level+").\nFounder-dependency: "+m.flag+".\n\nYour seven dimensions:\n"+m.dimsStr+"\n\nFix first: "+m.fixFirst+".\n\nWhat this means: the lower a dimension scores, the more of that part of the organisation lives in people's heads — which quietly caps growth, funding and the ability to automate. The fix is to make the engine visible.\n\nHere is your guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhen you are ready for the full, facilitated Mapped Score and a plan to fix your top gaps, reply to this email or book an assessment at https://mapped.africa\n\nTalk soon,\nThe Mapped team at Meroe Africa";
 
     var fsPayload={
       name:name, email:email,
-      clarity_score:c.pct+"%", band:c.band,
-      pillars:c.pillarsStr, fix_first:c.focusStr, answers:c.answersText,
-      _subject:"New Clarity Index lead, score "+c.pct+"% ("+c.band+")",
+      mapped_score:m.score+"/100", level:m.level, founder_dependency:m.flag,
+      dimensions:m.dimsStr, fix_first:m.fixFirst, answers:m.answersText,
+      _subject:"New Mapped Score lead, "+m.score+"/100 ("+m.level+")",
       _template:"table", _captcha:"false", _autoresponse:auto
     };
-    var n8nPayload={source:"clarity-index",name:name,email:email,clarity_score:c.pct,band:c.band,pillars:c.pillars,fix_first:c.focusStr,answers:c.answersText,page:location.href};
+    var n8nPayload={source:"mapped-score",name:name,email:email,mapped_score:m.score,level:m.level,founder_flag:m.flag,dimensions:m.dims,fix_first:m.fixFirst,answers:m.answersText,page:location.href};
 
-    function ok(){try{gtag('event','generate_lead',{clarity_score:c.pct,band:c.band});}catch(e){}
-      try{var bs=document.getElementById('bookSprint');if(bs){bs.href='mailto:mappedafricameroeafrica@gmail.com?subject='+encodeURIComponent('Booking a Clarity Sprint — '+c.pct+'% ('+c.band+')')+'&body='+encodeURIComponent('Hi Mapped team, I just took the Clarity Index (score '+c.pct+'%, '+c.band+'). I\'d like to book a Clarity Sprint to fix: '+c.focusStr+'.');}}catch(e){}
-      document.getElementById('captureBlock').style.display='none';document.getElementById('deeper').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth',block:'center'});}
+    function ok(){try{gtag('event','generate_lead',{mapped_score:m.score,level:m.level});}catch(e){}
+      document.getElementById('captureBlock').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth',block:'center'});}
     function fail(){leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.';leadErr.style.display='block';}
     function done(){leadBtn.textContent='Send my breakdown';leadBtn.disabled=false;}
     function viaFormSubmit(){
