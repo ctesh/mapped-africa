@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the Mapped Operational Rating works — Methodology | Mapped</title>
+<meta name="description" content="We publish our logic. Seven dimensions, evidence-weighted scoring and five operating bands — exactly how your Mapped Operational Rating is produced.">
+<link rel="canonical" href="https://mapped.africa/method.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How the Mapped Operational Rating works — Methodology">
+<meta property="og:description" content="We publish our logic. Seven dimensions, evidence-weighted scoring and five operating bands — exactly how your Mapped Operational Rating is produced.">
+<meta property="og:url" content="https://mapped.africa/method.html">
+<meta property="og:image" content="https://mapped.africa/og-image.png">
+<link rel="icon" href="favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SB3C0THX1W"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SB3C0THX1W');</script>
+<style>
+  :root{
+    --ink:#141009; --ink2:#4A423A; --mut:#8A8073; --line:#E4DED3; --line2:#D8D0C2;
+    --paper:#FBFAF7; --card:#FFFFFF; --accent:#B4530F; --pass:#2C4E86; --gold:#C7A35B;
+    --b-found:#9A9084; --b-emerg:#C98A1E; --b-scale:#2E7D64; --b-invest:#2C4E86; --b-inst:#1B1B1B;
+    --serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .navin{max-width:920px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:9px}
+  .mk{width:26px;height:26px;background:var(--accent);border-radius:6px;display:grid;place-items:center;color:#fff;font-weight:800;font-family:var(--serif)}
+  .brand b{font-family:var(--serif);font-size:1.1rem}
+  .nav-links{display:flex;gap:22px;font-size:.86rem;color:var(--ink2)}
+  .nav-links a{text-decoration:none;opacity:.85}
+  @media(max-width:760px){.nav-links{display:none}}
+  .btn{display:inline-block;font-weight:700;border-radius:9px;padding:11px 20px;background:var(--accent);color:#fff;border:2px solid var(--accent);text-decoration:none;font-size:.9rem}
+  .btn.sm{padding:9px 16px;font-size:.82rem}
+  .btn.big{padding:15px 30px;font-size:1rem}
+  .hero{padding:60px 0 40px;text-align:center}
+  .ey{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .hero h1{font-family:var(--serif);font-size:2.6rem;line-height:1.1;margin:14px auto 0;max-width:18ch;letter-spacing:-.01em}
+  .hero p{font-size:1.1rem;color:var(--ink2);max-width:52ch;margin:16px auto 0}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .kL{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .h2{font-family:var(--serif);font-size:1.7rem;margin:8px 0 6px;letter-spacing:-.01em}
+  .lead{color:var(--ink2);max-width:64ch;font-size:1.02rem}
+  .dims{margin-top:22px;border:1px solid var(--line2);border-radius:12px;overflow:hidden}
+  .drow{display:grid;grid-template-columns:34px 1fr;gap:0;align-items:center;padding:13px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+  .drow:last-child{border-bottom:none}
+  .drow .num{font-family:var(--serif);color:var(--mut);font-size:1rem}
+  .drow b{font-size:1rem} .drow span{color:var(--ink2);font-size:.9rem}
+  .weights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+  @media(max-width:640px){.weights{grid-template-columns:1fr}}
+  .wt{background:var(--card);border:1px solid var(--line2);border-radius:12px;padding:20px}
+  .wt .p{font-family:var(--serif);font-size:2rem;color:var(--accent)}
+  .wt b{display:block;margin-top:4px}.wt span{font-size:.88rem;color:var(--ink2)}
+  .formula{margin-top:18px;background:var(--ink);color:#F0E7D2;border-radius:10px;padding:16px 20px;font-family:var(--serif);font-size:1.05rem;text-align:center}
+  .formula em{color:var(--gold);font-style:normal}
+  .ladder{margin-top:18px;border:1px solid var(--line2);border-radius:12px;overflow:hidden}
+  .rung{display:grid;grid-template-columns:230px 84px 1fr;align-items:center;padding:13px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+  .rung:last-child{border-bottom:none}
+  @media(max-width:640px){.rung{grid-template-columns:1fr}}
+  .rung .bn{font-family:var(--serif);font-size:1.02rem}.rung .rg{color:var(--mut);font-size:.86rem}.rung .dsc{color:var(--ink2);font-size:.86rem}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:9px;vertical-align:1px}
+  .d1{background:var(--b-found)}.d2{background:var(--b-emerg)}.d3{background:var(--b-scale)}.d4{background:var(--b-invest)}.d5{background:var(--b-inst)}
+  .note{margin-top:12px;font-size:.9rem;color:var(--pass);font-style:italic}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line2);border-radius:10px;padding:16px 18px}
+  .box b{font-size:.96rem}.box p{font-size:.88rem;color:var(--ink2);margin-top:5px}
+  .limits{margin-top:22px;border:1px solid var(--line2);border-left:4px solid var(--pass);background:var(--card);border-radius:8px;padding:18px 22px}
+  .limits li{list-style:none;padding:6px 0;font-size:.94rem;display:flex;gap:10px}
+  .limits li b{color:var(--pass)}
+  .finalcta{text-align:center;padding:52px 0}
+  .finalcta h2{font-family:var(--serif);font-size:1.9rem;max-width:22ch;margin:0 auto 20px}
+  footer{background:var(--ink);color:#8A8073;padding:26px 0;font-size:.76rem}
+  footer .fin{max-width:920px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav><div class="navin">
+  <div class="brand"><span class="mk">M</span><b>MAPPED</b></div>
+  <div class="nav-links"><a href="index.html">Home</a><a href="clarity-check.html">Mapped Score</a><a href="method.html">Method</a><a href="press.html">Research</a></div>
+  <a class="btn sm" href="rating.html">Get Rated</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="ey">Methodology</div>
+  <h1>How the Mapped Operational Rating works.</h1>
+  <p>We publish our logic on purpose. A rating is only worth carrying if you can see how it was reached. Here is exactly how yours is produced.</p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="kL">Step 1 — What we measure</div>
+  <h2 class="h2">Seven dimensions of organisational maturity.</h2>
+  <p class="lead">Every rating assesses the same seven dimensions — the parts of an organisation that determine whether it can scale beyond the people who built it.</p>
+  <div class="dims">
+    <div class="drow"><span class="num">1</span><div><b>Intent Clarity</b> &nbsp;<span>— knows what it is building, why, and what matters now.</span></div></div>
+    <div class="drow"><span class="num">2</span><div><b>Role &amp; Accountability Clarity</b> &nbsp;<span>— who owns what, who decides.</span></div></div>
+    <div class="drow"><span class="num">3</span><div><b>Process Visibility</b> &nbsp;<span>— how work actually happens.</span></div></div>
+    <div class="drow"><span class="num">4</span><div><b>Knowledge Transferability</b> &nbsp;<span>— knowledge survives beyond individuals.</span></div></div>
+    <div class="drow"><span class="num">5</span><div><b>Decision Quality</b> &nbsp;<span>— decisions are clear, fast, owned, traceable.</span></div></div>
+    <div class="drow"><span class="num">6</span><div><b>Systems &amp; Data Readiness</b> &nbsp;<span>— reliable tools, data and reporting.</span></div></div>
+    <div class="drow"><span class="num">7</span><div><b>Learning &amp; Adaptability</b> &nbsp;<span>— the organisation improves itself on a rhythm.</span></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">Step 2 — How each dimension is scored</div>
+  <h2 class="h2">Declared, evidenced, and coherent.</h2>
+  <p class="lead">Each dimension blends three views. Evidence carries the most weight — that is what makes this a rating, not a survey.</p>
+  <div class="weights">
+    <div class="wt"><div class="p">30%</div><b>Declared</b><span>What you tell us in your answers.</span></div>
+    <div class="wt"><div class="p">50%</div><b>Evidence</b><span>What your documents and data actually prove.</span></div>
+    <div class="wt"><div class="p">20%</div><b>Coherence</b><span>How well the story, evidence and reality align.</span></div>
+  </div>
+  <div class="formula">Dimension score &nbsp;=&nbsp; Declared <em>×0.30</em> &nbsp;+&nbsp; Evidence <em>×0.50</em> &nbsp;+&nbsp; Coherence <em>×0.20</em></div>
+  <p class="lead" style="margin-top:16px">Each rating is produced and verified by a Mapped assessor against a fixed rubric — not generated automatically. The overall <b>Mapped Score (0–100)</b> is the average of the seven dimension scores.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">Step 3 — The band</div>
+  <h2 class="h2">Your score places you on one of five bands.</h2>
+  <div class="ladder">
+    <div class="rung"><div class="bn"><span class="dot d1"></span>Founder-Memory Driven</div><div class="rg">0–39</div><div class="dsc">Works because key people remember how it works.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d2"></span>Emerging System</div><div class="rg">40–59</div><div class="dsc">Some structure, but still uneven and informal.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d3"></span>Scaling Foundation</div><div class="rg">60–74</div><div class="dsc">Enough to grow — specific gaps to close first.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d4"></span>Investment-Grade Operations</div><div class="rg">75–89</div><div class="dsc">Visible systems; scales beyond individual effort.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d5"></span>Institution-Ready</div><div class="rg">90–100</div><div class="dsc">Mature, transferable, measurable, resilient.</div></div>
+  </div>
+  <p class="note">The ready-to-scale passmark is 70. Investment-Grade Operations begins at 75.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">Step 4 — Confidence, flag &amp; outlook</div>
+  <h2 class="h2">Every rating shows how it was reached.</h2>
+  <div class="grid2">
+    <div class="box"><b>Evidence confidence</b><p>Based on how many of the seven dimensions were backed by real evidence: none → Bronze, some → Silver, most or all → Gold, and Gold with a repeat assessment → Platinum.</p></div>
+    <div class="box"><b>Founder-dependency signal</b><p>Drawn from whether the business could run without a key person: untested → High, short-absence-only → Medium, tested → Low. Surfaced on its own because it is the headline risk to scale.</p></div>
+    <div class="box"><b>Rating outlook</b><p>Positive if a clear 90-day path lifts you through the passmark or up a band; Stable if you are past it and holding; Negative where dependency is high and several dimensions sit low.</p></div>
+    <div class="box"><b>Your roadmap</b><p>The three dimensions furthest below the passmark become your prioritised moves. Closing a gap of X points adds X ÷ 7 to your overall — so the projected climb is a straight recalculation, not a guess.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">What we don't claim</div>
+  <h2 class="h2">The honest limits.</h2>
+  <ul class="limits">
+    <li><b>—</b> A higher rating does not guarantee better business performance. It indicates stronger operational visibility and readiness, based on the evidence reviewed.</li>
+    <li><b>—</b> Benchmark and percentile figures become live only once enough verified assessments exist. Until then, they are shown as pending — never invented.</li>
+    <li><b>—</b> Specific scoring weights are held, but the dimensions, bands and logic on this page are the whole method. Transparency is the point.</li>
+  </ul>
+</div></section>
+
+<div class="finalcta"><div class="wrap">
+  <h2>See where your organisation stands.</h2>
+  <a class="btn big" href="rating.html">Get your Rating</a>
+</div></div>
+
+<footer><div class="fin">
+  <span>MAPPED · mapped.africa · Building practical systems for organisational understanding.</span>
+  <span>Method · Mapped Operational Rating™ v1.0</span>
+</div></footer>
+</body>
+</html>

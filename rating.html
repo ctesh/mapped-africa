@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapped Operational Rating™ — can your organisation scale? | Mapped</title>
+<meta name="description" content="An evidence-based rating of how ready your organisation is to scale beyond founder memory. Seven dimensions, five bands, issued as a private credential.">
+<link rel="canonical" href="https://mapped.africa/rating.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mapped Operational Rating™ — can your organisation scale?">
+<meta property="og:description" content="An evidence-based rating of how ready your organisation is to scale beyond founder memory. Seven dimensions, five bands, issued as a private credential.">
+<meta property="og:url" content="https://mapped.africa/rating.html">
+<meta property="og:image" content="https://mapped.africa/og-image.png">
+<link rel="icon" href="favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SB3C0THX1W"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SB3C0THX1W');</script>
+<style>
+  :root{
+    --ink:#141009; --ink2:#4A423A; --mut:#8A8073; --line:#E4DED3; --line2:#D8D0C2;
+    --paper:#FBFAF7; --card:#FFFFFF; --accent:#B4530F; --accent2:#C2660A; --pass:#2C4E86; --gold:#C7A35B;
+    --b-found:#9A9084; --b-emerg:#C98A1E; --b-scale:#2E7D64; --b-invest:#2C4E86; --b-inst:#1B1B1B;
+    --serif:'Iowan Old Style','Palatino Linotype','Book Antiqua',Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .navin{max-width:1000px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:9px}
+  .mk{width:26px;height:26px;background:var(--accent);border-radius:6px;display:grid;place-items:center;color:#fff;font-weight:800;font-family:var(--serif)}
+  .brand b{font-family:var(--serif);font-size:1.1rem;letter-spacing:.02em}
+  .nav-links{display:flex;gap:22px;font-size:.86rem;color:var(--ink2)}
+  .nav-links a{opacity:.8;text-decoration:none}
+  @media(max-width:760px){.nav-links{display:none}}
+  .btn{display:inline-block;font-weight:700;border-radius:9px;padding:11px 20px;background:var(--accent);color:#fff;border:2px solid var(--accent);cursor:pointer;font-size:.9rem;text-decoration:none}
+  .btn.sm{padding:9px 16px;font-size:.82rem}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+  .btn.big{padding:15px 30px;font-size:1rem}
+  .hero{padding:70px 0 54px;text-align:center}
+  .ey{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .hero h1{font-family:var(--serif);font-size:3rem;line-height:1.08;letter-spacing:-.015em;margin:16px auto 0;max-width:16ch}
+  @media(max-width:640px){.hero h1{font-size:2.1rem}}
+  .hero p.sub{font-size:1.14rem;color:var(--ink2);max-width:52ch;margin:18px auto 0}
+  .cta-row{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .trust{margin-top:22px;font-size:.8rem;color:var(--mut);letter-spacing:.02em}
+  .trust b{color:var(--ink2)}
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  .kL{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-align:center}
+  .h2{font-family:var(--serif);font-size:1.9rem;text-align:center;margin:10px auto 8px;max-width:22ch;letter-spacing:-.01em}
+  .lead{text-align:center;color:var(--ink2);max-width:56ch;margin:0 auto;font-size:1.02rem}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+  @media(max-width:640px){.two{grid-template-columns:1fr}}
+  .cardx{background:var(--card);border:1px solid var(--line2);border-radius:14px;padding:24px 26px}
+  .cardx.free{opacity:.9}
+  .cardx .t{font-family:var(--serif);font-size:1.2rem}
+  .cardx .tag{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:10px}
+  .tag.f{background:#EFEAE0;color:var(--mut)} .tag.p{background:#F4E9DE;color:var(--accent)}
+  .cardx p{font-size:.94rem;color:var(--ink2);margin-top:8px}
+  .effort{text-align:center;margin-top:26px;font-family:var(--serif);font-style:italic;font-size:1.24rem;color:var(--ink)}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  .step{background:var(--card);border:1px solid var(--line2);border-radius:12px;padding:18px 16px}
+  .step .n{width:26px;height:26px;border-radius:50%;background:var(--ink);color:#EAD9A8;display:grid;place-items:center;font-weight:800;font-size:.8rem;font-family:var(--serif)}
+  .step b{display:block;margin:10px 0 5px;font-size:.96rem}
+  .step p{font-size:.82rem;color:var(--ink2)}
+  .ladder{margin-top:32px;border:1px solid var(--line2);border-radius:12px;overflow:hidden}
+  .rung{display:grid;grid-template-columns:230px 84px 1fr;align-items:center;padding:15px 22px;border-bottom:1px solid var(--line);background:var(--card)}
+  .rung:last-child{border-bottom:none}
+  @media(max-width:640px){.rung{grid-template-columns:1fr;gap:2px}}
+  .rung .bn{font-family:var(--serif);font-size:1.06rem;font-weight:600}
+  .rung .rg{font-variant-numeric:tabular-nums;color:var(--mut);font-size:.86rem}
+  .rung .dsc{font-size:.86rem;color:var(--ink2)}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:9px;vertical-align:1px}
+  .d1{background:var(--b-found)}.d2{background:var(--b-emerg)}.d3{background:var(--b-scale)}.d4{background:var(--b-invest)}.d5{background:var(--b-inst)}
+  .passnote{text-align:center;margin-top:14px;font-size:.9rem;color:var(--pass);font-style:italic}
+  .receive{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center;margin-top:32px}
+  @media(max-width:720px){.receive{grid-template-columns:1fr}}
+  .cred{background:#141009;color:#F0E7D2;border-radius:12px;padding:26px 26px 30px;box-shadow:0 22px 60px rgba(20,16,9,.28)}
+  .cred .cp{font-family:var(--serif);font-size:1.1rem;color:#fff}
+  .cred .cc{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:8px}
+  .cred .rl{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:#9C927A;margin-top:22px}
+  .cred .rr{font-family:var(--serif);font-size:1.9rem;color:#fff;margin-top:5px}
+  .cred .grid{display:flex;gap:0;margin-top:18px;border-top:1px solid #33291890;padding-top:14px}
+  .cred .grid div{flex:1}
+  .cred .grid .k{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:#9C927A}
+  .cred .grid .v{font-family:var(--serif);font-size:1rem;color:#F0E7D2;margin-top:3px}
+  .rlist{list-style:none}
+  .rlist li{padding:9px 0;border-bottom:1px solid var(--line);font-size:.98rem;display:flex;gap:11px}
+  .rlist li:last-child{border-bottom:none}
+  .rlist .ck{color:var(--b-scale);font-weight:800}
+  .conf{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px}
+  @media(max-width:640px){.conf{grid-template-columns:1fr 1fr}}
+  .ct{background:var(--card);border:1px solid var(--line2);border-radius:10px;padding:14px 16px}
+  .ct b{font-size:.92rem}.ct p{font-size:.8rem;color:var(--ink2);margin-top:4px}
+  .price{max-width:520px;margin:34px auto 0;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:30px 30px 34px;text-align:center;box-shadow:0 20px 50px rgba(20,16,9,.1)}
+  .price .amt{font-family:var(--serif);font-size:2.8rem;letter-spacing:-.01em}
+  .price .amt small{font-size:1rem;color:var(--mut)}
+  .price .dp{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-top:4px}
+  .price ul{list-style:none;text-align:left;margin:22px auto 0;max-width:340px}
+  .price li{padding:7px 0;font-size:.94rem;display:flex;gap:10px}
+  .price .ck{color:var(--b-scale);font-weight:800}
+  .price .btn{margin-top:24px}
+  .price .pay{margin-top:12px;font-size:.78rem;color:var(--mut)}
+  .faq{max-width:720px;margin:30px auto 0}
+  .qa{border-bottom:1px solid var(--line);padding:16px 0}
+  .qa b{font-size:1rem}.qa p{font-size:.92rem;color:var(--ink2);margin-top:6px}
+  .method{text-align:center;font-size:.8rem;color:var(--mut);max-width:70ch;margin:24px auto 0;line-height:1.7}
+  .finalcta{text-align:center;padding:58px 0}
+  .finalcta h2{font-family:var(--serif);font-size:2.1rem;max-width:20ch;margin:0 auto 22px}
+  footer{background:var(--ink);color:#8A8073;padding:26px 0;font-size:.76rem}
+  footer .fin{max-width:1000px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav><div class="navin">
+  <div class="brand"><span class="mk">M</span><b>MAPPED</b></div>
+  <div class="nav-links"><a href="index.html">Home</a><a href="clarity-check.html">Mapped Score</a><a href="method.html">Method</a><a href="press.html">Research</a></div>
+  <a class="btn sm" href="#start">Get Rated</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="ey">Mapped Operational Rating™</div>
+  <h1>Know whether your organisation can survive its next stage of growth.</h1>
+  <p class="sub">An evidence-based rating of how ready your business is to scale beyond founder memory, informal systems and undocumented work. Not a survey — a rating, grounded in your own evidence.</p>
+  <div class="cta-row">
+    <a class="btn big" href="#start">Start my Rating</a>
+    <a class="btn big ghost" href="#sample">See a sample rating</a>
+  </div>
+  <div class="trust"><b>Evidence-based</b> · 7 dimensions · issued as a private credential · pay by <b>M-Pesa or card</b></div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="kL">Why it's different</div>
+  <h2 class="h2">A free snapshot asks your opinion. A rating asks for evidence.</h2>
+  <p class="lead">The free Mapped Score gives you an indication. The Operational Rating scores what you can <em>show</em> against what you <em>say</em> — and the gap between the two is the insight most founders have never seen.</p>
+  <div class="two">
+    <div class="cardx free"><span class="tag f">Free · Mapped Score</span><div class="t">The Snapshot</div><p>A two-minute self-assessment. Indicative. Reveals roughly where you're strong and weak. A door, not a diagnosis.</p></div>
+    <div class="cardx"><span class="tag p">Paid · Operational Rating</span><div class="t">The Verified Rating</div><p>You submit real documents, numbers and structure. We verify, rate, benchmark against the ready-to-scale line, and hand you a 90-day roadmap. A credential you can carry.</p></div>
+  </div>
+  <div class="effort">"The effort is the point."</div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">How it works</div>
+  <h2 class="h2">Five steps from evidence to rating.</h2>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><b>Submit</b><p>Answer the questions and upload your evidence.</p></div>
+    <div class="step"><div class="n">2</div><b>Review</b><p>We assess it across seven dimensions.</p></div>
+    <div class="step"><div class="n">3</div><b>Score</b><p>Declared 30% · Evidence 50% · Coherence 20%.</p></div>
+    <div class="step"><div class="n">4</div><b>Rate</b><p>Score, Band, Confidence and Outlook — issued.</p></div>
+    <div class="step"><div class="n">5</div><b>Roadmap</b><p>A 90-day plan, and a re-rating to prove the climb.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">The ladder</div>
+  <h2 class="h2">Every organisation sits on one of five bands.</h2>
+  <p class="lead">You're not chasing a number. You're climbing toward an identity — and everyone can see the next rung.</p>
+  <div class="ladder">
+    <div class="rung"><div class="bn"><span class="dot d1"></span>Founder-Memory Driven</div><div class="rg">0–39</div><div class="dsc">Works because key people remember how it works.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d2"></span>Emerging System</div><div class="rg">40–59</div><div class="dsc">Some structure, but still uneven and informal.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d3"></span>Scaling Foundation</div><div class="rg">60–74</div><div class="dsc">Enough to grow — specific gaps to close first.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d4"></span>Investment-Grade Operations</div><div class="rg">75–89</div><div class="dsc">Visible systems; scales beyond individual effort.</div></div>
+    <div class="rung"><div class="bn"><span class="dot d5"></span>Institution-Ready</div><div class="rg">90–100</div><div class="dsc">Mature, transferable, measurable, resilient.</div></div>
+  </div>
+  <div class="passnote">Ready-to-scale passmark: 70 · Investment-Grade begins at 75.</div>
+</div></section>
+
+<section id="sample"><div class="wrap">
+  <div class="kL">What you receive</div>
+  <h2 class="h2">A private, issued credential — not a slide deck.</h2>
+  <div class="receive">
+    <div class="cred">
+      <div class="cp">Mapped Operational Rating™</div>
+      <div class="cc">Private &amp; Confidential</div>
+      <div class="rl">Official Rating</div>
+      <div class="rr">Scaling Foundation</div>
+      <div class="grid">
+        <div><div class="k">Score</div><div class="v">64 / 100</div></div>
+        <div><div class="k">Confidence</div><div class="v">Silver</div></div>
+        <div><div class="k">Outlook</div><div class="v">Positive</div></div>
+      </div>
+    </div>
+    <ul class="rlist">
+      <li><span class="ck">✓</span> Your official rating, band and evidence-confidence level</li>
+      <li><span class="ck">✓</span> A one-paragraph rating opinion in board language</li>
+      <li><span class="ck">✓</span> All seven dimensions, scored against the passmark</li>
+      <li><span class="ck">✓</span> Your founder-dependency signal — the constraint on scale</li>
+      <li><span class="ck">✓</span> The three highest-impact moves, quantified</li>
+      <li><span class="ck">✓</span> A 90-day roadmap and a re-rating to verify the climb</li>
+    </ul>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">Evidence confidence</div>
+  <h2 class="h2">Every rating shows how sure we are.</h2>
+  <div class="conf">
+    <div class="ct"><b>Bronze</b><p>Self-declared only.</p></div>
+    <div class="ct"><b>Silver</b><p>Basic evidence reviewed.</p></div>
+    <div class="ct"><b>Gold</b><p>Strong evidence across most dimensions.</p></div>
+    <div class="ct"><b>Platinum</b><p>Evidence plus repeated assessment.</p></div>
+  </div>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <div class="kL">Get rated</div>
+  <h2 class="h2">Your rating, this week.</h2>
+  <div class="price">
+    <div class="amt">KES 13,000 <small>/ USD 100</small></div>
+    <div class="dp">Introductory design-partner price</div>
+    <ul>
+      <li><span class="ck">✓</span> Full evidence-based Operational Rating</li>
+      <li><span class="ck">✓</span> Issued credential (PDF) + rating opinion</li>
+      <li><span class="ck">✓</span> 90-day roadmap of prioritised fixes</li>
+      <li><span class="ck">✓</span> A re-rating to track your climb</li>
+    </ul>
+    <a class="btn big" href="mailto:mappedafricameroeafrica@gmail.com?subject=Request%20a%20Mapped%20Operational%20Rating" onclick="try{gtag('event','rating_request_click')}catch(e){}">Begin my Rating</a>
+    <div class="pay">Secure payment by M-Pesa or card · you'll complete the intake right after</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kL">Questions</div>
+  <h2 class="h2">Before you start.</h2>
+  <div class="faq">
+    <div class="qa"><b>How is this different from the free Mapped Score?</b><p>The free Score is a quick self-assessment. The Operational Rating is evidence-based — you submit real documents and data, and the rating reflects what you can prove, not just what you say.</p></div>
+    <div class="qa"><b>How long does it take?</b><p>About 45–60 minutes to complete the intake and gather evidence. Your rating is returned shortly after review.</p></div>
+    <div class="qa"><b>Is my information safe?</b><p>Yes. Everything is held with consent and kept confidential. Data only ever contributes to benchmarking in anonymised, aggregate form, and never identifiably without your written permission.</p></div>
+    <div class="qa"><b>What if my rating is low?</b><p>That's the point of starting — the roadmap shows exactly what to fix to climb, and the re-rating proves you did.</p></div>
+  </div>
+  <div class="method">A higher rating does not guarantee better business performance — it indicates stronger operational visibility and readiness, based on the evidence reviewed. Methodology (dimensions, bands and logic) is published openly; specific weights are held. Benchmark figures become live once enough verified assessments exist.</div>
+</div></section>
+
+<div class="finalcta"><div class="wrap">
+  <h2>Stop guessing whether you're ready to scale. Get rated.</h2>
+  <a class="btn big" href="#start">Start my Rating</a>
+</div></div>
+
+<footer><div class="fin">
+  <span>MAPPED · mapped.africa · Building practical systems for organisational understanding.</span>
+  <span>Mapped Operational Rating™ · v1.0</span>
+</div></footer>
+</body>
+</html>
