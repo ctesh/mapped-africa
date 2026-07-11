@@ -223,7 +223,7 @@
       <div>
         <h2 id="lvlHead">Your Mapped Score</h2>
         <p id="interp"></p>
-        <div class="tier">This is your free indicative Mapped Score. The full facilitated Score goes several layers deeper.</div>
+        <div class="tier">This is your free, indicative Mapped Score. The Mapped Operational Rating is evidence-based — you submit real documents and receive an issued credential.</div>
       </div>
     </div>
 
@@ -267,7 +267,7 @@
     </div>
     <div class="capture" id="captureBlock">
       <h3>Get your full breakdown</h3>
-      <p class="s">We'll email your dimension-by-dimension breakdown, your founder-dependency read, and the <b>7 Signs</b> guide. The full facilitated Score and the rebuild come after.</p>
+      <p class="s">We'll email your dimension-by-dimension breakdown, your founder-dependency read, and the <b>7 Signs</b> guide. The evidence-based Operational Rating and the rebuild come after.</p>
       <form id="lead" novalidate>
         <div class="field"><label for="lname">Name</label><input id="lname" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
         <div class="field"><label for="lemail">Email *</label><input id="lemail" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
@@ -283,7 +283,7 @@
       <p>Your breakdown and the 7 Signs guide are heading to your inbox.</p>
       <div class="row2">
         <a class="btn" href="7-signs.pdf" data-pub="7-signs">Download the 7 Signs guide</a>
-        <a class="btn ghost" id="bookSprint" href="/cdn-cgi/l/email-protection#5a373b2a2a3f3e3b3c2833393b373f28353f3b3c2833393b1a3d373b33367439353765292f38303f392e671835353133343d7f686a3b7f686a3c3b393336332e3b2e3f3e7f686a3b29293f2929373f342e">Book a facilitated assessment</a>
+        <a class="btn ghost" id="bookSprint" href="/cdn-cgi/l/email-protection#5a373b2a2a3f3e3b3c2833393b373f28353f3b3c2833393b1a3d373b33367439353765292f38303f392e671835353133343d7f686a3b7f686a3c3b393336332e3b2e3f3e7f686a3b29293f2929373f342e">Talk to us about your Rating</a>
       </div>
     </div>
   </div>
@@ -302,7 +302,7 @@
   <p class="note" id="consentNote" style="display:none">Every Mapped Score contributes, with consent and anonymisation, to Africa's emerging organisational visibility benchmark. Benchmark figures shown are illustrative while the founding sample is being built.</p>
 </div>
 
-<div class="foot"><div class="wrap">A Meroë Africa institution · The full, facilitated Mapped Score goes several layers deeper · <a href="https://mapped.africa">mapped.africa</a></div></div>
+<div class="foot"><div class="wrap">A Meroë Africa institution · This Score is indicative. The <a href="rating.html" style="color:#C2660A;font-weight:700;text-decoration:none">Mapped Operational Rating</a> is evidence-based. · <a href="https://mapped.africa">mapped.africa</a></div></div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
@@ -459,7 +459,7 @@
     var bt=document.getElementById('benchText');
     bt.innerHTML='You score <b>'+overall+'</b>. The emerging African SME benchmark — illustrative while the founding sample is built — sits near <b>~'+BENCH.overall+'</b>. '+
       (weakCount>0
-        ? 'Your <b>'+fixFirst+'</b> is your weakest dimension — that is the first thing a facilitated assessment would fix.'
+        ? 'Your <b>'+fixFirst+'</b> is your weakest dimension — that is the first thing your Operational Rating would put a plan against.'
         : 'You sit at or above it on every dimension. The next step is locking that in.');
 
     drawRadar(ddata);
@@ -473,8 +473,8 @@
 
     // personalise the book CTA
     try{
-      var subj='Booking a facilitated assessment — Mapped Score '+overall+'/100 ('+L.lvl.name+')';
-      var body='Hi Mapped team, I just took the Mapped Score ('+overall+'/100, '+L.lvl.name+'). I\'d like to book a facilitated assessment to fix: '+fixFirst+'.';
+      var subj='Mapped Operational Rating enquiry — Mapped Score '+overall+'/100 ('+L.lvl.name+')';
+      var body='Hi Mapped team, I just took the Mapped Score ('+overall+'/100, '+L.lvl.name+'). I\'d like to get my Mapped Operational Rating and fix: '+fixFirst+'.';
       var href='mailto:mappedafricameroeafrica@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
       document.getElementById('bookBtn').href=href;
       document.getElementById('bookSprint').href=href;
@@ -523,7 +523,7 @@
     var m=window.__mapped||{score:0,level:"",flag:"",answersText:"",dimsStr:"",fixFirst:""};
     leadBtn.textContent='Sending...';leadBtn.disabled=true;
 
-    var auto="Hi, and thanks for taking the Mapped Score.\n\nYour Mapped Score is "+m.score+"/100 ("+m.level+").\nFounder-dependency: "+m.flag+".\n\nYour seven dimensions:\n"+m.dimsStr+"\n\nFix first: "+m.fixFirst+".\n\nWhat this means: the lower a dimension scores, the more of that part of the organisation lives in people's heads — which quietly caps growth, funding and the ability to automate. The fix is to make the engine visible.\n\nHere is your guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nWhen you are ready for the full, facilitated Mapped Score and a plan to fix your top gaps, reply to this email or book an assessment at https://mapped.africa\n\nTalk soon,\nThe Mapped team at Meroe Africa";
+    var auto="Hi, and thanks for taking the Mapped Score.\n\nYour Mapped Score is "+m.score+"/100 ("+m.level+").\nFounder-dependency: "+m.flag+".\n\nYour seven dimensions:\n"+m.dimsStr+"\n\nFix first: "+m.fixFirst+".\n\nWhat this means: the lower a dimension scores, the more of that part of the business lives in people's heads \u2014 which quietly caps growth, funding and the ability to automate. A low band is not a verdict on you. It is the most common finding we see, and the most fixable.\n\nYour guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nOne thing to be clear about: this Score is INDICATIVE \u2014 it is based on what you told us. The Mapped Operational Rating is different. You submit real documents and numbers, we score what you can SHOW against what you SAY, and you receive an issued credential with a 90-day plan.\n\nSee what that looks like: https://mapped.africa/rating.html\nA real sample: https://mapped.africa/sample-rating.pdf\n\nQuestions? WhatsApp +254 740 223303.\n\nTalk soon,\nThe Mapped team";
 
     var fsPayload={
       name:name, email:email,
