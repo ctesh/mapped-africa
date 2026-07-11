@@ -6,20 +6,20 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.app.n8n.cloud https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <title>The Mapped Score™ | MAPPED</title>
-<meta name="description" content="Get your Mapped Score. Fourteen questions, about ninety seconds. One number, seven dimensions, five levels — how understandable is your organisation?">
+<meta name="description" content="Get your Mapped Score. Fourteen questions, about ninety seconds. One number, seven dimensions, five bands — how understandable is your organisation?">
 <link rel="canonical" href="https://mapped.africa/clarity-check.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0B0B0D">
 <meta name="mapped-version" content="site-v2.0-phase1; mapped-score-v1.0">
 <meta property="og:title" content="The Mapped Score™">
-<meta property="og:description" content="One number, seven dimensions, five levels. Measure whether your organisation can be understood well enough to scale, fund, automate, and improve.">
+<meta property="og:description" content="One number, seven dimensions, five bands. Measure whether your organisation can be understood well enough to scale, fund, automate, and improve.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mapped.africa/clarity-check.html">
 <meta property="og:image" content="https://mapped.africa/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"The Mapped Score","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://mapped.africa/clarity-check.html","description":"A free diagnostic that scores how understandable your organisation is across seven dimensions and five levels, and surfaces founder-dependency risk.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Meroë Africa","url":"https://mapped.africa"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"The Mapped Score","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://mapped.africa/clarity-check.html","description":"A free diagnostic that scores how understandable your organisation is across seven dimensions and five bands, and surfaces founder-dependency risk.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Meroë Africa","url":"https://mapped.africa"}}
 </script>
 <!-- Google Analytics 4 -->
 <script>
@@ -200,7 +200,7 @@
 <section class="hero"><div class="wrap">
   <div class="ey">The Mapped Score<sup>™</sup></div>
   <h1>How understandable is your organisation?</h1>
-  <p>One number, seven dimensions, five levels. Fourteen questions, about ninety seconds. It measures whether your organisation can be understood well enough to scale, fund, automate, and improve — not how good or profitable it is.</p>
+  <p>One number, seven dimensions, five bands. Fourteen questions, about ninety seconds. It measures whether your organisation can be understood well enough to scale, fund, automate, and improve — not how good or profitable it is.</p>
 </div></section>
 
 <div class="wrap">
@@ -228,7 +228,7 @@
     </div>
 
     <div class="gauge">
-      <div class="glabels"><span>Invisible</span><span>Founder-Dependent</span><span>Partially Visible</span><span>Managed</span><span>Adaptive</span></div>
+      <div class="glabels"><span>Founder-Memory</span><span>Emerging System</span><span>Scaling Foundation</span><span>Investment-Grade</span><span>Institution-Ready</span></div>
       <div class="gbar">
         <div class="gseg" style="left:20%"></div><div class="gseg" style="left:40%"></div><div class="gseg" style="left:60%"></div><div class="gseg" style="left:80%"></div>
         <div class="gpin" id="gpin" style="left:0%" data-v="You · 0"></div>
@@ -348,16 +348,16 @@
   var FOUNDER_Q = 7; // 0-based index of Q4b
 
   var LEVELS = [
-    {max:20, name:"Invisible",         head:"The organisation runs on memory, improvisation, and individual effort.",
-     body:"Very little of how the business works can be seen, transferred, or improved on purpose. Making the engine visible is your single highest-return move."},
-    {max:40, name:"Founder-Dependent", head:"It works — but too much is trapped in people's heads.",
-     body:"The business functions because a few people carry it. That caps growth, funding, and automation until the knowledge is made transferable."},
-    {max:60, name:"Partially Visible", head:"Important systems exist, but visibility is uneven and fragile.",
-     body:"You have real foundations. The weak dimensions below are quietly capping your ability to scale, raise, and automate."},
-    {max:80, name:"Managed",           head:"The organisation is largely visible, documented, and improvable.",
-     body:"Strong. The work now is tightening the last gaps and locking the system so growth doesn't reintroduce chaos."},
-    {max:100,name:"Adaptive",          head:"The organisation can learn, scale, automate, and transfer knowledge with confidence.",
-     body:"Rare air. Protect it: keep the operating picture current as you grow, and use it as your edge for funding and AI."}
+    {max:39, name:"Founder-Memory Driven", head:"The business works \u2014 because a few people carry it in their heads.",
+     body:"That is not a failure. It is how almost every business starts. It only becomes the ceiling the moment you try to grow, raise, or hand anything over. Making the engine visible is your single highest-return move."},
+    {max:59, name:"Emerging System",       head:"You have started building structure \u2014 it is real, but still uneven.",
+     body:"Some parts of the business now hold on their own; others still run on memory and goodwill. Closing the gaps below is what turns effort into a system."},
+    {max:74, name:"Scaling Foundation",    head:"You have enough structure to grow \u2014 with specific gaps to close first.",
+     body:"The foundations are real. But you are beginning to outgrow the operating model that got you here, and the weak dimensions below will create friction rather than momentum as you scale."},
+    {max:89, name:"Investment-Grade Operations", head:"The business scales beyond individual effort.",
+     body:"Strong operational credibility and visible systems. The work now is tightening the last gaps and locking the system so growth does not reintroduce chaos."},
+    {max:100,name:"Institution-Ready",     head:"Mature, transferable, measurable systems.",
+     body:"Rare air. Protect it: keep the operating picture current as you grow, and use it as your edge for funding, delegation and AI."}
   ];
 
   // Emerging Africa benchmark — ILLUSTRATIVE PLACEHOLDERS until the founding sample is real.
@@ -426,7 +426,7 @@
     document.getElementById('flywheel').style.display='block';
     document.getElementById('consentNote').style.display='block';
 
-    document.getElementById('lvlText').textContent='Level '+(L.idx+1)+' · '+L.lvl.name;
+    document.getElementById('lvlText').textContent='Band '+(L.idx+1)+' of 5 · '+L.lvl.name;
     document.getElementById('lvlHead').textContent=L.lvl.head;
     document.getElementById('interp').textContent=L.lvl.body;
 
