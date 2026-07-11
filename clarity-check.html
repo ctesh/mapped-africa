@@ -171,7 +171,7 @@
   .flywheel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 34px;margin-bottom:22px}
   @media(max-width:640px){.flywheel{padding:22px}}
   .fh-h{font-size:1.15rem;font-weight:800;margin-bottom:16px}
-  .steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch}
+  .steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
   @media(max-width:700px){.steps{grid-template-columns:1fr;gap:10px}.steps .arw{display:none}}
   .stepc{border:1px solid var(--line);border-radius:14px;padding:18px}
   .stepc .k{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dk)}
@@ -257,7 +257,7 @@
     <div class="realities">The seven dimensions sit within the four realities of every organisation — Intent, Structure, Flow, and Outcomes — from the paper <a href="invisible-organisation.pdf" data-pub="invisible-organisation" style="color:#C2660A">The Invisible Organisation</a>.</div>
 
     <div class="cta">
-      <a class="btn" id="bookBtn" href="/cdn-cgi/l/email-protection#7e131f0e0e1b1a1f180c171d1f131b0c111b1f180c171d1f3e19131f1712501d1113410d0b1c141b1d0a433c1111151710195b4c4e1f5b4c4e181f1d1712170a1f0a1b1a5b4c4e1f0d0d1b0d0d131b100a">Book a session to fix your top gap</a>
+      <a class="btn" id="bookBtn" href="rating.html">Get your Operational Rating</a>
       <a class="btn ghost" href="#captureBlock">Email me my full breakdown</a>
     </div>
 
@@ -280,10 +280,10 @@
     <div id="thanks">
       <div class="tickmark" aria-hidden="true">✓</div>
       <h3>On its way. Talk soon.</h3>
-      <p>Your breakdown and the 7 Signs guide are heading to your inbox.</p>
+      <p>Your dimension-by-dimension breakdown is on its way to your inbox, with your link to the 7 Signs guide.</p>
       <div class="row2">
         <a class="btn" href="7-signs.pdf" data-pub="7-signs">Download the 7 Signs guide</a>
-        <a class="btn ghost" id="bookSprint" href="/cdn-cgi/l/email-protection#5a373b2a2a3f3e3b3c2833393b373f28353f3b3c2833393b1a3d373b33367439353765292f38303f392e671835353133343d7f686a3b7f686a3c3b393336332e3b2e3f3e7f686a3b29293f2929373f342e">Talk to us about your Rating</a>
+        <a class="btn ghost" id="bookSprint" href="rating.html">Get your Operational Rating</a>
       </div>
     </div>
   </div>
@@ -291,11 +291,13 @@
   <div class="flywheel" id="flywheel" style="display:none">
     <div class="fh-h">What happens after your Score</div>
     <div class="steps">
-      <div class="stepc"><div class="k">Step 1 · Free</div><h4>Get Your Mapped Score</h4><p>The diagnostic. See your number, your level, and your weakest dimension.</p></div>
+      <div class="stepc"><div class="k">Step 1 · Free</div><h4>Get Your Mapped Score</h4><p>The indicative diagnostic. Your number, your band, your weakest dimension.</p></div>
       <div class="arw">→</div>
-      <div class="stepc"><div class="k">Step 2 · Project</div><h4>Build the System</h4><p>We redesign the operating model that lifts your score, with you.</p></div>
+      <div class="stepc"><div class="k">Step 2 · KES 13,000</div><h4>Get Your Operational Rating</h4><p>Evidence-based. You submit real documents; you receive an issued credential and a 90-day roadmap.</p></div>
       <div class="arw">→</div>
-      <div class="stepc"><div class="k">Step 3 · Retainer</div><h4>Stay Mapped</h4><p>Monthly clarity support to keep the organisation visible and improving.</p></div>
+      <div class="stepc"><div class="k">Step 3 · Project</div><h4>Build the System</h4><p>We close the gaps your Rating found, with you.</p></div>
+      <div class="arw">→</div>
+      <div class="stepc"><div class="k">Step 4 · Retainer</div><h4>Stay Mapped</h4><p>Re-rate every 90 days and keep the organisation visible as it grows.</p></div>
     </div>
   </div>
 
@@ -471,14 +473,6 @@
       dims:ddata.map(function(d){return {name:d.name,score:d.score};})};
     try{gtag('event','mapped_score_completed',{mapped_score:overall,level:L.lvl.name,founder_dependency:flag,fix_first:fixFirst});}catch(e){}
 
-    // personalise the book CTA
-    try{
-      var subj='Mapped Operational Rating enquiry — Mapped Score '+overall+'/100 ('+L.lvl.name+')';
-      var body='Hi Mapped team, I just took the Mapped Score ('+overall+'/100, '+L.lvl.name+'). I\'d like to get my Mapped Operational Rating and fix: '+fixFirst+'.';
-      var href='mailto:mappedafricameroeafrica@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
-      document.getElementById('bookBtn').href=href;
-      document.getElementById('bookSprint').href=href;
-    }catch(e){}
 
     res.scrollIntoView({behavior:'smooth',block:'start'});
   });
