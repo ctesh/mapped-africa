@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://formsubmit.co https://*.app.n8n.cloud https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <title>The Mapped Score™ | MAPPED</title>
-<meta name="description" content="Get your Mapped Score. Fourteen questions, about ninety seconds. One number, seven dimensions, five bands — how understandable is your organisation?">
+<meta name="description" content="Get your Mapped Score. Fourteen questions, about ninety seconds. One number, seven dimensions, five bands, how understandable is your organisation?">
 <link rel="canonical" href="https://mapped.africa/clarity-check.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -28,14 +28,14 @@
     var gaS=document.createElement('script'); gaS.async=1;
     gaS.src='https://www.googletagmanager.com/gtag/js?id='+window.GA_ID; document.head.appendChild(gaS);
     window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);}
-    window.gtag=gtag; gtag('js',new Date()); gtag('config',window.GA_ID);
+    window.gtag=gtag; gtag('js', new Date()); gtag('config', window.GA_ID);
   } else { window.gtag=function(){}; }
 </script>
 <style>
   :root{--ink:#0B0B0D;--paper:#fff;--grey:#6B7280;--grey2:#9AA3B2;--line:#E7E9EE;--soft:#F6F7F9;
     --accent:#F08010;--accent-dk:#C2660A;--bench:#3B82F6;--red:#D64545;--amber:#E8912B;--green:#1F9D55;
-    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:'Iowan Old Style',Georgia,serif;
-    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;}
+    --sans:-apple-system, BlinkMacSystemFont,'Segoe UI', Helvetica, Arial, sans-serif;--serif:'Iowan Old Style', Georgia, serif;
+    --mono:ui-monospace,'SF Mono', Menlo, Consolas, monospace;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);color:var(--ink);background:var(--soft);line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -54,7 +54,7 @@
   .hero h1{font-size:clamp(1.9rem,5vw,2.5rem);font-weight:800;letter-spacing:-.015em;margin:12px 0 8px;line-height:1.08}
   .hero p{color:#C9D2E0;max-width:600px;font-size:1.05rem}
 
-  .panel{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 50px rgba(11,11,13,.08);margin:-30px 0 22px;overflow:hidden}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 50px rgba(11,11,13.08);margin:-30px 0 22px;overflow:hidden}
   .pad{padding:clamp(20px,4vw,34px)}
 
   .pbar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin:2px 0 4px}
@@ -71,7 +71,7 @@
   .opt input{position:absolute;opacity:0;width:1px;height:1px}
   .opt label{display:block;text-align:center;padding:11px 8px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--grey);transition:.15s;background:#fff}
   .opt label:hover{border-color:#c9d2e0}
-  .opt input:checked + label{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(240,128,16,.28)}
+  .opt input:checked + label{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(240,128,16.28)}
   .opt input:focus-visible + label{outline:2px solid var(--ink);outline-offset:2px}
 
   .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:14px 26px;border-radius:10px;text-decoration:none;border:2px solid var(--accent);cursor:pointer;font-size:1rem;font-family:inherit;transition:.15s;text-align:center}
@@ -102,13 +102,13 @@
   @media(max-width:520px){.glabels{font-size:.5rem;letter-spacing:0;gap:2px}}
   .gbar{position:relative;height:16px;border-radius:9px;overflow:visible;margin-top:34px;
     background:linear-gradient(90deg,#D64545 0%,#E8912B 30%,#F08010 55%,#7BC47F 80%,#1F9D55 100%)}
-  .gseg{position:absolute;top:0;bottom:0;border-right:2px solid rgba(255,255,255,.7)}
+  .gseg{position:absolute;top:0;bottom:0;border-right:2px solid rgba(255,255,255.7)}
   .gpin{position:absolute;top:-10px;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:11px solid var(--ink);transform:translateX(-7px)}
   .gpin::after{content:attr(data-v);position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:5px;white-space:nowrap}
 
   .flagbox{margin:8px 34px;border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
   @media(max-width:640px){.flagbox{margin:8px 22px}}
-  .flagbox.high,.flagbox.medium{background:#FCEEE1;border:1px solid #F6D3AC;border-left:5px solid var(--amber)}
+  .flagbox.high.flagbox.medium{background:#FCEEE1;border:1px solid #F6D3AC;border-left:5px solid var(--amber)}
   .flagbox.high .risk{background:var(--red)}
   .flagbox.medium .risk{background:var(--amber)}
   .flagbox.low{background:#EAF7EF;border:1px solid #BEE6CC;border-left:5px solid var(--green)}
@@ -134,7 +134,7 @@
   .dval{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent-dk)}
   .dval.low{color:var(--amber)}
   .track{position:relative;height:12px;background:var(--soft);border:1px solid var(--line);border-radius:8px}
-  .fill{height:100%;background:var(--accent);border-radius:7px 0 0 7px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+  .fill{height:100%;background:var(--accent);border-radius:7px 0 0 7px;width:0;transition:width .9s cubic-bezier(.2.7.2,1)}
   .fill.low{background:var(--amber)}
   .tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--bench)}
   .dsub{font-size:.82rem;color:var(--grey);margin-top:5px}
@@ -186,7 +186,7 @@
   @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
-<!-- The Mapped Score™ v1.0 — FROZEN RULER. The 7 dimensions, 14 questions, scoring and 5 levels below are the measurement. Do not change without versioning. -->
+<!-- The Mapped Score™ v1.0, FROZEN RULER. The 7 dimensions, 14 questions, scoring and 5 levels below are the measurement. Do not change without versioning. -->
 <body data-mapped-score-version="1.0">
 
 <header><div class="wrap"><nav class="nav">
@@ -200,7 +200,7 @@
 <section class="hero"><div class="wrap">
   <div class="ey">The Mapped Score<sup>™</sup></div>
   <h1>How understandable is your organisation?</h1>
-  <p>One number, seven dimensions, five bands. Fourteen questions, about ninety seconds. It measures whether your organisation can be understood well enough to scale, fund, automate, and improve — not how good or profitable it is.</p>
+  <p>One number, seven dimensions, five bands. Fourteen questions, about ninety seconds. It measures whether your organisation can be understood well enough to scale, fund, automate, and improve, not how good or profitable it is.</p>
 </div></section>
 
 <div class="wrap">
@@ -218,12 +218,12 @@
     <div class="res">
       <div class="big">
         <div class="num" id="scoreNum">0<small>/100</small></div>
-        <div class="lvl" id="lvlText">—</div>
+        <div class="lvl" id="lvlText"></div>
       </div>
       <div>
         <h2 id="lvlHead">Your Mapped Score</h2>
         <p id="interp"></p>
-        <div class="tier">This is your free, indicative Mapped Score. The Mapped Operational Rating is evidence-based — you submit real documents and receive an issued credential.</div>
+        <div class="tier">This is your free, indicative Mapped Score. The Mapped Operational Rating is evidence-based. You submit real documents and receive an issued credential.</div>
       </div>
     </div>
 
@@ -254,7 +254,7 @@
 
     <div class="benchbar"><div class="l" id="benchText"></div></div>
 
-    <div class="realities">The seven dimensions sit within the four realities of every organisation — Intent, Structure, Flow, and Outcomes — from the paper <a href="invisible-organisation.pdf" data-pub="invisible-organisation" style="color:#C2660A">The Invisible Organisation</a>.</div>
+    <div class="realities">The seven dimensions sit within the four realities of every organisation, Intent, Structure, Flow, and Outcomes, from the paper <a href="invisible-organisation.pdf" data-pub="invisible-organisation" style="color:#C2660A">The Invisible Organisation</a>.</div>
 
     <div class="cta">
       <a class="btn" id="bookBtn" href="rating.html">Get your Operational Rating</a>
@@ -263,7 +263,7 @@
 
         <div class="ratingBridge" style="margin:22px 0;padding:18px 22px;border:1px solid #E4DED3;border-left:4px solid #B4530F;border-radius:10px;background:#FBFAF7">
       <div style="font-weight:700;color:#141009;margin-bottom:4px">This is your indicative Score.</div>
-      <div style="color:#4A423A;font-size:.95rem">Get the evidence-verified <b>Mapped Operational Rating</b> — you submit real documents and receive an issued credential, a benchmark and a 90-day roadmap. <a href="rating.html" style="color:#B4530F;font-weight:700;text-decoration:none">See the Operational Rating →</a><div style="margin-top:10px;font-size:.88rem;color:#6B7280">Questions? <a href="https://wa.me/254740223303?text=Hi%20Mapped%20-%20I%20have%20a%20question%20about%20the%20Operational%20Rating." target="_blank" rel="noopener" onclick="try{gtag('event','rating_whatsapp_click')}catch(e){}" style="color:#B4530F;font-weight:700;text-decoration:none">Talk to us</a></div></div>
+      <div style="color:#4A423A;font-size:.95rem">Get the evidence-verified <b>Mapped Operational Rating</b>. You submit real documents and receive an issued credential, a benchmark and a 90-day roadmap. <a href="rating.html" style="color:#B4530F;font-weight:700;text-decoration:none">See the Operational Rating →</a><div style="margin-top:10px;font-size:.88rem;color:#6B7280">Questions? <a href="https://wa.me/254740223303?text=Hi%20Mapped%20-%20I%20have%20a%20question%20about%20the%20Operational%20Rating." target="_blank" rel="noopener" onclick="try{gtag('event','rating_whatsapp_click')}catch(e){}" style="color:#B4530F;font-weight:700;text-decoration:none">Talk to us</a></div></div>
     </div>
     <div class="capture" id="captureBlock">
       <h3>Get your full breakdown</h3>
@@ -315,12 +315,12 @@
   var N8N_ENDPOINT = ""; // paste your n8n production webhook URL here to route leads through n8n; blank = FormSubmit (zero risk)
 
   /* ============================================================
-     THE MAPPED SCORE™ v1.0 — FROZEN RULER
+     THE MAPPED SCORE™ v1.0, FROZEN RULER
      7 dimensions × 2 questions. 0 = Not yet, 1 = Getting there, 2 = Yes, solid.
      Dimension score = (sum of its 2 answers ÷ 4) × 100.
      Overall = mean of the 7 dimension scores, rounded.
      Q4b (index 7) drives the founder-dependency flag.
-     Do NOT add, remove, or reword — they ARE the measurement.
+     Do NOT add, remove, or reword, they ARE the measurement.
      ============================================================ */
   var DIMS = [
     {name:"Intent Clarity", short:"Intent", sub:"Does the organisation know what it is building, why, and what matters now?"},
@@ -358,16 +358,16 @@
      body:"The foundations are real. But you are beginning to outgrow the operating model that got you here, and the weak dimensions below will create friction rather than momentum as you scale."},
     {max:89, name:"Investment-Grade Operations", head:"The business scales beyond individual effort.",
      body:"Strong operational credibility and visible systems. The work now is tightening the last gaps and locking the system so growth does not reintroduce chaos."},
-    {max:100,name:"Institution-Ready",     head:"Mature, transferable, measurable systems.",
+    {max:100, name:"Institution-Ready",     head:"Mature, transferable, measurable systems.",
      body:"Rare air. Protect it: keep the operating picture current as you grow, and use it as your edge for funding, delegation and AI."}
   ];
 
-  // Emerging Africa benchmark — ILLUSTRATIVE PLACEHOLDERS until the founding sample is real.
+  // Emerging Africa benchmark, ILLUSTRATIVE PLACEHOLDERS until the founding sample is real.
   var BENCH = {overall:42, dims:[44,45,43,40,42,41,43]};
 
   // ---- Build the quiz ----
   var quiz=document.getElementById('quiz');
-  QUESTIONS.forEach(function(t,i){
+  QUESTIONS.forEach(function(t, i){
     var n=i+1;
     if(i%2===0){
       var dh=document.createElement('div');dh.className='dimhead';
@@ -386,7 +386,7 @@
 
   function answeredCount(){var c=0;for(var i=1;i<=QUESTIONS.length;i++){if(document.querySelector('input[name="q'+i+'"]:checked'))c++;}return c;}
   var started=false;
-  quiz.addEventListener('change',function(){
+  quiz.addEventListener('change', function(){
     if(!started){started=true;try{gtag('event','mapped_score_started');}catch(e){}}
     var n=answeredCount();
     document.getElementById('pfill').style.width=(n/QUESTIONS.length*100)+'%';
@@ -396,20 +396,20 @@
 
   function val(i){var s=document.querySelector('input[name="q'+(i+1)+'"]:checked');return s?parseInt(s.value,10):0;}
   function albl(v){return v===2?"Yes, solid":(v===1?"Getting there":"Not yet");}
-  function levelFor(score){for(var i=0;i<LEVELS.length;i++){if(score<=LEVELS[i].max)return {idx:i,lvl:LEVELS[i]};}return {idx:4,lvl:LEVELS[4]};}
+  function levelFor(score){for(var i=0;i<LEVELS.length;i++){if(score<=LEVELS[i].max)return {idx:i, lvl:LEVELS[i]};}return {idx:4, lvl:LEVELS[4]};}
 
-  document.getElementById('seeScore').addEventListener('click',function(){
+  document.getElementById('seeScore').addEventListener('click', function(){
     if(answeredCount()<QUESTIONS.length){document.getElementById('quizErr').style.display='block';return;}
 
     var answersText="";
     for(var i=0;i<QUESTIONS.length;i++){answersText+="Q"+(i+1)+": "+albl(val(i))+"\n";}
 
     // dimension scores
-    var ddata=DIMS.map(function(d,di){
+    var ddata=DIMS.map(function(d, di){
       var pts=val(di*2)+val(di*2+1);
-      return {name:d.name,short:d.short,sub:d.sub,score:Math.round(pts/4*100),bench:BENCH.dims[di]};
+      return {name:d.name, short:d.short, sub:d.sub, score:Math.round(pts/4*100), bench:BENCH.dims[di]};
     });
-    var overall=Math.round(ddata.reduce(function(s,d){return s+d.score;},0)/ddata.length);
+    var overall=Math.round(ddata.reduce(function(s, d){return s+d.score;},0)/ddata.length);
     var L=levelFor(overall);
 
     // founder-dependency flag from Q4b
@@ -418,7 +418,7 @@
     var ktScore = ddata[3].score;
 
     // weakest dimensions (lowest first)
-    var sorted=ddata.slice().sort(function(a,b){return a.score-b.score;});
+    var sorted=ddata.slice().sort(function(a, b){return a.score-b.score;});
     var fixFirst=sorted[0].name;
     var weakCount=ddata.filter(function(d){return d.score<d.bench;}).length;
 
@@ -432,8 +432,8 @@
     document.getElementById('lvlHead').textContent=L.lvl.head;
     document.getElementById('interp').textContent=L.lvl.body;
 
-    var sn=document.getElementById('scoreNum'),cur=0;
-    (function step(){cur+=Math.max(1,Math.ceil((overall-cur)/6));if(cur>=overall)cur=overall;sn.innerHTML=cur+'<small>/100</small>';if(cur<overall)requestAnimationFrame(step);})();
+    var sn=document.getElementById('scoreNum'), cur=0;
+    (function step(){cur+=Math.max(1, Math.ceil((overall-cur)/6));if(cur>=overall)cur=overall;sn.innerHTML=cur+'<small>/100</small>';if(cur<overall)requestAnimationFrame(step);})();
 
     var pin=document.getElementById('gpin');
     pin.style.left=overall+'%';pin.setAttribute('data-v','You · '+overall);
@@ -444,10 +444,10 @@
     var ft=document.getElementById('flagText');
     if(flag==='High'){ft.innerHTML='<b>The business still lives in your head.</b> Knowledge Transferability scored '+ktScore+'. This is the single biggest thing standing between you and a business that can scale, sell, or be handed over.';}
     else if(flag==='Medium'){ft.innerHTML='<b>Parts of the business still depend on someone being in the room.</b> Knowledge Transferability scored '+ktScore+'. Keep moving knowledge out of heads and into systems.';}
-    else{ft.innerHTML='<b>The business can run without any single person.</b> Knowledge Transferability scored '+ktScore+'. Protect that as you scale — it is rarer than it should be.';}
+    else{ft.innerHTML='<b>The business can run without any single person.</b> Knowledge Transferability scored '+ktScore+'. Protect that as you scale, it is rarer than it should be.';}
 
     var dimsEl=document.getElementById('dims');dimsEl.innerHTML='';
-    ddata.forEach(function(d,i){
+    ddata.forEach(function(d, i){
       var low=d.score<d.bench;
       var el=document.createElement('div');el.className='dim';
       el.innerHTML='<div class="dtop"><span class="dname">'+(i+1)+' · '+d.name+'</span><span class="dval'+(low?' low':'')+'">'+d.score+'</span></div>'+
@@ -459,53 +459,53 @@
     });
 
     var bt=document.getElementById('benchText');
-    bt.innerHTML='You score <b>'+overall+'</b>. The emerging African SME benchmark — illustrative while the founding sample is built — sits near <b>~'+BENCH.overall+'</b>. '+
+    bt.innerHTML='You score <b>'+overall+'</b>. The emerging African SME benchmark, illustrative while the founding sample is built, sits near <b>~'+BENCH.overall+'</b>. '+
       (weakCount>0
-        ? 'Your <b>'+fixFirst+'</b> is your weakest dimension — that is the first thing your Operational Rating would put a plan against.'
+        ? 'Your <b>'+fixFirst+'</b> is your weakest dimension, that is the first thing your Operational Rating would put a plan against.'
         : 'You sit at or above it on every dimension. The next step is locking that in.');
 
     drawRadar(ddata);
 
     // stash for the lead payload
     var dimsStr=ddata.map(function(d){return d.name+" "+d.score;}).join(" | ");
-    window.__mapped={score:overall,level:L.lvl.name,levelIdx:L.idx+1,flag:flag,answersText:answersText,
-      dimsStr:dimsStr,fixFirst:fixFirst,
-      dims:ddata.map(function(d){return {name:d.name,score:d.score};})};
-    try{gtag('event','mapped_score_completed',{mapped_score:overall,level:L.lvl.name,founder_dependency:flag,fix_first:fixFirst});}catch(e){}
+    window.__mapped={score:overall, level:L.lvl.name, levelIdx:L.idx+1, flag:flag, answersText:answersText,
+      dimsStr:dimsStr, fixFirst:fixFirst,
+      dims:ddata.map(function(d){return {name:d.name, score:d.score};})};
+    try{gtag('event','mapped_score_completed',{mapped_score:overall, level:L.lvl.name, founder_dependency:flag, fix_first:fixFirst});}catch(e){}
 
 
-    res.scrollIntoView({behavior:'smooth',block:'start'});
+    res.scrollIntoView({behavior:'smooth', block:'start'});
   });
 
   // ---- radar: you vs illustrative benchmark ----
   function drawRadar(ddata){
-    var c=document.getElementById('radar'),dpr=window.devicePixelRatio||1;
+    var c=document.getElementById('radar'), dpr=window.devicePixelRatio||1;
     var w=Math.min(c.parentElement.clientWidth||560,560), h=Math.round(w*0.72);
     c.width=w*dpr;c.height=h*dpr;c.style.width=w+'px';c.style.height=h+'px';
-    var x=c.getContext('2d');x.scale(dpr,dpr);
-    var cx=w/2,cy=h/2+4,R=Math.min(w,h)/2-46,N=ddata.length;
-    function pt(i,v){var a=-Math.PI/2+i*2*Math.PI/N,r=R*v/100;return [cx+r*Math.cos(a),cy+r*Math.sin(a)];}
-    x.clearRect(0,0,w,h);
-    [25,50,75,100].forEach(function(v){x.strokeStyle='#E7E9EE';x.lineWidth=1;x.beginPath();for(var i=0;i<=N;i++){var p=pt(i%N,v);i===0?x.moveTo(p[0],p[1]):x.lineTo(p[0],p[1]);}x.closePath();x.stroke();});
-    for(var i=0;i<N;i++){var p=pt(i,100);x.strokeStyle='#E7E9EE';x.beginPath();x.moveTo(cx,cy);x.lineTo(p[0],p[1]);x.stroke();
-      var lp=pt(i,119);x.fillStyle='#6B7280';x.font='600 12px -apple-system,Arial';
+    var x=c.getContext('2d');x.scale(dpr, dpr);
+    var cx=w/2, cy=h/2+4, R=Math.min(w, h)/2-46, N=ddata.length;
+    function pt(i, v){var a=-Math.PI/2+i*2*Math.PI/N, r=R*v/100;return [cx+r*Math.cos(a), cy+r*Math.sin(a)];}
+    x.clearRect(0,0, w, h);
+    [25,50,75,100].forEach(function(v){x.strokeStyle='#E7E9EE';x.lineWidth=1;x.beginPath();for(var i=0;i<=N;i++){var p=pt(i%N, v);i===0?x.moveTo(p[0], p[1]):x.lineTo(p[0], p[1]);}x.closePath();x.stroke();});
+    for(var i=0;i<N;i++){var p=pt(i,100);x.strokeStyle='#E7E9EE';x.beginPath();x.moveTo(cx, cy);x.lineTo(p[0], p[1]);x.stroke();
+      var lp=pt(i,119);x.fillStyle='#6B7280';x.font='600 12px -apple-system, Arial';
       x.textAlign=(Math.abs(lp[0]-cx)<12?'center':(lp[0]<cx?'right':'left'));x.textBaseline='middle';
-      x.fillText(ddata[i].short,lp[0],lp[1]);}
-    function poly(vals,st,fl,dash){x.beginPath();for(var i=0;i<N;i++){var p=pt(i,vals[i]);i===0?x.moveTo(p[0],p[1]):x.lineTo(p[0],p[1]);}x.closePath();x.setLineDash(dash?[5,4]:[]);x.strokeStyle=st;x.lineWidth=2;if(fl){x.fillStyle=fl;x.fill();}x.stroke();x.setLineDash([]);}
-    poly(ddata.map(function(d){return d.bench;}),'#3B82F6','rgba(59,130,246,0.05)',true);
-    poly(ddata.map(function(d){return d.score;}),'#F08010','rgba(240,128,16,0.18)',false);
-    for(var i=0;i<N;i++){var p=pt(i,ddata[i].score);x.fillStyle='#F08010';x.beginPath();x.arc(p[0],p[1],3,0,6.3);x.fill();}
+      x.fillText(ddata[i].short, lp[0], lp[1]);}
+    function poly(vals, st, fl, dash){x.beginPath();for(var i=0;i<N;i++){var p=pt(i, vals[i]);i===0?x.moveTo(p[0], p[1]):x.lineTo(p[0], p[1]);}x.closePath();x.setLineDash(dash?[5,4]:[]);x.strokeStyle=st;x.lineWidth=2;if(fl){x.fillStyle=fl;x.fill();}x.stroke();x.setLineDash([]);}
+    poly(ddata.map(function(d){return d.bench;}),'#3B82F6','rgba(59,130,246,0.05)', true);
+    poly(ddata.map(function(d){return d.score;}),'#F08010','rgba(240,128,16,0.18)', false);
+    for(var i=0;i<N;i++){var p=pt(i, ddata[i].score);x.fillStyle='#F08010';x.beginPath();x.arc(p[0], p[1],3,0,6.3);x.fill();}
   }
 
   // GA: book + publication events
-  document.addEventListener('click',function(e){
+  document.addEventListener('click', function(e){
     var a=e.target.closest&&e.target.closest('a');if(!a)return;
     if(a.id==='bookBtn'||a.id==='bookSprint'){try{gtag('event','book_assessment_click',{mapped_score:(window.__mapped||{}).score||null});}catch(x){}}
     if(a.hasAttribute('data-pub')){try{gtag('event','publication_download',{publication:a.getAttribute('data-pub')});}catch(x){}}
   });
 
   // ---- Lead capture: n8n-first, FormSubmit fallback ----
-  document.getElementById('lead').addEventListener('submit',function(ev){
+  document.getElementById('lead').addEventListener('submit', function(ev){
     ev.preventDefault();
     var leadBtn=document.getElementById('leadBtn'), leadErr=document.getElementById('leadErr');
     var email=document.getElementById('lemail').value.trim();
@@ -514,7 +514,7 @@
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){leadErr.textContent="Please add a valid email.";leadErr.style.display='block';return;}
     if(honey){document.getElementById('captureBlock').style.display='none';document.getElementById('thanks').style.display='block';return;}
 
-    var m=window.__mapped||{score:0,level:"",flag:"",answersText:"",dimsStr:"",fixFirst:""};
+    var m=window.__mapped||{score:0, level:"", flag:"", answersText:"", dimsStr:"", fixFirst:""};
     leadBtn.textContent='Sending...';leadBtn.disabled=true;
 
     var auto="Hi, and thanks for taking the Mapped Score.\n\nYour Mapped Score is "+m.score+"/100 ("+m.level+").\nFounder-dependency: "+m.flag+".\n\nYour seven dimensions:\n"+m.dimsStr+"\n\nFix first: "+m.fixFirst+".\n\nWhat this means: the lower a dimension scores, the more of that part of the business lives in people's heads \u2014 which quietly caps growth, funding and the ability to automate. A low band is not a verdict on you. It is the most common finding we see, and the most fixable.\n\nYour guide, The 7 Signs Your Business Is Running on Memory: https://mapped.africa/7-signs.pdf\n\nOne thing to be clear about: this Score is INDICATIVE \u2014 it is based on what you told us. The Mapped Operational Rating is different. You submit real documents and numbers, we score what you can SHOW against what you SAY, and you receive an issued credential with a 90-day plan.\n\nSee what that looks like: https://mapped.africa/rating.html\nA real sample: https://mapped.africa/sample-rating.pdf\n\nQuestions? WhatsApp +254 740 223303.\n\nTalk soon,\nThe Mapped team";
@@ -526,20 +526,20 @@
       _subject:"New Mapped Score lead, "+m.score+"/100 ("+m.level+")",
       _template:"table", _captcha:"false", _autoresponse:auto
     };
-    var n8nPayload={source:"mapped-score",name:name,email:email,mapped_score:m.score,level:m.level,founder_flag:m.flag,dimensions:m.dims,fix_first:m.fixFirst,answers:m.answersText,page:location.href};
+    var n8nPayload={source:"mapped-score", name:name, email:email, mapped_score:m.score, level:m.level, founder_flag:m.flag, dimensions:m.dims, fix_first:m.fixFirst, answers:m.answersText, page:location.href};
 
-    function ok(){try{gtag('event','generate_lead',{mapped_score:m.score,level:m.level});}catch(e){}
-      document.getElementById('captureBlock').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth',block:'center'});}
+    function ok(){try{gtag('event','generate_lead',{mapped_score:m.score, level:m.level});}catch(e){}
+      document.getElementById('captureBlock').style.display='none';document.getElementById('thanks').style.display='block';document.getElementById('thanks').scrollIntoView({behavior:'smooth', block:'center'});}
     function fail(){leadErr.innerHTML='That did not send. Please email us at <a href="mailto:mappedafricameroeafrica@gmail.com" style="color:#C2660A">mappedafricameroeafrica@gmail.com</a>.';leadErr.style.display='block';}
     function done(){leadBtn.textContent='Send my breakdown';leadBtn.disabled=false;}
     function viaFormSubmit(){
-      fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(fsPayload)})
+      fetch(ENDPOINT,{method:'POST', headers:{'Accept':'application/json','Content-Type':'application/json'}, body:JSON.stringify(fsPayload)})
         .then(function(r){return r.json().catch(function(){return {};});})
         .then(function(j){if(j&&(j.success===true||j.success==="true")){ok();}else{fail();}})
         .catch(fail).finally(done);
     }
     if(N8N_ENDPOINT){
-      fetch(N8N_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(n8nPayload)})
+      fetch(N8N_ENDPOINT,{method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(n8nPayload)})
         .then(function(r){if(r.ok){ok();done();}else{viaFormSubmit();}})
         .catch(function(){viaFormSubmit();});
     } else { viaFormSubmit(); }
